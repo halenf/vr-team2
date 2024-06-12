@@ -46,15 +46,5 @@ namespace FishingGame
         public Constraint swimWaitTime { get { return m_swimWaitTime; } }
         public Constraint rodDetectionRange { get { return m_rodDetectionRange; } }
         public Constraint rodWaitTime { get { return m_rodWaitTime; } }
-
-        /// <summary>
-        /// Returns a random float within the range of the Constraint's min and max values.
-        /// Uses UnityEngine's Random class.
-        /// </summary>
-        /// <param name="variable">The Constraint to take the min and max values from.</param>
-        public float RandomConstraint(Constraint variable)
-        {
-            return Random.Range(variable.min, variable.max);
-        }
     }
 }
