@@ -17,7 +17,7 @@ namespace FishingGame
             public FiniteStateMachine stateMachine { get { return m_stateMachine; } }
 
             // variables for AI
-            [SerializeField] private float m_reachDistance;
+            [SerializeField] private float m_interactRange;
             private Vector3 m_targetPosition;
             private GameObject m_target;
 
@@ -26,14 +26,14 @@ namespace FishingGame
             {
                 get
                 {
-                    return Vector2.Distance(transform.position, m_targetPosition) < m_reachDistance;
+                    return Vector2.Distance(transform.position, m_targetPosition) < m_interactRange;
                 }
             }
 
             public void Start()
             {
                 m_fish = GetComponent<Fish>();
-                //m_stateMachine = new FiniteStateMachine(new State())
+                //m_stateMachine = new FiniteStateMachine(m_fish.initialState);
             }
 
             public void Update()

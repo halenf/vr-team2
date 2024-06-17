@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,14 @@ namespace FishingGame
 {
     namespace AI
     {
+        [Serializable]
         public class FiniteStateMachine : Behaviour
         {
             public FiniteStateMachine(State state)
             {
                 m_currentState = state;
             }
-
+            
             private State m_currentState;
 
             // base methods
@@ -20,7 +22,7 @@ namespace FishingGame
             {
                 m_currentState.Enter(agent);
             }
-            public override void Update(Agent agent)
+            public override void UpdateThis(Agent agent)
             {
                 State newState = null;
 

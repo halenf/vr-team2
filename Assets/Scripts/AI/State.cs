@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace FishingGame
 {
     namespace AI
     {
-        public class State
+        [CreateAssetMenu(fileName = "State", menuName = "FishingGame/AI/State", order = 0)]
+        public class State : ScriptableObject
         {
             public State(Behaviour behaviour, Transition transition)
             {
@@ -34,8 +35,8 @@ namespace FishingGame
                 m_transitions.AddRange(transitions);
             }
 
-            private List<Behaviour> m_behaviours;
-            private List<Transition> m_transitions;
+            [SerializeField] private List<Behaviour> m_behaviours;
+            [SerializeField] private List<Transition> m_transitions;
 
             public List<Behaviour> behaviours { get { return m_behaviours; } }
             public List<Transition> transitions { get { return m_transitions; } }
@@ -45,10 +46,10 @@ namespace FishingGame
                 foreach (Behaviour behaviour in m_behaviours)
                     behaviour.Enter(agent);
             }
-            public void Update(Agent agent)
+            public void UpdateThis(Agent agent)
             {
                 foreach (Behaviour behaviour in m_behaviours)
-                    behaviour.Update(agent);
+                    behaviour.UpdateThis(agent);
             }
             public void Exit(Agent agent)
             {
@@ -64,6 +65,13 @@ namespace FishingGame
             public void AddBehaviour(Behaviour behaviour)
             {
                 m_behaviours.Add(behaviour);
+            }
+            public void RemoveBehaviour(Behaviour behaviour = null)
+            {
+                if (behaviour == null)
+                    m_behaviours.RemoveAt(m_behaviours.Count - 1);
+                else
+                    m_behaviours.Remove(behaviour);
             }
         }
     }

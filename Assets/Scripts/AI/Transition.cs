@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ namespace FishingGame
 {
     namespace AI
     {
+        [Serializable]
         public class Transition
         {
             public Transition(Condition condition, State targetState)
