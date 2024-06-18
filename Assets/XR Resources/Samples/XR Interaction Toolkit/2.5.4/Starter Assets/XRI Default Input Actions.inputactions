@@ -689,7 +689,7 @@
                 {
                     "name": "",
                     "id": "be27240b-6990-4c17-9cb3-fe53294b7799",
-                    "path": "<XRController>{LeftHand}/{DeviceAngularVelocity}",
+                    "path": "*/{DeviceVelocity}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
