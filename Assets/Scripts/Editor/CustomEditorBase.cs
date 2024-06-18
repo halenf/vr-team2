@@ -31,18 +31,22 @@ namespace FishingGame
             }
         }
 
-        protected void CreateInstanceOfScriptableObject(Type type, SerializedProperty listProperty, string mainAssetPath)
+        protected void CreateInstanceOfScriptableObject(Type type, SerializedProperty listProperty, string mainAssetPath, string folderName = "")
         {
             ScriptableObject obj = CreateInstance(type);
             ScriptableObject loadedObject;
-            if (AssetDatabase.Contains(obj))
+            if (AssetDatabase.Contains(obj) && obj.GetType() == type)
             {
                 loadedObject = AssetDatabase.LoadAssetAtPath<ScriptableObject>(AssetDatabase.GetAssetPath(obj));
             }
             else
             {
                 obj.name = type.Name;
-                string path = $"{mainAssetPath}/{obj.name}.asset";
+                string path = "";
+                if (folderName == string.Empty)
+                    path = $"{mainAssetPath}/{obj.name}.asset";
+                else
+                    path = $"{mainAssetPath}/{folderName}/{obj.name}.asset";
 
                 AssetDatabase.CreateAsset(obj, path);
                 AssetDatabase.SaveAssets();

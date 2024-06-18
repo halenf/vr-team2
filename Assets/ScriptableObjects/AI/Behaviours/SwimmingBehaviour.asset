@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 797212fac1e7eb84586a7948c9118eb1, type: 3}
   m_Name: SwimmingBehaviour
-  m_EditorClassIdentifier: Assembly-CSharp:FishingGame.AI:SwimmingBehaviour
+  m_EditorClassIdentifier: 

@@ -8,9 +8,9 @@ namespace FishingGame
     namespace AI
     {
         [Serializable]
-        public class Condition : ScriptableObject
+        public abstract class Condition : ScriptableObject
         {
-            public virtual bool IsTrue(Agent agent) { return false; }
+            public abstract bool IsTrue(Agent agent);
         }
 
         [Serializable]

@@ -16,7 +16,7 @@ namespace FishingGame
                 m_targetState = targetState;
             }
 
-            [SerializeField] private Condition m_condition;
+            [SerializeReference] private Condition m_condition;
             [SerializeField] private State m_targetState;
 
             public Condition condition { get { return m_condition; } }
