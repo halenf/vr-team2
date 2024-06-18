@@ -146,7 +146,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6439325165255107649, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_Name
-      value: WaitingRodState
+      value: WaitingRod
       objectReference: {fileID: 0}
     - target: {fileID: 6439325165255107651, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_RootOrder

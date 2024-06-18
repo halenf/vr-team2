@@ -25,6 +25,7 @@ namespace FishingGame
         [SerializeField] private Constraint m_length;
 
         [Header("AI Data")]
+        [SerializeField] private Constraint m_lifeTime;
         [SerializeField] private Constraint m_swimSpeed;
         [SerializeField] private Constraint m_spookSpeed;
         [SerializeField] private Constraint m_swimRange;
@@ -43,11 +44,15 @@ namespace FishingGame
         public Constraint length { get { return m_length; } }
 
         // ai
+        public Constraint lifeTime { get { return m_lifeTime; } }
         public Constraint swimSpeed { get { return m_swimSpeed; } }
         public Constraint spookSpeed { get { return m_spookSpeed; } }
         public Constraint swimRange { get { return m_swimRange; } }
         public Constraint swimWaitTime { get { return m_swimWaitTime; } }
         public Constraint rodDetectionRange { get { return m_rodDetectionRange; } }
         public Constraint rodWaitTime { get { return m_rodWaitTime; } }
+
+        // reeling
+        public Constraint pullStrength { get { return m_pullStrength; } }
     }
 }
