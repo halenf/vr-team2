@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace FishingGame
 {
@@ -8,8 +9,8 @@ namespace FishingGame
     {
         public class ReelFish : MonoBehaviour
         {
-            private object m_hookedFish;
-            public object hookFish { set { m_hookedFish = value; } }
+            private Fish m_hookedFish;
+            public Fish hookFish { get { return m_hookedFish; } set { m_hookedFish = value; } }
             [SerializeField] private Transform m_fishDisplayPoint;
             [SerializeField] private float m_reelSpeed = 1;
             /// <summary>
@@ -21,7 +22,7 @@ namespace FishingGame
                 if(m_hookedFish != null)
                 {
                     //Pull in the hooked fish
-                    GameObject fishAI = (GameObject)m_hookedFish;
+                    GameObject fishAI = m_hookedFish.gameObject;
                     fishAI.transform.position = Vector3.Lerp(new Vector3(fishAI.transform.position.x, 0, fishAI.transform.position.z), new Vector3(transform.position.x, 0, transform.position.z), m_reelSpeed); ;
                     return 0;
                 }
@@ -33,15 +34,13 @@ namespace FishingGame
             /// <returns></returns>
             public int SurfaceFish()
             {
-                //Launch the fish out of the water
-                FishData fish = (FishData)m_hookedFish;
-                GameObject caughtFish = Instantiate(fish.fishModel);
-                //Its a grabbale kinematic rigidbody
+                //Instance the fish model as a child of the empty parent
+                GameObject caughtFish = Instantiate(m_hookedFish.data.fishModel, m_fishDisplayPoint);
+                //Its a grabbale kinematic rigidbody, so add the components
                 Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
+                XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
                 fishRb.isKinematic = true;
-                //caughtFish.AddComponent(Grabbable);
-                //Display the fish in front of the player
-                caughtFish.transform.position = m_fishDisplayPoint.position;
+                fishGrab.useDynamicAttach = true;
                 return 0;
             }
         }

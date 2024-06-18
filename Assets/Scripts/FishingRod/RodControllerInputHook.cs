@@ -21,11 +21,11 @@ namespace FishingGame
                 {
                     case InputActionPhase.Performed:
                         Debug.Log("Locking line.");
-                        m_base.isLineLocked = 1;
+                        m_base.getRodState = 1;
                         break;
                     case InputActionPhase.Canceled:
                         Debug.Log("Unlocking line.");
-                        m_base.isLineLocked = 2;
+                        m_base.getRodState = 2;
                         break;
 
                 }
@@ -47,6 +47,10 @@ namespace FishingGame
             {
                 //LogAction(action);
                 m_base.setHandVelocity = action.ReadValue<Vector3>();
+            }
+            public void PassStickY(InputAction.CallbackContext action)
+            {
+                m_base.setReelVelo = action.ReadValue<Vector2>().y;
             }
             private void LogAction(InputAction.CallbackContext action)
             {
