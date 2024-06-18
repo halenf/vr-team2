@@ -7,39 +7,27 @@ namespace FishingGame
 {
     namespace AI
     {
-        [CreateAssetMenu(fileName = "State", menuName = "FishingGame/AI/State", order = 0)]
-        public class State : ScriptableObject
+        [DisallowMultipleComponent]
+        public class State : MonoBehaviour
         {
-            public State(Behaviour behaviour, Transition transition)
-            {
-                m_behaviours = new List<Behaviour> { behaviour };
-                m_transitions = new List<Transition> { transition };
-            }
-            public State(Behaviour[] behaviours, Transition transition)
-            {
-                m_behaviours = new List<Behaviour>();
-                m_behaviours.AddRange(behaviours);
-                m_transitions = new List<Transition> { transition };
-            }
-            public State(Behaviour behaviour, Transition[] transitions)
-            {
-                m_behaviours = new List<Behaviour> { behaviour };
-                m_transitions = new List<Transition>();
-                m_transitions.AddRange(transitions);
-            }
-            public State(Behaviour[] behaviours, Transition[] transitions)
-            {
-                m_behaviours = new List<Behaviour>();
-                m_behaviours.AddRange(behaviours);
-                m_transitions = new List<Transition>();
-                m_transitions.AddRange(transitions);
-            }
+            [SerializeField] private Transform m_behaviourContainer;
+            [SerializeField] private Transform m_transitionContainer;
 
-            [SerializeField] private List<Behaviour> m_behaviours;
-            [SerializeField] private List<Transition> m_transitions;
+            [Space]
+
+            private List<Behaviour> m_behaviours;
+            private List<Transition> m_transitions;
 
             public List<Behaviour> behaviours { get { return m_behaviours; } }
             public List<Transition> transitions { get { return m_transitions; } }
+
+            private void Awake()
+            {
+                m_behaviours = new List<Behaviour>();
+                m_behaviours = m_behaviourContainer.GetComponentsInChildren<Behaviour>().ToList();
+                m_transitions = new List<Transition>();
+                m_transitions = m_transitionContainer.GetComponentsInChildren<Transition>().ToList();
+            }
 
             public void Enter(Agent agent)
             {
@@ -55,23 +43,6 @@ namespace FishingGame
             {
                 foreach (Behaviour behaviour in m_behaviours)
                     behaviour.Exit(agent);
-            }
-
-            public void AddTransition(Condition condition, State targetState)
-            {
-                Transition transition = new Transition(condition, targetState);
-                m_transitions.Add(transition);
-            }
-            public void AddBehaviour(Behaviour behaviour)
-            {
-                m_behaviours.Add(behaviour);
-            }
-            public void RemoveBehaviour(Behaviour behaviour = null)
-            {
-                if (behaviour == null)
-                    m_behaviours.RemoveAt(m_behaviours.Count - 1);
-                else
-                    m_behaviours.Remove(behaviour);
             }
         }
     }

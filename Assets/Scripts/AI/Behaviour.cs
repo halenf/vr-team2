@@ -7,8 +7,8 @@ namespace FishingGame
 {
     namespace AI
     {
-        [Serializable]
-        public abstract class Behaviour : ScriptableObject
+        [DisallowMultipleComponent]
+        public abstract class Behaviour : MonoBehaviour
         {
             public virtual void Enter(Agent agent) { }
             public virtual void UpdateThis(Agent agent) { }

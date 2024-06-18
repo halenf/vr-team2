@@ -7,7 +7,6 @@ namespace FishingGame
 {
     namespace AI
     {
-        [Serializable]
         public class MultiCondition : Condition
         {
             [SerializeReference] private List<Condition> m_conditions;
