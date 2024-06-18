@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default
   m_EditorClassIdentifier: 
   m_fishModel: {fileID: 0}
-  m_speciesName: Test Fish
+  m_speciesName: Default
   m_weight:
     m_min: 4
     m_max: 6
