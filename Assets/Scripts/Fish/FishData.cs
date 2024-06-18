@@ -32,6 +32,9 @@ namespace FishingGame
         [SerializeField] private Constraint m_rodDetectionRange;
         [SerializeField] private Constraint m_rodWaitTime;
 
+        [Header("Reeling Data")]
+        [SerializeField] private Constraint m_pullStrength;
+
         public GameObject fishModel { get { return m_fishModel; } }
 
         // core
