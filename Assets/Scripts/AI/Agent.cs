@@ -25,6 +25,7 @@ namespace FishingGame
             private Transform m_bobberTransform;
             public Vector3 bobberPosition { get { return m_bobberTransform.position; } }
 
+            
             public void Awake()
             {
                 m_fish = GetComponent<Fish>();

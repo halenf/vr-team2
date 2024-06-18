@@ -5,29 +5,24 @@ using UnityEngine;
 namespace FishingGame
 {
     public class Fish : MonoBehaviour
-    {
-        public Fish(FishData data)
-        {
-            m_data = data;
-        }
-        
+    {       
         // data
         [SerializeField] private FishData m_data;
         public FishData data { get { return m_data; } }
 
         // properties
-        private float m_weight, m_length, m_swimSpeed;
+        private float m_weight, m_length;
 
         // property accessors
         public string speciesName { get { return m_data.speciesName; } }
         public float weight { get { return m_weight; } }
         public float length { get { return m_length; } }
 
-
         // Start is called before the first frame update
         void Start()
         {
-
+            m_weight = RandomConstraint(m_data.weight);
+            m_length = RandomConstraint(m_data.length);
         }
 
         // Update is called once per frame
