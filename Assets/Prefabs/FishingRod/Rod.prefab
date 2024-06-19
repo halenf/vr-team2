@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6464047156303021229}
   - component: {fileID: 6464047156303021228}
   - component: {fileID: 6464047156303021230}
+  - component: {fileID: 6551484394965782114}
   m_Layer: 0
   m_Name: Rod
   m_TagString: Untagged
@@ -47,9 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843548adc5b940544b73389417fc1be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_forceScale: 10000
-  m_hook: {fileID: 0}
-  m_hookHold: {fileID: 6464047157221814696}
+  m_bobber: {fileID: 0}
+  m_rodTip: {fileID: 6464047157221814696}
+  m_forceScale: 50000
+  m_catchRadius: 10
+  m_pullPower: 0.5
+  m_lineTension: 0.75
 --- !u!120 &6464047156303021230
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -93,6 +97,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
@@ -152,6 +158,20 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &6551484394965782114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464047156303021227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08621f0c6384636489c329f9b658327f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fishDisplayPoint: {fileID: 0}
+  m_reelSpeed: 1
 --- !u!1 &6464047156564775622
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +311,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6464047157221814696}
+  - component: {fileID: 1467796915}
   m_Layer: 0
-  m_Name: Hook Hold
+  m_Name: RodTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,3 +334,19 @@ Transform:
   m_Father: {fileID: 6464047156303021229}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1467796915
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464047157221814695}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
