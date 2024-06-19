@@ -31,6 +31,7 @@ namespace FishingGame
 
             public void Enter(Agent agent)
             {
+                Debug.Log($"{name} Enter!");
                 foreach (Behaviour behaviour in m_behaviours)
                     behaviour.Enter(agent);
             }
@@ -41,6 +42,7 @@ namespace FishingGame
             }
             public void Exit(Agent agent)
             {
+                Debug.Log($"{name} Exit!");
                 foreach (Behaviour behaviour in m_behaviours)
                     behaviour.Exit(agent);
             }
