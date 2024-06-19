@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bobber: {fileID: 0}
+  m_rodTip: {fileID: 6464047157221814696}
   m_forceScale: 50000
   m_catchRadius: 10
   m_pullPower: 0.5
@@ -312,7 +313,7 @@ GameObject:
   - component: {fileID: 6464047157221814696}
   - component: {fileID: 1467796915}
   m_Layer: 0
-  m_Name: Hook Hold
+  m_Name: RodTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
