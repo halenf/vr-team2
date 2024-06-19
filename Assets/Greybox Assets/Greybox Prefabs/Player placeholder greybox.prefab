@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 302078208799571544}
   - component: {fileID: 302078208799571547}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player placeholder greybox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
