@@ -337,6 +337,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Velocity",
+                    "type": "Value",
+                    "id": "d00f2bf8-1528-4a29-88d0-fc3e6e20c892",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Rotation",
                     "type": "Value",
                     "id": "cb6b7130-2bac-4ef7-abe4-6991ae7d419d",
@@ -674,6 +683,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Grip Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be27240b-6990-4c17-9cb3-fe53294b7799",
+                    "path": "*/{DeviceVelocity}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Velocity",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
