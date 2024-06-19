@@ -17,15 +17,11 @@ namespace FishingGame
                 float xRange = agent.fish.GetConstraint(agent.fish.data.swimRange);
                 float zRange = agent.fish.GetConstraint(agent.fish.data.swimRange);
 
-                // get the static values
-                Vector3 poolOrigin = GameSettings.POOL_ORIGIN;
-                Vector2 poolBounds = GameSettings.POOL_BOUNDS;
+                // calc the new target position
+                float xTarget = agent.transform.position.x + Random.Range(-xRange, xRange);
+                float zTarget = agent.transform.position.z + Random.Range(-zRange, zRange);
 
-                // clamp the target inside the pool bounds
-                float xTarget = Mathf.Clamp(agent.transform.position.x + Random.Range(-xRange, xRange), poolOrigin.x - poolBounds.x, poolOrigin.x + poolBounds.x);
-                float zTarget = Mathf.Clamp(agent.transform.position.z + Random.Range(-zRange, zRange), poolOrigin.z - poolBounds.y, poolOrigin.z + poolBounds.y);
-
-                agent.SetTargetPosition(new Vector3(xTarget, GameSettings.POOL_HEIGHT, zTarget));
+                agent.SetTargetPosition(Vector3.ClampMagnitude(new Vector3(xTarget, GameSettings.POOL_HEIGHT, zTarget), GameSettings.POOL_RADIUS));
 
                 m_speed = agent.fish.GetConstraint(agent.fish.data.swimSpeed);
             }

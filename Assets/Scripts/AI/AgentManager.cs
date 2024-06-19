@@ -52,6 +52,8 @@ namespace FishingGame
             private List<AgentTracker> m_agents;
             public List<Agent> currentAgents { get { return m_agents.Select(agentTracker => agentTracker.agent).ToList(); } }
 
+            private Vector3 spawnLocation;
+
             private void Start()
             {
                 // don't allow the editor to run without any FishData
@@ -106,23 +108,13 @@ namespace FishingGame
                 return Random.Range(m_minSpawnTime, m_maxSpawnTime);
             }
 
-            private Vector3 GetRandomPositionInPool()
-            {
-                Vector2 poolBounds = GameSettings.POOL_BOUNDS;
-                Vector3 poolOrigin = GameSettings.POOL_ORIGIN;
-
-                return new Vector3(Random.Range(poolOrigin.x - poolBounds.x, poolOrigin.x + poolBounds.x),
-                                   GameSettings.POOL_HEIGHT,
-                                   Random.Range(poolOrigin.z - poolBounds.y, poolOrigin.z + poolBounds.y));
-            }
-
             private void SpawnAgent()
             {
                 // Create the agent object
                 Agent agent = Instantiate(m_agentPrefab, m_agentContainer);
 
                 // put the agent in a random position in the pool
-                agent.transform.position = GetRandomPositionInPool();
+                agent.transform.position = GameSettings.get_random_position_in_pool();
 
                 // if debugging, the agent prefab may already have a Fish component, so check for that
                 Fish fish = agent.gameObject.GetComponent<Fish>();
@@ -193,7 +185,12 @@ namespace FishingGame
                 }
 
                 // draw pool bounds
-                Handles.DrawWireCube(GameSettings.POOL_ORIGIN, new Vector3(GameSettings.POOL_BOUNDS.x * 2, 0, GameSettings.POOL_BOUNDS.y * 2));
+                Handles.color = Color.blue;
+                Handles.DrawWireDisc(GameSettings.POOL_ORIGIN, Vector3.up, GameSettings.POOL_RADIUS);
+
+                // draw debug spawn location
+                Handles.color = Color.magenta;
+                Handles.DrawWireCube(spawnLocation, new Vector3(0.5f, 0.5f, 0.5f));
             }
         }
     }
