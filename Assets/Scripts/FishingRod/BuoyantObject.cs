@@ -21,12 +21,11 @@ namespace FishingGame
             {
                 get
                 {
-                    return transform.position.y < (m_waterHeight + 0.2f);
+                    return transform.position.y < (GameSettings.POOL_HEIGHT + 0.2f);
                 }
             }
 
             [SerializeField] private float m_floatingPower;
-            [SerializeField] private float m_waterHeight;
             // Start is called before the first frame update
             void Start()
             {
@@ -36,7 +35,7 @@ namespace FishingGame
             // Update is called once per frame
             void Update()
             {
-                float diff = transform.position.y - m_waterHeight;
+                float diff = transform.position.y - GameSettings.POOL_HEIGHT;
 
                 if (diff < 0)
                 {

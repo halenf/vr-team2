@@ -36,6 +36,18 @@ namespace FishingGame
             {
                 m_base.setReelVelo = action.ReadValue<Vector2>().y;
             }
+            public void GripButton(InputAction.CallbackContext action)
+            {
+                switch (action.phase)
+                {
+                    case InputActionPhase.Started:
+                        m_base.getRodState = RodController.state.Reeling;
+                        break;
+                    case InputActionPhase.Canceled:
+                        m_base.getRodState = RodController.state.Cast;
+                        break;
+                }
+            }
             private void LogAction(InputAction.CallbackContext action)
             {
                 Debug.Log("Input logged: " + action.control);

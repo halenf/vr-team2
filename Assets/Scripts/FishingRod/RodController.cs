@@ -40,7 +40,7 @@ namespace FishingGame
             private float m_reelVelocity;
             public float setReelVelo { set { m_reelVelocity = value; } }
             [Header("Reeling")]
-            [SerializeField] private float m_catchRadius;
+            //[SerializeField] private float m_catchRadius;
             [SerializeField] private float m_pullPower;
             private ReelFish m_reelFish;
             [Header("Fishing Line Visuals")]
@@ -75,11 +75,6 @@ namespace FishingGame
                         {
                             m_rodState = state.Reeling;
                         }
-                        //When the player pulls the controller back, mount the bobber - change this
-                        if (Vector3.Distance(m_bobber.transform.position, transform.position) < m_catchRadius && (m_handVelocity.z + m_handVelocity.y) / 2 > m_pullPower)
-                        {
-                            MountBobber();
-                        }
                         DrawFishingLine();
                         break;
                     case state.Mounted:
@@ -102,16 +97,11 @@ namespace FishingGame
                         break;
                     case state.Reeling:
                         //Pull the bobber towards the player
-                        m_bobber.transform.position = Vector3.Lerp(m_bobber.transform.position, new Vector3(m_rodTip.position.x, m_bobber.transform.position.y, m_rodTip.position.z), Time.deltaTime);
+                        m_bobber.transform.position = Vector3.Lerp(m_bobber.transform.position, new Vector3(m_rodTip.position.x, GameSettings.POOL_HEIGHT, m_rodTip.position.z), Time.deltaTime);
                         //Return to the cast state when no motion is inputed
                         if (m_reelVelocity >= 0)
                         {
                             m_rodState = state.Cast;
-                        }
-                        //When the player pulls the controller back, mount the bobber - change this
-                        if (Vector3.Distance(m_bobber.transform.position, transform.position) < m_catchRadius && (m_handVelocity.z + m_handVelocity.y) / 2 > m_pullPower)
-                        {
-                            MountBobber();
                         }
                         DrawFishingLine();
                         break;
@@ -154,10 +144,10 @@ namespace FishingGame
             /// <summary>
             /// Mounts the bobber to the rod
             /// </summary>
-            private void MountBobber()
+            public void MountBobber()
             {
                 //pull out the hook
-                m_reelFish.SurfaceFish();
+                //m_reelFish.SurfaceFish();
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
                 m_bobber.transform.position = m_bobberHold.position;
