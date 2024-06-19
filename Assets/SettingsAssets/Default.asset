@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da5ab0926c96124e90f42e88ba2a01f, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  m_poolOrigin: {x: 0.25, y: 0, z: -0.5}
-  m_poolBounds: {x: 100, y: 100}
+  m_poolOrigin: {x: 0, y: 0, z: 0}
+  m_poolRadius: 50
   m_maxFishCount: 10
