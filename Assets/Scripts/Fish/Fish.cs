@@ -5,7 +5,7 @@ using UnityEngine;
 namespace FishingGame
 {
     public class Fish : MonoBehaviour
-    {       
+    {              
         // data
         [SerializeField] private FishData m_data;
         public FishData data { get { return m_data; } }
@@ -18,11 +18,16 @@ namespace FishingGame
         public float weight { get { return m_weight; } }
         public float length { get { return m_length; } }
 
+        public void Init(FishData data)
+        {
+            m_data = data;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
-            m_weight = RandomConstraint(m_data.weight);
-            m_length = RandomConstraint(m_data.length);
+            m_weight = GetConstraint(m_data.weight);
+            m_length = GetConstraint(m_data.length);
         }
 
         // Update is called once per frame
@@ -36,7 +41,7 @@ namespace FishingGame
         /// Uses UnityEngine's Random class.
         /// </summary>
         /// <param name="variable">The Constraint to take the min and max values from.</param>
-        public float RandomConstraint(FishData.Constraint variable)
+        public float GetConstraint(FishData.Constraint variable)
         {
             return Random.Range(variable.min, variable.max);
         }
