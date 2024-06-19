@@ -12,19 +12,14 @@ namespace FishingGame
             [SerializeField] private State[] m_defaultStates;
             
             private State m_currentState;
-
-            private void Awake()
-            {
-                if (m_defaultStates.Length == 1)
-                    m_currentState = Instantiate(m_defaultStates[0], transform);
-                else
-                    m_currentState = Instantiate(m_defaultStates[Random.Range(0, m_defaultStates.Length)]);
-            }
+            public State currentState { get { return m_currentState; } }
 
             // base methods
             public override void Enter(Agent agent)
             {
-                Debug.Log($"{name} Enter!");
+                // if null, then its first state. set it to one of the defaults
+                if (m_currentState == null)
+                    m_currentState = Instantiate(m_defaultStates[Random.Range(0, m_defaultStates.Length)], transform);
                 m_currentState.Enter(agent);
             }
             public override void UpdateThis(Agent agent)
@@ -37,10 +32,7 @@ namespace FishingGame
                 {
                     if (transition.condition.IsTrue(agent))
                     {
-                        if (transition.targetStates.Length == 1)
-                            newState = transition.targetStates[0];
-                        else
-                            newState = transition.targetStates[Random.Range(0, transition.targetStates.Length)];
+                        newState = transition.targetStates[Random.Range(0, transition.targetStates.Length)];
                         break;
                     }
                 }
@@ -56,7 +48,6 @@ namespace FishingGame
             }
             public override void Exit(Agent agent)
             {
-                Debug.Log($"{name} Exit!");
                 m_currentState.Exit(agent);
             }
         }

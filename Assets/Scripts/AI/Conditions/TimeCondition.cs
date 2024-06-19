@@ -8,13 +8,23 @@ namespace FishingGame
     {
         public class TimeCondition : Condition
         {
-            [Tooltip("The amount of time that passes until the Condition passes.")]
+            [Tooltip("Whether the Fish will be targeting the Bobber during this State.")]
+            [SerializeField] private bool m_targetIsBobber;
+            
+            [Tooltip("The amount of time that passes until the Condition passes. Leave at 0 to use a value from the Fish.")]
             [SerializeField] private float m_time;
+
             private float m_counter = 0;
 
             public override bool IsTrue(Agent agent)
             {
-                if (m_counter >= m_time)
+                float time;
+                if (m_time == 0)
+                    time = m_targetIsBobber ? agent.bobberWaitTime : agent.swimWaitTime;
+                else
+                    time = m_time;
+
+                if (m_counter >= time)
                 {
                     return true;
                 }

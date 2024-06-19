@@ -23,26 +23,46 @@ namespace FishingGame
             public Vector3 targetPosition { get { return m_targetPosition; } }
 
             private Transform m_bobberTransform;
-            public Vector3 bobberPosition { get { return m_bobberTransform.position; } }
+            public Vector3 bobberPosition 
+            { get { return m_bobberTransform.position; }
+              set { m_bobberTransform.position = value; } }
 
-            public void Awake()
+            private Transform m_playerTransform;
+            public Vector3 playerPosition { get { return m_playerTransform.position; } }
+
+            // set variables from data
+            private float m_swimWaitTime;
+            public float swimWaitTime { get { return m_swimWaitTime; } }
+
+            private float m_swimDetectionRange;
+            public float swimDetectionRange { get { return m_swimDetectionRange; } }
+
+            private float m_bobberWaitTime;
+            public float bobberWaitTime { get { return m_bobberWaitTime; } }
+
+            private float m_bobberDetectionRange;
+            public float bobberDetectionRange { get { return m_bobberDetectionRange; } }
+
+            public void Init(Fish fish, Transform bobber, Transform player)
             {
-                m_fish = GetComponent<Fish>();
+                m_fish = fish;
+                m_bobberTransform = bobber;
+                m_playerTransform = player;
+
+                SetAIVariables();
             }
 
             public void Start()
-            {
-                m_bobberTransform = GameObject.FindGameObjectWithTag("Bobber").transform;
-            }
-
-            public void OnEnable()
             {
                 m_stateMachine.Enter(this);
             }
 
             public void Update()
             {
+                State currentState = m_stateMachine.currentState;
                 m_stateMachine.UpdateThis(this);
+                if (m_stateMachine.currentState != currentState)
+                    SetAIVariables();
             }
 
             private void OnDisable()
@@ -55,20 +75,33 @@ namespace FishingGame
                 m_targetPosition = position;
             }
 
-            public bool WithinRangeOfTarget(float range = 0)
+            private void SetAIVariables()
             {
-                return Vector2.Distance(transform.position, m_targetPosition) < range;
+                m_swimWaitTime = m_fish.GetConstraint(m_fish.data.swimWaitTime);
+                m_swimDetectionRange = m_fish.GetConstraint(m_fish.data.swimDetectionRange);
+                m_bobberWaitTime = m_fish.GetConstraint(m_fish.data.bobberWaitTime);
+                m_bobberDetectionRange = m_fish.GetConstraint(m_fish.data.bobberDetectionRange);
             }
 
-            public void MoveTowardsTarget()
+            public void MoveTowardsTarget(float speed)
             {
-                transform.position += (m_targetPosition - transform.position).normalized * 2f * Time.deltaTime;
+                transform.position += (m_targetPosition - transform.position).normalized * speed * Time.deltaTime;
+            }
+
+            public void PullBobberAwayFromTarget()
+            {
+                m_bobberTransform.position -= (m_targetPosition - m_bobberTransform.position).normalized * 1.4f * Time.deltaTime;
+                transform.position = m_bobberTransform.position;
             }
 
             public void LookAtTarget()
             {
-                transform.LookAt(m_targetPosition);
-                transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+                transform.rotation = Quaternion.LookRotation(m_targetPosition - transform.position);
+            }
+
+            public void LookAwayFromTarget()
+            {
+                transform.rotation = Quaternion.LookRotation(transform.position - m_targetPosition);
             }
 
             private void OnDrawGizmos()
@@ -76,13 +109,6 @@ namespace FishingGame
                 // draw target position
                 Handles.color = Color.green;
                 Handles.DrawWireCube(m_targetPosition, new Vector3(0.5f, 0.5f, 0.5f));
-
-                // draw bobber position
-                if (m_bobberTransform != null)
-                {
-                    Handles.color = Color.red;
-                    Handles.DrawWireCube(bobberPosition, new Vector3(0.5f, 0.5f, 0.5f));
-                }
             }
         }
     }

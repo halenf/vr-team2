@@ -13,7 +13,14 @@ namespace FishingGame
 
             public override bool IsTrue(Agent agent)
             {
-                return m_conditions.TrueForAll(condition => IsTrue(agent));
+                foreach (Condition condition in m_conditions)
+                {
+                    if (!condition.IsTrue(agent))
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
         }
     }

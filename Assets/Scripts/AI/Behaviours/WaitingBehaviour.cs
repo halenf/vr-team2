@@ -12,8 +12,15 @@ namespace FishingGame
 
             public override void Enter(Agent agent)
             {
-                Vector2 randomLook = Random.insideUnitCircle;
-                agent.SetTargetPosition(m_lookAtBobber ? agent.bobberPosition : transform.position + new Vector3(randomLook.x, 0, randomLook.y));
+                if (m_lookAtBobber)
+                {
+                    agent.SetTargetPosition(agent.bobberPosition);
+                }
+                else
+                {
+                    Vector2 randomLook = Random.insideUnitCircle;
+                    agent.SetTargetPosition(transform.position + new Vector3(randomLook.x, GameSettings.POOL_HEIGHT, randomLook.y));
+                }
             }
 
             public override void UpdateThis(Agent agent)
