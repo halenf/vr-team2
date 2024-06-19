@@ -21,7 +21,6 @@ namespace FishingGame
                 if (m_hookedFish)
                 {
                     //Instance the fish model as a child of the empty parent
-                    GameObject caughtFish = Instantiate(m_hookedFish.data.fishModel, m_fishDisplayPoint);
                     GameObject caughtFish = Instantiate(m_hookedFish.data.model, m_fishDisplayPoint);
                     //Its a grabbale kinematic rigidbody, so add the components
                     Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
