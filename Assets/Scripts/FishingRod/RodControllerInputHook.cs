@@ -19,29 +19,13 @@ namespace FishingGame
             {
                 switch (action.phase)
                 {
-                    case InputActionPhase.Performed:
-                        Debug.Log("Locking line.");
-                        m_base.getRodState = 1;
-                        break;
                     case InputActionPhase.Canceled:
                         Debug.Log("Unlocking line.");
-                        m_base.getRodState = 2;
+                        if(m_base.getRodState == RodController.state.Mounted)
+                            m_base.getRodState = RodController.state.CastingOut;
                         break;
 
                 }
-                /*        if (action.started)
-                        {
-                            //Debug.Log("Lock state: " + m_base.isLineLocked);
-                        }
-                        if(action.performed)
-                        {
-                            Debug.Log("middle of action");
-                        }
-                        if (action.canceled)
-                        {
-                            m_base.isLineLocked = false;
-                            //Debug.Log("Lock state: " + m_base.isLineLocked);
-                        }*/
             }
             public void PassControllerVelo(InputAction.CallbackContext action)
             {

@@ -1141,7 +1141,20 @@ MonoBehaviour:
     m_ActionId: 21b75b25-12ad-410f-b4f8-a7745b7aca27
     m_ActionName: XRI LeftHand Interaction/Rotate Anchor
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3876666466488310184}
+        m_TargetAssemblyTypeName: FishingGame.ControlHook.RodControllerInputHook,
+          Assembly-CSharp
+        m_MethodName: PassStickY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bfa204c7-3c92-4193-bad1-39eb71920042
     m_ActionName: XRI LeftHand Interaction/Translate Anchor
   - m_PersistentCalls:
@@ -2206,10 +2219,6 @@ PrefabInstance:
     - target: {fileID: 6464047156303021227, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
       propertyPath: m_Name
       value: Rod
-      objectReference: {fileID: 0}
-    - target: {fileID: 6464047156303021228, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
-      propertyPath: m_hook
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6464047156303021229, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
       propertyPath: m_RootOrder
