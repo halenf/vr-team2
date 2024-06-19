@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a27153a2f11704479605416a4428c84, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  m_fishModel: {fileID: 0}
+  m_model: {fileID: 0}
+  m_silhouetteSize: 1
   m_speciesName: Default
   m_weight:
     m_min: 4
@@ -20,21 +21,36 @@ MonoBehaviour:
   m_length:
     m_min: 0.8
     m_max: 1
+  m_lifeTime:
+    m_min: 25
+    m_max: 35
   m_swimSpeed:
     m_min: 3
     m_max: 4
-  m_spookSpeed:
+  m_chaseSpeed:
     m_min: 5
     m_max: 6
-  m_swimRange:
-    m_min: 5
+  m_spookSpeed:
+    m_min: 7
     m_max: 8
+  m_swimRange:
+    m_min: 10
+    m_max: 20
+  m_swimDetectionRange:
+    m_min: 0.6
+    m_max: 1
+  m_bobberDetectionRange:
+    m_min: 4
+    m_max: 7
+  m_playerDetectionRange:
+    m_min: 2
+    m_max: 2
   m_swimWaitTime:
     m_min: 2
     m_max: 3
-  m_rodDetectionRange:
-    m_min: 4
+  m_bobberWaitTime:
+    m_min: 2
     m_max: 4
-  m_rodWaitTime:
-    m_min: 1.4
-    m_max: 2.3
+  m_pullStrength:
+    m_min: 2
+    m_max: 2

@@ -35,7 +35,7 @@ namespace FishingGame
             {
                 //Launch the fish out of the water
                 FishData fish = (FishData)m_hookedFish;
-                GameObject caughtFish = Instantiate(fish.fishModel);
+                GameObject caughtFish = Instantiate(fish.model);
                 //Its a grabbale kinematic rigidbody
                 Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 fishRb.isKinematic = true;

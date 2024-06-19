@@ -996,6 +996,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Keyboard Debugging",
+            "id": "6809a234-82b2-48e5-a1c8-e7b53a1a4d48",
+            "actions": [
+                {
+                    "name": "MoveBobber",
+                    "type": "Button",
+                    "id": "344ad230-d345-4f85-a1f1-c86abf4d248c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ddcea476-ff62-4403-8576-f20c5d889b50",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveBobber",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
