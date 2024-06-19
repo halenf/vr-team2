@@ -291,5 +291,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetIsBobber: 1
-  m_distance: 5
+  m_distance: 0
   m_withinRange: 0

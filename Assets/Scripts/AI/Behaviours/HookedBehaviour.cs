@@ -16,8 +16,7 @@ namespace FishingGame
             public override void UpdateThis(Agent agent)
             {
                 agent.SetTargetPosition(agent.playerPosition);
-                agent.MoveBobberAwayFromPlayer();
-                agent.transform.position = agent.bobberPosition;
+                agent.PullBobberAwayFromTarget();
                 agent.LookAwayFromTarget();
             }
         }

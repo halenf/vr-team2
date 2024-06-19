@@ -16,7 +16,7 @@ namespace FishingGame
             private void Update()
             {
                 if (m_moving)
-                    transform.position += (player.transform.position - transform.position) * 2.0f * Time.deltaTime;
+                    transform.position += (player.transform.position - transform.position).normalized * 2.0f * Time.deltaTime;
             }
 
             public void MoveTowards(InputAction.CallbackContext action)

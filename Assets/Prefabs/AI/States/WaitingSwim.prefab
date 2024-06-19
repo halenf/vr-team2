@@ -54,7 +54,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6439325165255107649, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_Name
-      value: WaitingSwimState
+      value: WaitingSwim
       objectReference: {fileID: 0}
     - target: {fileID: 6439325165255107651, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_RootOrder
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetIsBobber: 1
-  m_distance: 3
+  m_distance: 0
   m_withinRange: 1
 --- !u!1001 &7743279810658728754
 PrefabInstance:
@@ -287,4 +287,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1a962689d6e704d92dc77c06cc528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_time: 2
+  m_targetIsBobber: 0
+  m_time: 0

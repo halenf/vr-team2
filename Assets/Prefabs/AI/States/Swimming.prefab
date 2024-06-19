@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetIsBobber: 0
-  m_distance: 1
+  m_distance: 0
   m_withinRange: 1
 --- !u!1001 &5206559460480671138
 PrefabInstance:
@@ -299,5 +299,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetIsBobber: 1
-  m_distance: 3
+  m_distance: 0
   m_withinRange: 1
