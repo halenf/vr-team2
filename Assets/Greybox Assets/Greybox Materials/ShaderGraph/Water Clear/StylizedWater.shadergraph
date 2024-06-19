@@ -163,6 +163,9 @@
         },
         {
             "m_Id": "b36586ca816d43c5ab6609d36437d92d"
+        },
+        {
+            "m_Id": "45fefa542ae84215b3c981ad0424d7d5"
         }
     ],
     "m_StickyNoteDatas": [],
@@ -649,8 +652,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 394.9999694824219,
-            "y": 89.00000762939453
+            "x": 1602.0,
+            "y": 121.99999237060547
         },
         "m_Blocks": [
             {
@@ -1453,8 +1456,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1750.0,
-            "y": 1139.0,
+            "x": -1752.0,
+            "y": 1130.0,
             "width": 208.0,
             "height": 302.0
         }
@@ -1598,6 +1601,17 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "45fefa542ae84215b3c981ad0424d7d5",
+    "m_Title": "Combine Bits",
+    "m_Position": {
+        "x": 10.0,
+        "y": 10.0
     }
 }
 
@@ -2023,7 +2037,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "64aeff43918644498fb975018979cbdb",
     "m_Id": 0,
-    "m_DisplayName": "Shallow Water",
+    "m_DisplayName": "Shallow Water Color",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2326,7 +2340,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "83306b1f52164df98df3e9549d51ccc4",
     "m_Id": 0,
-    "m_DisplayName": "Deep Water",
+    "m_DisplayName": "Deep Water Color",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2875,10 +2889,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1227.0,
-            "y": 346.9999694824219,
-            "width": 207.99993896484376,
-            "height": 279.0000305175781
+            "x": -1230.0,
+            "y": 347.0,
+            "width": 208.00006103515626,
+            "height": 279.0
         }
     },
     "m_Slots": [
@@ -3092,10 +3106,10 @@
     "m_Guid": {
         "m_GuidSerialized": "7677fd79-c79e-4aff-bf4f-477ab6c96682"
     },
-    "m_Name": "Deep Water",
+    "m_Name": "Deep Water Color",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Deep Water",
-    "m_DefaultReferenceName": "_Deep_Water",
+    "m_RefNameGeneratedByDisplayName": "Deep Water Color",
+    "m_DefaultReferenceName": "_Deep_Water_Color",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -3592,7 +3606,7 @@
     "m_Type": "UnityEditor.ShaderGraph.LerpNode",
     "m_ObjectId": "d6f8899b1ada45cf81838153c2f3d882",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "45fefa542ae84215b3c981ad0424d7d5"
     },
     "m_Name": "Lerp",
     "m_DrawState": {
@@ -3663,10 +3677,10 @@
     "m_Guid": {
         "m_GuidSerialized": "7da081db-cca6-4261-8213-3e227ca09cfe"
     },
-    "m_Name": "Shallow Water",
+    "m_Name": "Shallow Water Color",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Shallow Water",
-    "m_DefaultReferenceName": "_Shallow_Water",
+    "m_RefNameGeneratedByDisplayName": "Shallow Water Color",
+    "m_DefaultReferenceName": "_Shallow_Water_Color",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -3804,17 +3818,17 @@
     "m_Type": "UnityEditor.ShaderGraph.LerpNode",
     "m_ObjectId": "e0cd00f0f0a54ad494a503c3090c79ba",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "45fefa542ae84215b3c981ad0424d7d5"
     },
     "m_Name": "Lerp",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -54.00016403198242,
-            "y": -220.00003051757813,
-            "width": 208.00013732910157,
-            "height": 326.00006103515627
+            "x": 8.999977111816407,
+            "y": 134.99996948242188,
+            "width": 208.0,
+            "height": 326.0
         }
     },
     "m_Slots": [
@@ -3944,17 +3958,17 @@
     "m_Type": "UnityEditor.ShaderGraph.SplitNode",
     "m_ObjectId": "ea481168841e4cb8bb3d2265ab928edf",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "45fefa542ae84215b3c981ad0424d7d5"
     },
     "m_Name": "Split",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -189.00003051757813,
-            "y": 148.99998474121095,
-            "width": 119.99992370605469,
-            "height": 148.99998474121095
+            "x": -171.9999542236328,
+            "y": 477.0,
+            "width": 120.00003051757813,
+            "height": 149.0
         }
     },
     "m_Slots": [
@@ -4136,9 +4150,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1229.0001220703125,
-            "y": 166.0,
-            "width": 152.0001220703125,
+            "x": -1215.0,
+            "y": 186.0,
+            "width": 152.0,
             "height": 34.0
         }
     },
@@ -4171,10 +4185,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1215.0001220703125,
-            "y": 238.99996948242188,
-            "width": 139.0001220703125,
-            "height": 34.0
+            "x": -1215.0,
+            "y": 229.00001525878907,
+            "width": 139.0,
+            "height": 33.99998474121094
         }
     },
     "m_Slots": [
