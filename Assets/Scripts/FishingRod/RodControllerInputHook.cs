@@ -21,8 +21,8 @@ namespace FishingGame
                 {
                     case InputActionPhase.Canceled:
                         Debug.Log("Unlocking line.");
-                        if(m_base.getRodState == RodController.state.Mounted)
-                            m_base.getRodState = RodController.state.CastingOut;
+                        if(m_base.getRodState == RodController.state.PreCast)
+                            m_base.getRodState = RodController.state.Casting;
                         break;
 
                 }
