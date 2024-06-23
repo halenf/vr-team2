@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace FishingGame
 {
     namespace Player
     {
         [RequireComponent(typeof(LineRenderer))]
-        [RequireComponent(typeof(ReelFish))]
         //Controls player interactions with the fishing rod
         public class RodController : MonoBehaviour
         {
@@ -16,8 +16,8 @@ namespace FishingGame
             public enum state
             {
                 Cast,
-                Mounted,
-                CastingOut,
+                PreCast,
+                Casting,
                 Reeling
             }
             private state m_rodState = 0;
@@ -42,7 +42,7 @@ namespace FishingGame
             [Header("Reeling")]
             //[SerializeField] private float m_catchRadius;
             [SerializeField] private float m_pullPower;
-            private ReelFish m_reelFish;
+            [SerializeField] private Transform m_fishDisplayPoint;
             [Header("Fishing Line Visuals")]
             private LineRenderer m_line;
             [SerializeField, Range(0.5f, 1f)] private float m_lineTension = 0.75f;
@@ -51,7 +51,6 @@ namespace FishingGame
             {
                 //Get the line and reel fish components
                 m_line = GetComponent<LineRenderer>();
-                m_reelFish = GetComponent<ReelFish>();
                 //Get the parent of the bobber, this is used for mounting the bobber
                 m_bobberHold = m_bobber.transform.parent;
                 //Match the rbs
@@ -77,7 +76,7 @@ namespace FishingGame
                         }
                         DrawFishingLine();
                         break;
-                    case state.Mounted:
+                    case state.PreCast:
                         //Just draws a line along the rod to the bobber
                         List<Vector3> points = new List<Vector3>(3);
                         m_line.positionCount = 3;
@@ -86,7 +85,7 @@ namespace FishingGame
                         points.Add(m_bobber.transform.position);
                         m_line.SetPositions(points.ToArray());
                         break;
-                    case state.CastingOut:
+                    case state.Casting:
                         //Unparent the bobber from its mount
                         m_bobber.transform.SetParent(null);
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
@@ -151,7 +150,21 @@ namespace FishingGame
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
                 m_bobber.transform.position = m_bobberHold.position;
-                m_rodState = state.Mounted;
+                m_rodState = state.PreCast;
+            }
+            /// <summary>
+            /// Upon getting near to the player/pier, pull the fish from the water.
+            /// </summary>
+            public void SurfaceFish(Fish fish)
+            {
+                //Instance the fish model as a child of the empty parent
+                GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
+                //Its a grabbale kinematic rigidbody, so add the components
+                Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
+                XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
+                fishRb.isKinematic = true;
+                fishGrab.useDynamicAttach = true;
+                FindObjectOfType<RodController>().MountBobber();
             }
         }
     }
