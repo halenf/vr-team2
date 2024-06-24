@@ -118,7 +118,7 @@ Material:
     - _ReceiveShadows: 1
     - _Refraction_Scale: 10
     - _Refraction_Speed: 0.01
-    - _Refraction_Strength: 0
+    - _Refraction_Strength: 2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
