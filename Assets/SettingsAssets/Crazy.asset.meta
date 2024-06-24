@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SettingsAssets/Crazy.asset.meta
 guid: bc258522a7c0dbe4f9dedad81a0b27e9
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
+========
+guid: 48068752bc370704ca1b3328ecca4366
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>>> main:Assets/[Greybox Assets]/Greybox Materials/ShaderGraph/Water Clear/Water No Foam or Refraction.mat.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
