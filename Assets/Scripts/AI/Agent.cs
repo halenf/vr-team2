@@ -1,6 +1,6 @@
+using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace FishingGame
@@ -22,10 +22,11 @@ namespace FishingGame
             private Vector3 m_targetPosition = new Vector3();
             public Vector3 targetPosition { get { return m_targetPosition; } }
 
-            private Transform m_bobberTransform;
+            private BuoyantObject m_bobber;
             public Vector3 bobberPosition 
-            { get { return m_bobberTransform.position; }
-              set { m_bobberTransform.position = value; } }
+            { get { return m_bobber.transform.position; }
+              set { m_bobber.transform.position = value; } }
+            public bool bobberIsUnderwater { get { return m_bobber.isUnderwater; } }
 
             private Transform m_playerTransform;
             public Vector3 playerPosition { get { return m_playerTransform.position; } }
@@ -43,10 +44,10 @@ namespace FishingGame
             private float m_bobberDetectionRange;
             public float bobberDetectionRange { get { return m_bobberDetectionRange; } }
 
-            public void Init(Fish fish, Transform bobber, Transform player)
+            public void Init(Fish fish, BuoyantObject bobber, Transform player)
             {
                 m_fish = fish;
-                m_bobberTransform = bobber;
+                m_bobber = bobber;
                 m_playerTransform = player;
 
                 SetAIVariables();
@@ -90,8 +91,8 @@ namespace FishingGame
 
             public void PullBobberAwayFromTarget()
             {
-                m_bobberTransform.position -= (m_targetPosition - m_bobberTransform.position).normalized * 1.4f * Time.deltaTime;
-                transform.position = m_bobberTransform.position;
+                transform.position -= (m_targetPosition - bobberPosition).normalized * 1.4f * Time.deltaTime;
+                bobberPosition = transform.position;
             }
 
             public void LookAtTarget()
@@ -107,8 +108,8 @@ namespace FishingGame
             private void OnDrawGizmos()
             {
                 // draw target position
-                Handles.color = Color.green;
-                Handles.DrawWireCube(m_targetPosition, new Vector3(0.5f, 0.5f, 0.5f));
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireCube(m_targetPosition, new Vector3(0.5f, 0.5f, 0.5f));
             }
         }
     }

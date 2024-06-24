@@ -11,6 +11,8 @@ namespace FishingGame
             public override void Enter(Agent agent)
             {
                 agent.SetTargetPosition(agent.playerPosition);
+                Vector3 currentPosition = agent.transform.position;
+                agent.transform.position = new Vector3(currentPosition.x, GameSettings.POOL_HEIGHT, currentPosition.z);
             }
 
             public override void UpdateThis(Agent agent)

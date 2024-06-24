@@ -1,6 +1,7 @@
+using FishingGame.FishControls;
+using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace FishingGame
     {
         public class AgentManager : MonoBehaviour
         {
-            private struct AgentTracker
+            public struct AgentTracker
             {
                 public AgentTracker(Agent agent, float lifeTime)
                 {
@@ -32,7 +33,7 @@ namespace FishingGame
             }
 
             [Header("Constant Objects")]
-            private Transform m_bobberTransform;
+            private BuoyantObject m_bobberTransform;
             private Transform m_playerTransform;
 
             [Header("Agent Spawning")]
@@ -52,7 +53,7 @@ namespace FishingGame
             private List<AgentTracker> m_agents;
             public List<Agent> currentAgents { get { return m_agents.Select(agentTracker => agentTracker.agent).ToList(); } }
 
-            private Vector3 spawnLocation;
+            private Vector3 m_nextSpawnPosition;
 
             private void Start()
             {
@@ -68,8 +69,11 @@ namespace FishingGame
                 // set an initial spawn time
                 m_spawnTimer = GetRandomSpawnTime();
 
+                // calc next spawn position
+                m_nextSpawnPosition = GameSettings.get_random_position_in_pool();
+
                 // get bobber and player transform
-                m_bobberTransform = GameObject.FindGameObjectWithTag("Bobber").transform;
+                m_bobberTransform = GameObject.FindGameObjectWithTag("Bobber").GetComponent<BuoyantObject>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             }
 
@@ -114,7 +118,10 @@ namespace FishingGame
                 Agent agent = Instantiate(m_agentPrefab, m_agentContainer);
 
                 // put the agent in a random position in the pool
-                agent.transform.position = GameSettings.get_random_position_in_pool();
+                agent.transform.position = m_nextSpawnPosition;
+
+                // calc next spawn position
+                m_nextSpawnPosition = GameSettings.get_random_position_in_pool();
 
                 // if debugging, the agent prefab may already have a Fish component, so check for that
                 Fish fish = agent.gameObject.GetComponent<Fish>();
@@ -140,7 +147,7 @@ namespace FishingGame
                 Debug.Log("New fish spawned!");
             }
 
-            private bool DespawnAgent(AgentTracker agentTracker)
+            public bool DespawnAgent(AgentTracker agentTracker)
             {
                 bool despawned = m_agents.Remove(agentTracker);
                 Destroy(agentTracker.agent.gameObject);
@@ -149,7 +156,7 @@ namespace FishingGame
 
             public bool DespawnAgent(Agent agent)
             {
-                bool despawned = m_agents.RemoveAll(agentTracker => agentTracker.agent.Equals(agent)) > 0;
+                bool despawned = m_agents.RemoveAll(agentTracker => agentTracker.agent == agent) > 0;
                 Destroy(agent.gameObject);
                 return despawned;
             }
@@ -157,6 +164,7 @@ namespace FishingGame
             [ContextMenu("Load FishData from Fish Data Path")]
             private void LoadAllFishData()
             {
+#if UNITY_EDITOR
                 List<FishData> fishData = new List<FishData>();
                 string[] guids = AssetDatabase.FindAssets($"t:{typeof(FishData).Name}", new string[] { m_fishDataPath }); //, new string[] { m_fishDataPath }
                 foreach (string guid in guids)
@@ -166,6 +174,7 @@ namespace FishingGame
                 m_fishData = fishData.ToArray();
                 if (m_fishData.Length > 0)
                     Debug.Log($"Successfully loaded all FishDatas into the {name} Agent Manager.");
+#endif
             }
 
             private void OnDrawGizmos()
@@ -173,24 +182,37 @@ namespace FishingGame
                 // draw bobber position
                 if (m_bobberTransform != null)
                 {
-                    Handles.color = Color.red;
-                    Handles.DrawWireCube(m_bobberTransform.position, new Vector3(0.5f, 0.5f, 0.5f));
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireCube(m_bobberTransform.transform.position, new Vector3(0.5f, 0.5f, 0.5f));
                 }
 
                 // draw player
                 if (m_playerTransform != null)
                 {
-                    Handles.color = Color.blue;
-                    Handles.DrawWireCube(m_playerTransform.position, new Vector3(0.6f, 2, 0.6f));
+                    Gizmos.color = Color.blue;
+                    Gizmos.DrawWireCube(m_playerTransform.position, new Vector3(0.6f, 2, 0.6f));
                 }
 
                 // draw pool bounds
-                Handles.color = Color.blue;
-                Handles.DrawWireDisc(GameSettings.POOL_ORIGIN, Vector3.up, GameSettings.POOL_RADIUS);
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireSphere(GameSettings.POOL_ORIGIN, GameSettings.POOL_RADIUS);
 
                 // draw debug spawn location
-                Handles.color = Color.magenta;
-                Handles.DrawWireCube(spawnLocation, new Vector3(0.5f, 0.5f, 0.5f));
+                Gizmos.color = Color.magenta;
+                Gizmos.DrawWireCube(m_nextSpawnPosition, new Vector3(0.5f, 0.5f, 0.5f));
+            }
+
+            public void ToggleFishParticleDebug()
+            {
+                FishAnimationController controls = m_agents[0].agent.gameObject.GetComponent<FishAnimationController>();
+                
+                if (controls != null)
+                {
+                    if (controls.bubbleSystem.isPlaying)
+                        controls.bubbleSystem.Stop();
+                    else
+                        controls.bubbleSystem.Play();
+                }
             }
         }
     }

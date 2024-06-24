@@ -368,7 +368,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator
         }
 
 
-        // Handles 2 axis activation for 1 UI Button
+        // Gizmos 2 axis activation for 1 UI Button
         bool m_XAxisActivated;
         bool m_ZAxisActivated;
 
