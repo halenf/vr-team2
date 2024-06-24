@@ -1,7 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Shaders/OutlineShader/Basic Outline.mat.meta
+guid: 0775fa4588c67484f987cc05e132fe2e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+========
 guid: f3ed74bd971d0694295e5a5f48d95374
 PrefabImporter:
   externalObjects: {}
+>>>>>>>> main:Assets/Prefabs/Particle Effects/Cast Splash.prefab.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

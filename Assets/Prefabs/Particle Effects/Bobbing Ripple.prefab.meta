@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Particle Effects/Shadow.prefab.meta
+guid: 3417059810358994d97e64a2f0e62072
+========
 guid: fda4d186b0f246e4aa442f1ef4250753
+>>>>>>>> main:Assets/Prefabs/Particle Effects/Bobbing Ripple.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
