@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_poolOrigin: {x: 0, y: 0, z: 35}
   m_poolRadius: 30
-  m_maxFishCount: 1
+  m_maxFishCount: 20
