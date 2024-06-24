@@ -24,6 +24,9 @@ namespace FishingGame
                 else
                     time = m_time;
 
+                if (m_targetIsBobber && !agent.bobberIsUnderwater)
+                    return false;
+
                 if (m_counter >= time)
                 {
                     return true;

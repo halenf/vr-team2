@@ -1009,6 +1009,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleParticleSystem",
+                    "type": "Button",
+                    "id": "8123ee35-0ff7-4039-aab2-870732959c94",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1020,6 +1029,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "MoveBobber",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c55a5866-b04d-433e-af89-507d399eaa13",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ToggleParticleSystem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
