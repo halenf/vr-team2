@@ -62,7 +62,7 @@ namespace FishingGame
                 else
                 {
                     m_rb.drag = m_airDrag;
-                    m_rb.drag = m_underwaterAngularDrag;
+                    m_rb.angularDrag = m_underwaterAngularDrag;
                 }
             }
         }
