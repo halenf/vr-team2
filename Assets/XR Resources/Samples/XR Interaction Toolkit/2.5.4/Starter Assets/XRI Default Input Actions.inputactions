@@ -2620,6 +2620,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Button Input",
+            "id": "904b91b8-9df5-44fa-8f38-f00177f1e79c",
+            "actions": [
+                {
+                    "name": "DEBUG_MountButton",
+                    "type": "Button",
+                    "id": "9d98dd3c-c2e6-4bf8-8103-160b9ccf420b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "39c82261-5351-4ca4-a865-ebd36a705a57",
+                    "path": "<XRController>/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DEBUG_MountButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
