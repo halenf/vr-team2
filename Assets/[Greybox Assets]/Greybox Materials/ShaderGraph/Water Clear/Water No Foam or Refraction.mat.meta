@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/[Greybox Assets]/Greybox Materials/ShaderGraph/Water Clear/Water No Foam or Refraction.mat.meta
 guid: 48068752bc370704ca1b3328ecca4366
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+========
+guid: f3ed74bd971d0694295e5a5f48d95374
+PrefabImporter:
+  externalObjects: {}
+>>>>>>>> main:Assets/Prefabs/Particle Effects/Cast Splash.prefab.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

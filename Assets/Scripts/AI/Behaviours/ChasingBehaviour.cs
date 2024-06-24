@@ -15,6 +15,7 @@ namespace FishingGame
             {
                 agent.SetTargetPosition(agent.bobberPosition);
                 m_speed = agent.fish.GetConstraint(agent.fish.data.chaseSpeed);
+                agent.animationController.ToggleBubbles(true);
             }
 
             public override void UpdateThis(Agent agent)

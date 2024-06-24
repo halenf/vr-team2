@@ -21,6 +21,8 @@ namespace FishingGame
                     Vector2 randomLook = Random.insideUnitCircle;
                     agent.SetTargetPosition(transform.position + new Vector3(randomLook.x, GameSettings.POOL_HEIGHT, randomLook.y));
                 }
+
+                agent.animationController.ToggleBubbles(false);
             }
 
             public override void UpdateThis(Agent agent)
