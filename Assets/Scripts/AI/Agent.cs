@@ -91,8 +91,8 @@ namespace FishingGame
 
             public void PullBobberAwayFromTarget()
             {
-                transform.position -= (m_targetPosition - bobberPosition).normalized * 1.4f * Time.deltaTime;
-                bobberPosition = transform.position;
+                bobberPosition -= (m_targetPosition - bobberPosition).normalized * 1.4f * Time.deltaTime;
+                transform.position = new Vector3(bobberPosition.x, GameSettings.POOL_HEIGHT, bobberPosition.z);
             }
 
             public void LookAtTarget()
