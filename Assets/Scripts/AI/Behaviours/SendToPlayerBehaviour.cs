@@ -13,9 +13,9 @@ namespace FishingGame
             {
                 // send the fish details to the player
                 FindObjectOfType<RodController>().MountBobber();
-                
-                // destroy it
-                Destroy(agent.gameObject);
+
+                // despawn the agent
+                FindObjectOfType<AgentManager>().DespawnAgent(agent);
             }
         }
     }

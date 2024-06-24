@@ -17,13 +17,7 @@ namespace FishingGame
             private Rigidbody m_rb;
             private bool m_isUnderwater;
 
-            public bool IsUnderwater
-            {
-                get
-                {
-                    return transform.position.y < (GameSettings.POOL_HEIGHT + 0.2f);
-                }
-            }
+            public bool isUnderwater { get { return m_isUnderwater; } }
 
             [SerializeField] private float m_floatingPower;
             // Start is called before the first frame update
@@ -37,7 +31,7 @@ namespace FishingGame
             {
                 float diff = transform.position.y - GameSettings.POOL_HEIGHT;
 
-                if (diff < 0)
+                if (diff < 0.15f)
                 {
                     m_rb.AddForceAtPosition(Vector3.up * m_floatingPower * Mathf.Abs(diff), transform.position, ForceMode.Force);
                     if (!m_isUnderwater)
@@ -62,7 +56,7 @@ namespace FishingGame
                 else
                 {
                     m_rb.drag = m_airDrag;
-                    m_rb.angularDrag = m_underwaterAngularDrag;
+                    m_rb.angularDrag = m_airAngularDrag;
                 }
             }
         }

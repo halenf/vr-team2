@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace FishingGame
@@ -34,13 +33,16 @@ namespace FishingGame
                 // decide on target
                 Vector3 targetPosition = m_targetIsBobber ? agent.bobberPosition : agent.targetPosition;
 
+                if (m_targetIsBobber && !agent.bobberIsUnderwater)
+                    return false == m_withinRange;
+
                 return Vector3.Distance(agent.transform.position, targetPosition) < distance == m_withinRange;
             }
 
             private void OnDrawGizmos()
             {
-                Handles.color = Color.red;
-                Handles.DrawWireDisc(transform.position, Vector3.up, m_gizmoRadius);
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(transform.position, m_gizmoRadius);
             }
         }
     }
