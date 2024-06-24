@@ -1410,6 +1410,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d00f2bf8-1528-4a29-88d0-fc3e6e20c892
     m_ActionName: XRI LeftHand/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4367296847499598548}
+        m_TargetAssemblyTypeName: FishingGame.Player.RodController, Assembly-CSharp
+        m_MethodName: MountBobber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9d98dd3c-c2e6-4bf8-8103-160b9ccf420b
+    m_ActionName: Button Input/DEBUG_MountButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: XRI Head
@@ -2266,6 +2282,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
+--- !u!114 &4367296847499598548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6464047156303021228, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
+  m_PrefabInstance: {fileID: 7291092484132003448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843548adc5b940544b73389417fc1be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4367296847499598549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6464047156303021229, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
