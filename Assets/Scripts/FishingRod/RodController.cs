@@ -87,12 +87,12 @@ namespace FishingGame
                         m_line.SetPositions(points.ToArray());
                         break;
                     case state.Casting:
-                        //Unparent the bobber from its mount
-                        m_bobber.transform.SetParent(null);
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Apply the controller's velocity to it
-                        m_bobber.GetComponent<Rigidbody>().AddForce(m_handVelocity.normalized * m_forceScale);
+                        m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_forceScale, ForceMode.VelocityChange);
                         //The rod has now been cast
+                        //Unparent the bobber from its mount
+                        m_bobber.transform.SetParent(null);
                         m_rodState = state.Cast;
                         break;
                     case state.Reeling:
