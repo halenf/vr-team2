@@ -12,17 +12,10 @@ namespace FishingGame
             public override void Enter(Agent agent)
             {
                 // send the fish details to the player
-                //FindObjectOfType<ReelFish>().SurfaceFish(agent.fish);
+                FindObjectOfType<RodController>().MountBobber();
                 
-                // get the Agent/Fish object
-                Transform parent = transform.parent;
-                while (parent.GetComponent<Agent>() == null)
-                {
-                    parent = parent.parent;
-                }
-
                 // destroy it
-                Destroy(parent.gameObject);
+                Destroy(agent.gameObject);
             }
         }
     }

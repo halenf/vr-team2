@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 457598608795243646, guid: 8def25ff2a68d5b46a6130c408c97de8, type: 3}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_Name
-      value: Transition
+      value: SendToPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetIsBobber: 0
-  m_distance: 1.5
+  m_distance: 3
   m_withinRange: 1
 --- !u!1001 &7447683269033465418
 PrefabInstance:

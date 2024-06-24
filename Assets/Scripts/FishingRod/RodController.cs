@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using System;
 
 namespace FishingGame
 {
@@ -96,7 +97,7 @@ namespace FishingGame
                         break;
                     case state.Reeling:
                         //Pull the bobber towards the player
-                        m_bobber.transform.position = Vector3.Lerp(m_bobber.transform.position, new Vector3(m_rodTip.position.x, GameSettings.POOL_HEIGHT, m_rodTip.position.z), Time.deltaTime);
+                        m_bobber.transform.position = Vector3.Lerp(new Vector3(m_bobber.transform.position.x, GameSettings.POOL_HEIGHT, m_bobber.transform.position.z), new Vector3(m_rodTip.position.x, GameSettings.POOL_HEIGHT, m_rodTip.position.z), Time.deltaTime);
                         //Return to the cast state when no motion is inputed
                         if (m_reelVelocity >= 0)
                         {
@@ -157,6 +158,7 @@ namespace FishingGame
             /// </summary>
             public void SurfaceFish(Fish fish)
             {
+
                 //Instance the fish model as a child of the empty parent
                 GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
                 //Its a grabbale kinematic rigidbody, so add the components
