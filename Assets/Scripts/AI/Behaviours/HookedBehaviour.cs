@@ -13,6 +13,8 @@ namespace FishingGame
                 agent.SetTargetPosition(agent.playerPosition);
                 Vector3 currentPosition = agent.transform.position;
                 agent.transform.position = new Vector3(currentPosition.x, GameSettings.POOL_HEIGHT, currentPosition.z);
+
+                agent.animationController.ToggleBubbles(true);
             }
 
             public override void UpdateThis(Agent agent)

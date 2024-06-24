@@ -1,3 +1,4 @@
+using FishingGame.FishControls;
 using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace FishingGame
             // state machine
             [SerializeField] private FiniteStateMachine m_stateMachine;
             public FiniteStateMachine stateMachine { get { return m_stateMachine; } }
+
+            // animator
+            private FishAnimationController m_animationController;
+            public FishAnimationController animationController { get { return m_animationController; } }
 
             // variables for AI
             private Vector3 m_targetPosition = new Vector3();
@@ -55,6 +60,7 @@ namespace FishingGame
 
             public void Start()
             {
+                m_animationController = GetComponent<FishAnimationController>();
                 m_stateMachine.Enter(this);
             }
 

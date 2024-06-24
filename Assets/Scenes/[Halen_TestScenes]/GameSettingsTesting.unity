@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b32de2d4773624d942c890acdbbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsAsset: {fileID: 11400000, guid: 2b552dac89aef2d45aea7293b99474e9, type: 2}
+  settingsAsset: {fileID: 11400000, guid: bc258522a7c0dbe4f9dedad81a0b27e9, type: 2}
 --- !u!4 &67682303
 Transform:
   m_ObjectHideFlags: 0
@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477320806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 3, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -758,11 +758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_maxSpawnTime
-      value: 6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_minSpawnTime
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_agentContainer

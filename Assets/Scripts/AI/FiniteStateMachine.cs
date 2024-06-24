@@ -38,7 +38,6 @@ namespace FishingGame
 
                 if (newState != null && newState != m_currentState)
                 {
-                    Debug.Log($"{name} Entering new state!");
                     m_currentState.Exit(agent);
                     Destroy(m_currentState.gameObject);
                     m_currentState = Instantiate(newState, transform);

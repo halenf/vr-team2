@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 namespace FishingGame
@@ -24,9 +25,12 @@ namespace FishingGame
                 
             }
 
-            public void ToggleParticleDebug()
+            public void ToggleBubbles(bool value)
             {
-                
+                if (value)
+                    m_bubbleSystem.Play();
+                else
+                    m_bubbleSystem.Stop();
             }
         }
     }

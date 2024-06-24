@@ -37,11 +37,13 @@ namespace FishingGame
             private Transform m_playerTransform;
 
             [Header("Agent Spawning")]
+            [Tooltip("Fish prefab goes here")]
             [SerializeField] private Agent m_agentPrefab;
-            [SerializeField] private GameObject m_fishSilhouettePrefab;
+            //[SerializeField] private GameObject m_fishSilhouettePrefab;
+            [Tooltip("Create an empty GameObject for the fish to spawn under.")]
             [SerializeField] private Transform m_agentContainer;
 
-            [Header("Fish Data")]
+            [Header("Fish Data (Please do not touch, right click component header to load FishData)")]
             [SerializeField] private string m_fishDataPath;
             [SerializeField][NonReorderable] private FishData[] m_fishData;
 
@@ -138,8 +140,8 @@ namespace FishingGame
                 }
 
                 // attach the silhouette and scale it
-                GameObject silhouette = Instantiate(m_fishSilhouettePrefab, agent.transform);
-                silhouette.transform.localScale *= (int)fish.data.silhouetteSize + 1;
+                //GameObject silhouette = Instantiate(m_fishSilhouettePrefab, agent.transform);
+                //silhouette.transform.localScale *= (int)fish.data.silhouetteSize + 1;
 
                 // add the agent to the list and set a lifetime for it
                 m_agents.Add(new AgentTracker(agent, fish.GetConstraint(fish.data.lifeTime)));
@@ -200,19 +202,6 @@ namespace FishingGame
                 // draw debug spawn location
                 Gizmos.color = Color.magenta;
                 Gizmos.DrawWireCube(m_nextSpawnPosition, new Vector3(0.5f, 0.5f, 0.5f));
-            }
-
-            public void ToggleFishParticleDebug()
-            {
-                FishAnimationController controls = m_agents[0].agent.gameObject.GetComponent<FishAnimationController>();
-                
-                if (controls != null)
-                {
-                    if (controls.bubbleSystem.isPlaying)
-                        controls.bubbleSystem.Stop();
-                    else
-                        controls.bubbleSystem.Play();
-                }
             }
         }
     }
