@@ -6276,54 +6276,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2199512116826917563, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 91
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_ActionId
-      value: 9d98dd3c-c2e6-4bf8-8103-160b9ccf420b
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_ActionName
-      value: Button Input/DEBUG_MountButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 985264639}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MountBobber
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FishingGame.Player.RodController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367467705628032195, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[90].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4367296847499598548, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-      propertyPath: m_forceScale
-      value: 1500
-      objectReference: {fileID: 0}
     - target: {fileID: 4367296848969556528, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6479,17 +6431,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3970057834264978726, guid: 1be37c06cbad97046927a95cf85da82b, type: 3}
   m_PrefabInstance: {fileID: 77546667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &985264639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4367296847499598548, guid: a1f5ee525e5c6f64faf84f458e480db5, type: 3}
-  m_PrefabInstance: {fileID: 840948069}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843548adc5b940544b73389417fc1be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &987544086
 PrefabInstance:
   m_ObjectHideFlags: 0
