@@ -7,7 +7,7 @@ using System;
 
 namespace FishingGame
 {
-    namespace Player
+    namespace FishingRod
     {
         [RequireComponent(typeof(LineRenderer))]
         //Controls player interactions with the fishing rod
