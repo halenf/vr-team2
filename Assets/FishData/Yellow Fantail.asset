@@ -26,7 +26,7 @@ MonoBehaviour:
     m_max: 35
   m_swimSpeed:
     m_min: 3
-    m_max: 15
+    m_max: 5
   m_chaseSpeed:
     m_min: 7
     m_max: 10
