@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6464047156303021229}
   - component: {fileID: 6464047156303021228}
   - component: {fileID: 6464047156303021230}
-  - component: {fileID: 6551484394965782114}
   m_Layer: 0
   m_Name: Rod
   m_TagString: Untagged
@@ -51,7 +50,7 @@ MonoBehaviour:
   m_bobber: {fileID: 8910676847970718924}
   m_rodTip: {fileID: 6464047157221814696}
   m_forceScale: 1
-  m_pullPower: 0.5
+  m_reelScale: 1
   m_fishDisplayPoint: {fileID: 0}
   m_lineTension: 0.75
 --- !u!120 &6464047156303021230
@@ -158,18 +157,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &6551484394965782114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464047156303021227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08621f0c6384636489c329f9b658327f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6464047156564775622
 GameObject:
   m_ObjectHideFlags: 0

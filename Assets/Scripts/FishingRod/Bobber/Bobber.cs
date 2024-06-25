@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FishingGame.Objects;
 using FishingGame.AI;
+using Unity.VisualScripting;
 
 namespace FishingGame
 {
@@ -12,41 +13,93 @@ namespace FishingGame
 
         public class Bobber : MonoBehaviour
         {
-            private BuoyantObject m_datBuoy;
-            public bool isUnderwater { get { return m_datBuoy.isUnderwater; } }
+            // Returns true if the bobber is below the water level
+            public bool isUnderwater { get { return transform.position.y <= GameSettings.POOL_HEIGHT; } }
             private Agent m_hookedAgent;
+            // Returns true if there is a hooked agent
             public bool hasHookedAgent { get { return m_hookedAgent != null; } }
+            private Transform m_playerTransform;
+            // This could be a func, but this works nicely too
+            // Returns the distance between the bobber and the player
+            private Vector3 playerDistance { get { return transform.position - m_playerTransform.position; } }
+            // Returns the direction between the bobber and the player
+            private Vector3 playerDirection { get { return playerDistance.normalized; } }
+            // The range a which the bobber is pulled out of the water
+            [SerializeField] private float m_pullRange = 1.0f;
+            private RodController m_rodControl;
+            private Rigidbody m_rigidbody;
 
-            // Start is called before the first frame update
             void Start()
             {
-                m_datBuoy = GetComponent<BuoyantObject>();
+                m_rigidbody = GetComponent<Rigidbody>();
+                m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+                m_rodControl = m_playerTransform.GetComponentInChildren<RodController>();
+                if (!m_rodControl)
+                {
+                    Debug.LogError("Bobber cannot find the rod!! Please ensure that the player is tagged correctly <i>(\"Player\")</i> and has a rod controller in one of its children.");
+                }
             }
-
-            // Update is called once per frame
-            void Update()
+            private void Update()
             {
-                
+                // Lock the Y level while underwater
+                if (isUnderwater && !m_rigidbody.isKinematic)
+                    transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
+                ReelIn();
             }
-
+            /// <summary>
+            /// Pulls the bobber towards or away from the player based on the controller input or hooked fish
+            /// </summary>
             public void ReelIn()
             {
                 Vector3 delta = Vector3.zero;
 
+                //if there is a hooked agent, pull the bobber out
                 if (hasHookedAgent)
                 {
-                    //delta += m_hookedAgent.pullStrength;
+                    // get the change in distance that the fish would apply to the bobber
+                    delta -= playerDirection * m_hookedAgent.bobberPullStrength * Time.deltaTime;
                 }
 
-                //delta += rod.reelStrength;
+                // get the change in distance that the rod wants to apply to the bobber
+                delta += playerDirection * m_rodControl.getReelForce * Time.deltaTime;
 
-                transform.position += delta;
+                // apply the change in distance
+                // should this be lerped??
+                transform.position += new Vector3(delta.x, 0, delta.z);
+
+                // check if the bobber is within range
+                if(playerDistance.magnitude <= m_pullRange)
+                {
+                    //surface the fish if ones hooked, otherwise just mount the bobber
+                    if (hasHookedAgent)
+                    {
+                        m_rodControl.SurfaceFish(m_hookedAgent.fish);
+                        m_hookedAgent = null;
+                    }
+                    else
+                        m_rodControl.MountBobber();
+                }
             }
-
-            public void HookFish(Agent agent)
+            /// <summary>
+            /// Assigns the fish as the hooked fish
+            /// </summary>
+            /// <returns>Returns true if the given agent was hooked</returns>
+            public bool HookFish(Agent agent)
             {
+                if (hasHookedAgent)
+                    return false;
                 m_hookedAgent = agent;
                 m_hookedAgent.transform.SetParent(transform, false);
+                return true;
+            }
+
+            private void OnDrawGizmos()
+            {
+                if (hasHookedAgent)
+                    Gizmos.color = Color.blue;
+                else
+                    Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(transform.position, m_pullRange);
             }
         }
     }

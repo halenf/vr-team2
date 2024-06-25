@@ -39,10 +39,10 @@ namespace FishingGame
             [SerializeField] private float m_forceScale;
             //Reeling
             private float m_reelVelocity;
-            public float setReelVelo { set { m_reelVelocity = value; } }
+            public float setReelVelo { set { m_reelVelocity = Mathf.Clamp(value, -1.0f, 0.0f); } }
             [Header("Reeling")]
-            //[SerializeField] private float m_catchRadius;
-            [SerializeField] private float m_pullPower;
+            [SerializeField] private float m_reelScale = 1;
+            public float getReelForce { get { return m_reelVelocity * m_reelScale; } }
             [SerializeField] private Transform m_fishDisplayPoint;
             [Header("Fishing Line Visuals")]
             private LineRenderer m_line;
@@ -50,16 +50,10 @@ namespace FishingGame
 
             private void Start()
             {
-                //Get the line and reel fish components
+                //Get the line components for visuals
                 m_line = GetComponent<LineRenderer>();
                 //Get the parent of the bobber, this is used for mounting the bobber
                 m_bobberHold = m_bobber.transform.parent;
-                //Match the rbs
-                Rigidbody targRb = m_bobberHold.GetComponent<Rigidbody>();
-                Rigidbody hRb = m_bobber.GetComponent<Rigidbody>();
-                targRb.mass = hRb.mass;
-                targRb.drag = hRb.drag;
-                targRb.angularDrag = hRb.angularDrag;
                 //mount it for safety
                 MountBobber();
             }
@@ -158,7 +152,6 @@ namespace FishingGame
             /// </summary>
             public void SurfaceFish(Fish fish)
             {
-
                 //Instance the fish model as a child of the empty parent
                 GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
                 //Its a grabbale kinematic rigidbody, so add the components
@@ -166,7 +159,7 @@ namespace FishingGame
                 XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
                 fishRb.isKinematic = true;
                 fishGrab.useDynamicAttach = true;
-                FindObjectOfType<RodController>().MountBobber();
+                MountBobber();
             }
         }
     }
