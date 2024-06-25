@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843548adc5b940544b73389417fc1be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bobber: {fileID: 8910676847970718924}
+  m_bobber: {fileID: 7784012275639616061}
   m_rodTip: {fileID: 6464047157221814696}
   m_forceScale: 1
   m_reelScale: 1
@@ -289,11 +289,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4627895588161809540, guid: 11468e39cad3e3b4a9f4de34fe049b02, type: 3}
   m_PrefabInstance: {fileID: 1938725701384365043}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8910676847970718924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7011728179026523967, guid: 11468e39cad3e3b4a9f4de34fe049b02, type: 3}
+--- !u!114 &7784012275639616061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8566375548336005582, guid: 11468e39cad3e3b4a9f4de34fe049b02, type: 3}
   m_PrefabInstance: {fileID: 1938725701384365043}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822b2701139edee4d8f48b81e19136e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7281172323198701611
 PrefabInstance:
   m_ObjectHideFlags: 0

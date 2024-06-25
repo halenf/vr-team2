@@ -18,9 +18,9 @@ namespace FishingGame
             {
                 get
                 {
-                    if (m_rodControl.rodState != RodController.RodState.Cast)
+                    if (m_rodControl.rodState == RodController.RodState.PreCast)
                         return false;
-                    return transform.position.y <= GameSettings.POOL_HEIGHT;
+                    return transform.position.y <= GameSettings.POOL_HEIGHT + 0.25f;
                 }
             }
             private Agent m_hookedAgent;
@@ -37,9 +37,10 @@ namespace FishingGame
             [SerializeField] private float m_pullRange = 1.0f;
             private RodController m_rodControl;
             private Rigidbody m_rigidbody;
-
+            private BuoyantObject m_datBuoy;
             void Start()
             {
+                m_datBuoy = GetComponent<BuoyantObject>();
                 m_rigidbody = GetComponent<Rigidbody>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
                 m_rodControl = m_playerTransform.GetComponentInChildren<RodController>();
@@ -53,6 +54,11 @@ namespace FishingGame
                 // Lock the Y level while underwater
                 if (isUnderwater)
                     transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
+
+                /*if (isUnderwater && !m_rigidbody.isKinematic)
+                    m_rigidbody.isKinematic = true;
+                else
+                    m_rigidbody.isKinematic = false;*/
                 ReelIn();
             }
 
@@ -76,6 +82,7 @@ namespace FishingGame
                 }
 
                 // get the change in distance that the rod wants to apply to the bobber
+                // should be changed to direction to rod tip instead of player position
                 delta += playerDirection * m_rodControl.getReelForce * Time.deltaTime;
 
                 delta.y = GameSettings.POOL_HEIGHT;

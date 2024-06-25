@@ -47,6 +47,7 @@ namespace FishingGame
             [Header("Fishing Line Visuals")]
             private LineRenderer m_line;
             [SerializeField, Range(0.5f, 1f)] private float m_lineTension = 0.75f;
+            [SerializeField] private Vector2[] m_linePoints;
 
             private void Start()
             {
@@ -74,9 +75,11 @@ namespace FishingGame
                     case RodState.PreCast:
                         //Just draws a line along the rod to the bobber
                         List<Vector3> points = new List<Vector3>(3);
-                        m_line.positionCount = 3;
-                        points.Add(transform.position + transform.forward * -0.05f);
-                        points.Add(m_rodTip.position + m_rodTip.forward * -0.05f + m_rodTip.up * 0.1f);
+                        m_line.positionCount = 1 + m_linePoints.Length;
+                        foreach (Vector2 point in m_linePoints)
+                        {
+                            points.Add(new Vector3(transform.position.x, transform.position.y + point.x, transform.position.z + point.y));
+                        }
                         points.Add(m_bobber.transform.position);
                         m_line.SetPositions(points.ToArray());
                         break;
@@ -121,11 +124,11 @@ namespace FishingGame
             {
                 m_lineTension = 0.75f - 0.25f * -m_reelVelocity;
                 List<Vector3> points = new List<Vector3>(6);
-                m_line.positionCount = 6;
-                //base
-                points.Add(transform.position + transform.forward * -0.05f);
-                //tip
-                points.Add(m_rodTip.position + m_rodTip.forward * -0.05f + m_rodTip.up * 0.1f);
+                m_line.positionCount = 4 + m_linePoints.Length;
+                foreach(Vector2 point in m_linePoints)
+                {
+                    points.Add(new Vector3(transform.position.x, transform.position.y + point.x, transform.position.z + point.y));
+                }
                 //mid
                 FindLinePoints(points, 2, m_rodTip.position, m_bobber.transform.position);
                 //outer
