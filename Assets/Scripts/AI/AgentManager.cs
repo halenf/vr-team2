@@ -1,4 +1,5 @@
 using FishingGame.FishControls;
+using FishingGame.FishingRod;
 using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace FishingGame
             }
 
             [Header("Constant Objects")]
-            private BuoyantObject m_bobberTransform;
+            private Bobber m_bobberTransform;
             private Transform m_playerTransform;
 
             [Header("Agent Spawning")]
@@ -75,7 +76,7 @@ namespace FishingGame
                 m_nextSpawnPosition = GameSettings.get_random_position_in_pool();
 
                 // get bobber and player transform
-                m_bobberTransform = GameObject.FindGameObjectWithTag("Bobber").GetComponent<BuoyantObject>();
+                m_bobberTransform = FindObjectOfType<Bobber>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             }
 
