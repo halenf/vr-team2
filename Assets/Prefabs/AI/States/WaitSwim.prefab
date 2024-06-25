@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8281620231972574436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530966876bf8da145843d2b609a95f90, type: 3}
+  m_Script: {fileID: 11500000, guid: ac2dccd450a6a1d41b864adb387f1aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lookAtBobber: 0
+  m_lookBehaviour: 1
 --- !u!1001 &3621983913134812114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 8452376617118891910, guid: c5243c5d6716ab54f8712f44a5ded74d, type: 3}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_Name
-      value: ToWaitingRod
+      value: ToWaitBobber
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
@@ -198,8 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
+  m_targetType: 2
   m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 1
 --- !u!1001 &7743279810658728754
 PrefabInstance:
@@ -287,5 +288,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1a962689d6e704d92dc77c06cc528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 0
+  m_targetType: 1
   m_time: 0

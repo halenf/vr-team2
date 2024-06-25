@@ -40,14 +40,8 @@ namespace FishingGame
             private float m_swimWaitTime;
             public float swimWaitTime { get { return m_swimWaitTime; } }
 
-            private float m_swimDetectionRange;
-            public float swimDetectionRange { get { return m_swimDetectionRange; } }
-
             private float m_bobberWaitTime;
             public float bobberWaitTime { get { return m_bobberWaitTime; } }
-
-            private float m_bobberDetectionRange;
-            public float bobberDetectionRange { get { return m_bobberDetectionRange; } }
 
             public void Init(Fish fish, BuoyantObject bobber, Transform player)
             {
@@ -85,9 +79,7 @@ namespace FishingGame
             private void SetAIVariables()
             {
                 m_swimWaitTime = m_fish.GetConstraint(m_fish.data.swimWaitTime);
-                m_swimDetectionRange = m_fish.GetConstraint(m_fish.data.swimDetectionRange);
                 m_bobberWaitTime = m_fish.GetConstraint(m_fish.data.bobberWaitTime);
-                m_bobberDetectionRange = m_fish.GetConstraint(m_fish.data.bobberDetectionRange);
             }
 
             public void MoveTowardsTarget(float speed)
