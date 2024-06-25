@@ -103,10 +103,10 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Foam_Amount: 0
-    - _Foam_Cutoff: 0
-    - _Foam_Scale: 0
-    - _Foam_Speed: 0
+    - _Foam_Amount: 20
+    - _Foam_Cutoff: 1.36
+    - _Foam_Scale: 20
+    - _Foam_Speed: 0.1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -116,9 +116,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Refraction_Scale: 10
+    - _Refraction_Scale: 0.5
     - _Refraction_Speed: 0.01
-    - _Refraction_Strength: 0
+    - _Refraction_Strength: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -134,7 +134,7 @@ Material:
     - _Deep_Water: {r: 0, g: 0.3226787, b: 0.46226418, a: 1}
     - _Deep_Water_Color: {r: 0, g: 0.39080453, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Foam_Color: {r: 0.5896226, g: 0.87608224, b: 1, a: 0.13333334}
     - _Shallow_Water: {r: 0, g: 0.69803923, b: 1, a: 0.7490196}
     - _Shallow_Water_Color: {r: 0, g: 0.6976149, b: 1, a: 0.8666667}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
