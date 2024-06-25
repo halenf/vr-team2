@@ -16,6 +16,7 @@ namespace FishingGame
             // Returns true if the bobber is below the water level
             public bool isUnderwater { get { return transform.position.y <= GameSettings.POOL_HEIGHT; } }
             private Agent m_hookedAgent;
+            private float m_agentPullStrength;
             // Returns true if there is a hooked agent
             public bool hasHookedAgent { get { return m_hookedAgent != null; } }
             private Transform m_playerTransform;
@@ -46,6 +47,12 @@ namespace FishingGame
                     transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
                 ReelIn();
             }
+
+            public void SetAgentPullStrength(float value)
+            {
+                m_agentPullStrength = value;
+            }
+
             /// <summary>
             /// Pulls the bobber towards or away from the player based on the controller input or hooked fish
             /// </summary>
@@ -57,7 +64,7 @@ namespace FishingGame
                 if (hasHookedAgent)
                 {
                     // get the change in distance that the fish would apply to the bobber
-                    delta -= playerDirection * m_hookedAgent.bobberPullStrength * Time.deltaTime;
+                    delta -= playerDirection * m_agentPullStrength * Time.deltaTime;
                 }
 
                 // get the change in distance that the rod wants to apply to the bobber
@@ -80,6 +87,7 @@ namespace FishingGame
                         m_rodControl.MountBobber();
                 }
             }
+
             /// <summary>
             /// Assigns the fish as the hooked fish
             /// </summary>
@@ -95,11 +103,11 @@ namespace FishingGame
 
             private void OnDrawGizmos()
             {
-                if (hasHookedAgent)
-                    Gizmos.color = Color.blue;
-                else
-                    Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(transform.position, m_pullRange);
+                if (!hasHookedAgent)
+                {
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawWireSphere(transform.position, m_pullRange);
+                }
             }
         }
     }

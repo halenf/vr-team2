@@ -146,8 +146,6 @@ namespace FishingGame
 
                 // add the agent to the list and set a lifetime for it
                 m_agents.Add(new AgentTracker(agent, fish.GetConstraint(fish.data.lifeTime)));
-
-                Debug.Log("New fish spawned!");
             }
 
             public bool DespawnAgent(AgentTracker agentTracker)

@@ -13,6 +13,8 @@ namespace FishingGame
             {
                 agent.animationController.ToggleBubbles(true);
                 agent.SetTargetPosition(agent.playerPosition);
+                agent.bobber.SetAgentPullStrength(agent.fish.GetConstraint(agent.fish.data.pullStrength));
+                agent.bobber.HookFish(agent);
             }
             public override void UpdateThis(Agent agent)
             {

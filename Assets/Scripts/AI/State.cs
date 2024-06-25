@@ -34,9 +34,8 @@ namespace FishingGame
                 foreach (Behaviour behaviour in m_behaviours)
                     behaviour.Enter(agent);
                 foreach (Transition transition in m_transitions)
-                {
-                    transition.condition.Enter(agent);
-                }
+                    foreach (Condition condition in transition.conditions)
+                        condition.Enter(agent);
             }
             public void UpdateThis(Agent agent)
             {
