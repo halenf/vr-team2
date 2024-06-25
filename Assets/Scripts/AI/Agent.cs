@@ -1,4 +1,5 @@
 using FishingGame.FishControls;
+using FishingGame.FishingRod;
 using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace FishingGame
             private Vector3 m_targetPosition = new Vector3();
             public Vector3 targetPosition { get { return m_targetPosition; } }
 
-            private BuoyantObject m_bobber;
+            private Bobber m_bobber;
+            public Bobber bobber { get { return m_bobber; } }
             public Vector3 bobberPosition 
             { get { return m_bobber.transform.position; }
               set { m_bobber.transform.position = value; } }
@@ -43,7 +45,7 @@ namespace FishingGame
             private float m_bobberWaitTime;
             public float bobberWaitTime { get { return m_bobberWaitTime; } }
 
-            public void Init(Fish fish, BuoyantObject bobber, Transform player)
+            public void Init(Fish fish, Bobber bobber, Transform player)
             {
                 m_fish = fish;
                 m_bobber = bobber;
