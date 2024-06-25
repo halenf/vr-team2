@@ -38,20 +38,11 @@ namespace FishingGame
             private Transform m_playerTransform;
             public Vector3 playerPosition { get { return m_playerTransform.position; } }
 
-            // set variables from data
-            private float m_swimWaitTime;
-            public float swimWaitTime { get { return m_swimWaitTime; } }
-
-            private float m_bobberWaitTime;
-            public float bobberWaitTime { get { return m_bobberWaitTime; } }
-
             public void Init(Fish fish, Bobber bobber, Transform player)
             {
                 m_fish = fish;
                 m_bobber = bobber;
                 m_playerTransform = player;
-
-                SetAIVariables();
             }
 
             public void Start()
@@ -62,10 +53,7 @@ namespace FishingGame
 
             public void Update()
             {
-                State currentState = m_stateMachine.currentState;
                 m_stateMachine.UpdateThis(this);
-                if (m_stateMachine.currentState != currentState)
-                    SetAIVariables();
             }
 
             private void OnDisable()
@@ -76,12 +64,6 @@ namespace FishingGame
             public void SetTargetPosition(Vector3 position)
             {
                 m_targetPosition = position;
-            }
-
-            private void SetAIVariables()
-            {
-                m_swimWaitTime = m_fish.GetConstraint(m_fish.data.swimWaitTime);
-                m_bobberWaitTime = m_fish.GetConstraint(m_fish.data.bobberWaitTime);
             }
 
             public void MoveTowardsTarget(float speed)

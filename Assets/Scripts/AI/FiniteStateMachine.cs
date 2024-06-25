@@ -29,10 +29,13 @@ namespace FishingGame
 
                 foreach (Transition transition in m_currentState.transitions)
                 {
-                    if (transition.condition.IsTrue(agent))
+                    foreach (Condition condition in transition.conditions)
                     {
-                        newState = transition.targetStates[Random.Range(0, transition.targetStates.Length)];
-                        break;
+                        if (condition.IsTrue(agent))
+                        {
+                            newState = transition.targetStates[Random.Range(0, transition.targetStates.Length)];
+                            break;
+                        }
                     }
                 }
 
