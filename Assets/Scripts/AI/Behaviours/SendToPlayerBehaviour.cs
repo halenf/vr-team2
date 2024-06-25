@@ -1,4 +1,4 @@
-using FishingGame.Player;
+using FishingGame.FishingRod;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using FishingGame.Player;
 
 namespace FishingGame
 {
-    namespace ControlHook
+    namespace FishingRod
     {
         public class RodControllerInputHook : MonoBehaviour
         {
