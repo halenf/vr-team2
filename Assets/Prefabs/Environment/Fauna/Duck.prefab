@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7549079263685240746}
   - component: {fileID: 7549079263685240744}
   m_Layer: 0
-  m_Name: Duck 1
+  m_Name: Duck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
