@@ -10,17 +10,14 @@ namespace FishingGame
         [RequireComponent(typeof(Rigidbody))]
         public class BuoyantObject : MonoBehaviour
         {
-            [SerializeField] private float m_underwaterDrag;
-            [SerializeField] private float m_underwaterAngularDrag;
-            [SerializeField] private float m_airDrag;
-            [SerializeField] private float m_airAngularDrag;
+            [SerializeField, Min(0.01f)] private float m_forceStrength;
+            [SerializeField, Min(0)] private float m_minimumForce;
+#if UNITY_EDITOR
+            [SerializeField] private bool m_isUnderwater;
+#endif
+
             private Rigidbody m_rb;
-            private bool m_isUnderwater;
 
-            public bool isUnderwater { get { return m_isUnderwater; } }
-
-            [SerializeField] private float m_floatingPower;
-            // Start is called before the first frame update
             void Start()
             {
                 m_rb = GetComponent<Rigidbody>();
@@ -29,35 +26,19 @@ namespace FishingGame
             // Update is called once per frame
             void Update()
             {
-                float diff = transform.position.y - GameSettings.POOL_HEIGHT;
+                float delta = transform.position.y - GameSettings.POOL_HEIGHT;
+                bool isUnderwater = delta < 0;
+#if UNITY_EDITOR
+                m_isUnderwater = isUnderwater;
+#endif
 
-                if (diff < 0.15f)
-                {
-                    m_rb.AddForceAtPosition(Vector3.up * m_floatingPower * Mathf.Abs(diff), transform.position, ForceMode.Force);
-                    if (!m_isUnderwater)
-                    {
-                        m_isUnderwater = true;
-                        SwitchState();
-                    }
-                }
-                else if (m_isUnderwater)
-                {
-                    m_isUnderwater = false;
-                    SwitchState();
-                }
+                if (isUnderwater)
+                    ApplyFloatationForce(-delta);
             }
-            private void SwitchState()
+
+            private void ApplyFloatationForce(float value)
             {
-                if (m_isUnderwater)
-                {
-                    m_rb.drag = m_underwaterDrag;
-                    m_rb.angularDrag = m_underwaterAngularDrag;
-                }
-                else
-                {
-                    m_rb.drag = m_airDrag;
-                    m_rb.angularDrag = m_airAngularDrag;
-                }
+                m_rb.AddForce(new Vector3(0, (value * m_forceStrength + m_minimumForce) * Time.deltaTime), ForceMode.VelocityChange);
             }
         }
     }
