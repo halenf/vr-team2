@@ -11,6 +11,12 @@ namespace FishingGame
         {
             [SerializeReference] private List<Condition> m_conditions;
 
+            public override void Enter(Agent agent)
+            {
+                foreach (Condition condition in m_conditions)
+                    condition.Enter(agent);
+            }
+
             public override bool IsTrue(Agent agent)
             {
                 foreach (Condition condition in m_conditions)

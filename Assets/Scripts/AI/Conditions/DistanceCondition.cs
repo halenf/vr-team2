@@ -8,41 +8,53 @@ namespace FishingGame
     {
         public class DistanceCondition : Condition
         {
-            [Tooltip("false: compares the distance with the Agent's target Position. true: compares the distance with the Bobber's position.")]
-            [SerializeField] private bool m_targetIsBobber;
+            [SerializeField] private TargetType m_targetType = 0;
 
-            [Tooltip("The distance used to check if the condition passes. Leave at 0 to use a value from the Fish.")]
             [SerializeField] private float m_distance;
+            [SerializeField] private Transform m_target;
 
-            private float m_gizmoRadius;
-
-            [Tooltip("If this Condition passes when the target is within the distance or outside of it.")]
+            [Tooltip("If this Condition passes when the target is within the range of Distance or outside of it.")]
             [SerializeField] private bool m_withinRange;
+
+            public override void Enter(Agent agent)
+            {
+                switch (m_targetType)
+                {
+                    case TargetType.Target:
+                        m_distance = agent.fish.GetConstraint(agent.fish.data.swimDetectionRange);
+                        break;
+                    case TargetType.Bobber:
+                        m_distance = agent.fish.GetConstraint(agent.fish.data.bobberDetectionRange);
+                        break;
+                }
+            }
 
             public override bool IsTrue(Agent agent)
             {
-                // decide if should used provided value or value from fish
-                float distance;
-                if (m_distance == 0)
-                    distance = m_targetIsBobber ? agent.bobberDetectionRange : agent.swimDetectionRange;
-                else
-                    distance = m_distance;
-
-                m_gizmoRadius = distance;
-                
                 // decide on target
-                Vector3 targetPosition = m_targetIsBobber ? agent.bobberPosition : agent.targetPosition;
+                Vector3 targetPosition = Vector3.zero;
+                switch (m_targetType)
+                {
+                    case TargetType.Value:
+                        targetPosition = m_target.position;
+                        break;
+                    case TargetType.Target:
+                        targetPosition = agent.targetPosition;
+                        break;
+                    case TargetType.Bobber:
+                        if (!agent.bobberIsUnderwater == m_withinRange)
+                            return false;
+                        targetPosition = agent.bobberPosition;
+                        break;
+                }
 
-                if (m_targetIsBobber && !agent.bobberIsUnderwater)
-                    return false == m_withinRange;
-
-                return Vector3.Distance(agent.transform.position, targetPosition) < distance == m_withinRange;
+                return Vector3.Distance(agent.transform.position, targetPosition) <= m_distance == m_withinRange;
             }
 
             private void OnDrawGizmos()
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(transform.position, m_gizmoRadius);
+                Gizmos.DrawWireSphere(transform.position, m_distance);
             }
         }
     }
