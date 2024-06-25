@@ -758,11 +758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_maxSpawnTime
-      value: 0.5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_minSpawnTime
-      value: 0.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_agentContainer
@@ -770,12 +770,12 @@ PrefabInstance:
       objectReference: {fileID: 1334991370}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 0e621f4c9c1e03f49b638b15526e1b52, type: 2}
+      objectReference: {fileID: 11400000, guid: 0e98efd32265f2b4e8d4e26d0e685547, type: 2}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.data[1]
       value: 
@@ -783,6 +783,22 @@ PrefabInstance:
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: ea41a008c4ea0794ba4a407abdcc702e, type: 2}
+      objectReference: {fileID: 11400000, guid: 2f55c6d6fa4a2e049909192363917be1, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c8775fe4c4929442b5b8689ddc516bf, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e621f4c9c1e03f49b638b15526e1b52, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3116eeff3c3b456428d5cd463fec9b07, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3116eeff3c3b456428d5cd463fec9b07, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}

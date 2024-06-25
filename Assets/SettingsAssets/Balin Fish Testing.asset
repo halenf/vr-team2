@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Balin Fish Testing
   m_EditorClassIdentifier: 
   m_poolOrigin: {x: 0, y: 0, z: 0}
-  m_poolRadius: 20
-  m_maxFishCount: 5
+  m_poolRadius: 25
+  m_maxFishCount: 500
