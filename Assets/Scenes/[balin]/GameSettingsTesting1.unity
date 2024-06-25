@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b32de2d4773624d942c890acdbbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsAsset: {fileID: 11400000, guid: bc258522a7c0dbe4f9dedad81a0b27e9, type: 2}
+  settingsAsset: {fileID: 11400000, guid: b3aec9a19c7c6584db653d55c9b2455f, type: 2}
 --- !u!4 &67682303
 Transform:
   m_ObjectHideFlags: 0
@@ -768,5 +768,21 @@ PrefabInstance:
       propertyPath: m_agentContainer
       value: 
       objectReference: {fileID: 1334991370}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e621f4c9c1e03f49b638b15526e1b52, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ea41a008c4ea0794ba4a407abdcc702e, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ea41a008c4ea0794ba4a407abdcc702e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}

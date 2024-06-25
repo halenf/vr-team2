@@ -719,7 +719,7 @@ MonoBehaviour:
       m_Topology: 0
     m_Mesh: {fileID: 576703947}
   m_SkinMeshRef: {fileID: 0}
-  m_OriginalMeshObject: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_OriginalMeshObject: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 3}
   m_Mode: 0
 --- !u!1001 &77546667
 PrefabInstance:

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a27153a2f11704479605416a4428c84, type: 3}
+  m_Name: Freshwater Blanket Ray
+  m_EditorClassIdentifier: 
+  m_model: {fileID: 0}
+  m_silhouetteSize: 3
+  m_speciesName: Freshwater Blanket Ray
+  m_weight:
+    m_min: 0
+    m_max: 0
+  m_length:
+    m_min: 0
+    m_max: 0
+  m_lifeTime:
+    m_min: 25
+    m_max: 35
+  m_swimSpeed:
+    m_min: 2
+    m_max: 3
+  m_chaseSpeed:
+    m_min: 2
+    m_max: 3
+  m_spookSpeed:
+    m_min: 3
+    m_max: 5
+  m_swimRange:
+    m_min: 20
+    m_max: 30
+  m_swimDetectionRange:
+    m_min: 0.75
+    m_max: 1
+  m_bobberDetectionRange:
+    m_min: 2
+    m_max: 5
+  m_playerDetectionRange:
+    m_min: 3
+    m_max: 3
+  m_swimWaitTime:
+    m_min: 2
+    m_max: 5
+  m_bobberWaitTime:
+    m_min: 3
+    m_max: 6
+  m_pullStrength:
+    m_min: 1
+    m_max: 6
