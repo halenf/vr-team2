@@ -14,7 +14,15 @@ namespace FishingGame
         public class Bobber : MonoBehaviour
         {
             // Returns true if the bobber is below the water level
-            public bool isUnderwater { get { return transform.position.y <= GameSettings.POOL_HEIGHT; } }
+            public bool isUnderwater
+            {
+                get
+                {
+                    if (m_rodControl.rodState != RodController.RodState.Cast)
+                        return false;
+                    return transform.position.y <= GameSettings.POOL_HEIGHT;
+                }
+            }
             private Agent m_hookedAgent;
             private float m_agentPullStrength;
             // Returns true if there is a hooked agent
@@ -43,7 +51,7 @@ namespace FishingGame
             private void Update()
             {
                 // Lock the Y level while underwater
-                if (isUnderwater && !m_rigidbody.isKinematic)
+                if (isUnderwater)
                     transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
                 ReelIn();
             }
@@ -64,12 +72,13 @@ namespace FishingGame
                 if (hasHookedAgent)
                 {
                     // get the change in distance that the fish would apply to the bobber
-                    delta -= playerDirection * m_agentPullStrength * Time.deltaTime;
+                    delta += playerDirection * m_agentPullStrength * Time.deltaTime;
                 }
 
                 // get the change in distance that the rod wants to apply to the bobber
                 delta += playerDirection * m_rodControl.getReelForce * Time.deltaTime;
 
+                delta.y = GameSettings.POOL_HEIGHT;
                 // apply the change in distance
                 // should this be lerped??
                 transform.position += new Vector3(delta.x, 0, delta.z);
@@ -81,7 +90,7 @@ namespace FishingGame
                     if (hasHookedAgent)
                     {
                         m_rodControl.SurfaceFish(m_hookedAgent.fish);
-                        m_hookedAgent = null;
+                        Destroy(m_hookedAgent.gameObject);
                     }
                     else
                         m_rodControl.MountBobber();
@@ -97,7 +106,8 @@ namespace FishingGame
                 if (hasHookedAgent)
                     return false;
                 m_hookedAgent = agent;
-                m_hookedAgent.transform.SetParent(transform, false);
+                m_hookedAgent.transform.SetParent(transform);
+                m_hookedAgent.transform.position = transform.position;
                 return true;
             }
 

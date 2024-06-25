@@ -14,22 +14,22 @@ namespace FishingGame
         public class RodController : MonoBehaviour
         {
             //States
-            public enum state
+            public enum RodState
             {
                 Cast,
                 PreCast,
                 Casting,
                 Reeling
             }
-            private state m_rodState = 0;
-            public state getRodState
+            private RodState m_rodState = 0;
+            public RodState rodState
             {
                 get { return m_rodState; }
                 set { m_rodState = value; }
             }
             //Hook
             [Header("Bobber")]
-            [SerializeField] private GameObject m_bobber;
+            [SerializeField] private Bobber m_bobber;
             private Transform m_bobberHold;
             [SerializeField] private Transform m_rodTip;
             //Casting
@@ -61,17 +61,17 @@ namespace FishingGame
             {
                 switch (m_rodState)
                 {
-                    case state.Cast:
+                    case RodState.Cast:
                         //Set the line tension to a regular amount
                         m_lineTension = 0.75f;
                         //Check for any imput on the control stick
                         if (m_reelVelocity < 0)
                         {
-                            m_rodState = state.Reeling;
+                            m_rodState = RodState.Reeling;
                         }
                         DrawFishingLine();
                         break;
-                    case state.PreCast:
+                    case RodState.PreCast:
                         //Just draws a line along the rod to the bobber
                         List<Vector3> points = new List<Vector3>(3);
                         m_line.positionCount = 3;
@@ -80,22 +80,22 @@ namespace FishingGame
                         points.Add(m_bobber.transform.position);
                         m_line.SetPositions(points.ToArray());
                         break;
-                    case state.Casting:
+                    case RodState.Casting:
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Apply the controller's velocity to it
                         m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_forceScale, ForceMode.VelocityChange);
                         //The rod has now been cast
                         //Unparent the bobber from its mount
                         m_bobber.transform.SetParent(null);
-                        m_rodState = state.Cast;
+                        m_rodState = RodState.Cast;
                         break;
-                    case state.Reeling:
+                    case RodState.Reeling:
                         //Pull the bobber towards the player
-                        m_bobber.transform.position = Vector3.Lerp(new Vector3(m_bobber.transform.position.x, GameSettings.POOL_HEIGHT, m_bobber.transform.position.z), new Vector3(m_rodTip.position.x, GameSettings.POOL_HEIGHT, m_rodTip.position.z), Time.deltaTime);
+                        //m_bobber.transform.position = Vector3.Lerp(new Vector3(m_bobber.transform.position.x, GameSettings.POOL_HEIGHT, m_bobber.transform.position.z), new Vector3(m_rodTip.position.x, GameSettings.POOL_HEIGHT, m_rodTip.position.z), Time.deltaTime);
                         //Return to the cast state when no motion is inputed
                         if (m_reelVelocity >= 0)
                         {
-                            m_rodState = state.Cast;
+                            m_rodState = RodState.Cast;
                         }
                         DrawFishingLine();
                         break;
@@ -145,7 +145,7 @@ namespace FishingGame
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
                 m_bobber.transform.position = m_bobberHold.position;
-                m_rodState = state.PreCast;
+                m_rodState = RodState.PreCast;
             }
             /// <summary>
             /// Upon getting near to the player/pier, pull the fish from the water.
