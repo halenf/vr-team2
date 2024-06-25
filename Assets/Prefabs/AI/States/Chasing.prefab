@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
-  m_distance: 1
+  m_targetType: 1
+  m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 1
 --- !u!1001 &7435846437273920672
 PrefabInstance:
@@ -290,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
+  m_targetType: 2
   m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 0

@@ -1,4 +1,3 @@
-using FishingGame.FishingRod;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +6,19 @@ namespace FishingGame
 {
     namespace AI
     {
-        public class HookedBehaviour : Behaviour
+        public class WaitBobberBehaviour : Behaviour
         {
             public override void Enter(Agent agent)
             {
-                agent.animationController.ToggleBubbles(true);
-                agent.SetTargetPosition(agent.playerPosition);
+                agent.SetTargetPosition(agent.bobberPosition);
+
+                agent.animationController.ToggleBubbles(false);
             }
+
             public override void UpdateThis(Agent agent)
             {
-                agent.LookAwayFromTarget();
+                agent.LookAtTarget();
             }
         }
     }
-
 }

@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 7718830231814393744, guid: 5d5df26a1d6cee34daedd7a2d7f9f95c, type: 3}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_Name
-      value: ToWaitingSwim
+      value: ToWaitSwim
       objectReference: {fileID: 0}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_IsActive
@@ -201,8 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 0
+  m_targetType: 1
   m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 1
 --- !u!1001 &5206559460480671138
 PrefabInstance:
@@ -273,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 8452376617118891910, guid: c5243c5d6716ab54f8712f44a5ded74d, type: 3}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_Name
-      value: ToWaitingRod
+      value: ToWaitBobber
       objectReference: {fileID: 0}
     - target: {fileID: 5855507341264596267, guid: 4b2c39c560e18e74aa80a22b98cb213a, type: 3}
       propertyPath: m_IsActive
@@ -298,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
+  m_targetType: 2
   m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 1

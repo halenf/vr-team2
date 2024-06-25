@@ -41,10 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8357513582108247838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530966876bf8da145843d2b609a95f90, type: 3}
+  m_Script: {fileID: 11500000, guid: b061b11d6cc6da74297253d2ec816719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lookAtBobber: 1
 --- !u!1001 &3175543369962347460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54,7 +53,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6439325165255107649, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_Name
-      value: WaitingRod
+      value: WaitBobber
       objectReference: {fileID: 0}
     - target: {fileID: 6439325165255107651, guid: d33312447bf986d4a8362da0271559e6, type: 3}
       propertyPath: m_RootOrder
@@ -202,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1a962689d6e704d92dc77c06cc528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
+  m_targetType: 2
   m_time: 0
 --- !u!1001 &6645573165442358921
 PrefabInstance:
@@ -290,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb32ff242b4c8044d8219890341f2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetIsBobber: 1
+  m_targetType: 2
   m_distance: 0
+  m_target: {fileID: 0}
   m_withinRange: 0

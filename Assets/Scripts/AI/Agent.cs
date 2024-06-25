@@ -1,4 +1,5 @@
 using FishingGame.FishControls;
+using FishingGame.FishingRod;
 using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace FishingGame
             private Vector3 m_targetPosition = new Vector3();
             public Vector3 targetPosition { get { return m_targetPosition; } }
 
-            private BuoyantObject m_bobber;
+            private Bobber m_bobber;
+            public Bobber bobber { get { return m_bobber; } }
             public Vector3 bobberPosition 
             { get { return m_bobber.transform.position; }
               set { m_bobber.transform.position = value; } }
@@ -40,16 +42,10 @@ namespace FishingGame
             private float m_swimWaitTime;
             public float swimWaitTime { get { return m_swimWaitTime; } }
 
-            private float m_swimDetectionRange;
-            public float swimDetectionRange { get { return m_swimDetectionRange; } }
-
             private float m_bobberWaitTime;
             public float bobberWaitTime { get { return m_bobberWaitTime; } }
 
-            private float m_bobberDetectionRange;
-            public float bobberDetectionRange { get { return m_bobberDetectionRange; } }
-
-            public void Init(Fish fish, BuoyantObject bobber, Transform player)
+            public void Init(Fish fish, Bobber bobber, Transform player)
             {
                 m_fish = fish;
                 m_bobber = bobber;
@@ -85,9 +81,7 @@ namespace FishingGame
             private void SetAIVariables()
             {
                 m_swimWaitTime = m_fish.GetConstraint(m_fish.data.swimWaitTime);
-                m_swimDetectionRange = m_fish.GetConstraint(m_fish.data.swimDetectionRange);
                 m_bobberWaitTime = m_fish.GetConstraint(m_fish.data.bobberWaitTime);
-                m_bobberDetectionRange = m_fish.GetConstraint(m_fish.data.bobberDetectionRange);
             }
 
             public void MoveTowardsTarget(float speed)
