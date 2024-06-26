@@ -27,6 +27,7 @@ namespace FishingGame
 
         [Header("Fish Object")]
         [SerializeField] private GameObject m_model;
+        [SerializeField] private Sprite m_sprite;
         [SerializeField] private FishSilhouetteSize m_silhouetteSize;
 
         [Header("Core Data")]
@@ -50,6 +51,7 @@ namespace FishingGame
 
         // object
         public GameObject model { get { return m_model; } }
+        public Sprite sprite { get { return m_sprite; } }
         public FishSilhouetteSize silhouetteSize { get { return m_silhouetteSize; } }
 
         // core
