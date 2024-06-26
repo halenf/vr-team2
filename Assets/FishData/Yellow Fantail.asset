@@ -19,8 +19,8 @@ MonoBehaviour:
     m_min: 0
     m_max: 0
   m_length:
-    m_min: 0
-    m_max: 0
+    m_min: 0.24
+    m_max: 0.29
   m_lifeTime:
     m_min: 25
     m_max: 35
