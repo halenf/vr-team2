@@ -51,7 +51,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &2411465557228392518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822b2701139edee4d8f48b81e19136e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pullRange: 1
+  m_pullRange: 3
 --- !u!114 &4446802247342861076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b6a69f8ab28bf4db511230959ecdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_forceStrength: 20
-  m_minimumForce: 20
+  m_forceStrength: 5
+  m_minimumForce: 12
   m_isUnderwater: 0
 --- !u!1001 &7693923989023715520
 PrefabInstance:

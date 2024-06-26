@@ -80,6 +80,11 @@ namespace FishingGame
                     case RodState.Mounted:
                         break;
                     case RodState.Casting:
+                        if (m_bobber.transform.parent.childCount > 1)
+                        {
+                            m_rodState = RodState.Mounted;
+                            return;
+                        }
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Apply the controller's velocity to it
                         m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_forceScale, ForceMode.VelocityChange);
@@ -125,7 +130,7 @@ namespace FishingGame
                     points.Add(point.position);
                 }
                 //Add the tip to the list
-                points.Add(m_rodTip.position);
+                //points.Add(m_rodTip.position);
 
                 // if the rod is out, draw a line from the tip to the bobber
                 if (rodState != RodState.Mounted)
@@ -167,7 +172,7 @@ namespace FishingGame
             {
                 MountBobber();
                 //Instance the fish model as a child of the empty parent
-                GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
+                AttachObjectToDisplayPoint(Instantiate(fish.data.model).transform);
                 //Its a grabbale kinematic rigidbody, so add the components
                 /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 //fishRb.isKinematic = true;
@@ -183,7 +188,11 @@ namespace FishingGame
                 fishJoint.damper = 100.0f;
                 fishJoint.minDistance = 0;
                 fishJoint.maxDistance = 1;*/
-                caughtFish.transform.localPosition = Vector3.zero;
+            }
+            public void AttachObjectToDisplayPoint(Transform obj)
+            {
+                obj.SetParent(m_fishDisplayPoint);
+                obj.localPosition = Vector3.zero;
             }
         }
     }
