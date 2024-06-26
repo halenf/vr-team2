@@ -70,18 +70,8 @@ namespace FishingGame
                         {
                             m_rodState = RodState.Reeling;
                         }
-                        DrawFishingLine();
                         break;
                     case RodState.PreCast:
-                        //Just draws a line along the rod to the bobber
-                        List<Vector3> points = new List<Vector3>(3);
-                        m_line.positionCount = 1 + m_linePoints.Length;
-                        foreach (Vector2 point in m_linePoints)
-                        {
-                            points.Add(new Vector3(transform.position.x, transform.position.y + point.x, transform.position.z + point.y));
-                        }
-                        points.Add(m_bobber.transform.position);
-                        m_line.SetPositions(points.ToArray());
                         break;
                     case RodState.Casting:
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
@@ -100,42 +90,56 @@ namespace FishingGame
                         {
                             m_rodState = RodState.Cast;
                         }
-                        DrawFishingLine();
                         break;
 
                 }
+                DrawFishingLine();
             }
             /// <summary>
             /// Finds the mid point between 2 points, and lowers it slightly.
             /// </summary>
-            private void FindLinePoints(List<Vector3> points, int index, Vector3 initPos, Vector3 targPos)
+            private Vector3 FindLineHalfPoint(Vector3 initPos, Vector3 targPos)
             {
                 //find the mid point stuff;
                 float yDiff = initPos.y - targPos.y;
                 Vector3 pos = (initPos + targPos) / 2.0f;
                 pos.y = initPos.y - yDiff * m_lineTension;
 
-                points.Insert(index, pos);
+                return pos;
             }
             /// <summary>
             /// Draws the line when cast out
             /// </summary>
             private void DrawFishingLine()
             {
-                m_lineTension = 0.75f - 0.25f * -m_reelVelocity;
-                List<Vector3> points = new List<Vector3>(6);
-                m_line.positionCount = 4 + m_linePoints.Length;
-                foreach(Vector2 point in m_linePoints)
+                List<Vector3> points = new List<Vector3>();
+                //Draw the fishing line from the base of the rod to the tip
+                foreach (Vector2 point in m_linePoints)
                 {
-                    points.Add(new Vector3(transform.position.x, transform.position.y + point.x, transform.position.z + point.y));
+                    points.Add(transform.position + transform.forward * point.x + transform.up * point.y);
                 }
-                //mid
-                FindLinePoints(points, 2, m_rodTip.position, m_bobber.transform.position);
-                //outer
-                FindLinePoints(points, 3, points[2], m_bobber.transform.position);
-                //inner
-                FindLinePoints(points, 2, m_rodTip.position, points[2]);
+                //Add the tip to the list
+                points.Add(m_rodTip.position);
+
+                // if the rod is out, draw a line from the tip to the bobber
+                if (rodState != RodState.PreCast)
+                {
+                    m_lineTension = 0.75f - 0.25f * -m_reelVelocity;
+                    Vector3[] segs = new Vector3[3];
+                    //mid
+                    segs[1] = FindLineHalfPoint(m_rodTip.position, m_bobber.transform.position);
+                    //close
+                    segs[0] = FindLineHalfPoint(m_rodTip.position, segs[1]);
+                    //far
+                    segs[2] = FindLineHalfPoint(segs[2], m_bobber.transform.position);
+
+                    points.AddRange(segs);
+                }
+
+                //Then from the tip to the bobber
                 points.Add(m_bobber.transform.position);
+                //attach the points
+                m_line.positionCount = points.Count;
                 m_line.SetPositions(points.ToArray());
             }
             /// <summary>
