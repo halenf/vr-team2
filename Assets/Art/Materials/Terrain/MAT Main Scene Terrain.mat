@@ -8,21 +8,24 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT Main Scene Terrain
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ValidKeywords:
+  m_Shader: {fileID: -6465566751694194690, guid: 9fce06c2a0e58a64590034d06336986c, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseColorTexture:
+        m_Texture: {fileID: 2800000, guid: b41056f66c9fe70498651329091082af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: b41056f66c9fe70498651329091082af, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -55,6 +58,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d05498250f976df4aa6f092b09c42797, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -81,6 +88,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_c3323d9d6a354a70b26eed8c20185909: 0
     - _AlphaClip: 0
     - _AmbientStrength: 0.25
     - _Blend: 0
@@ -98,13 +106,18 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _HighlightArea: 0.2
+    - _HighlightStrength: 1
     - _LightingCutoff: 0
     - _Metallic: 0
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RimArea: 0.548
+    - _RimStrength: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -118,6 +131,9 @@ Material:
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _HighlightColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0.414}
+    - _RimColor: {r: 0.7429245, g: 0.99056596, b: 0.7509388, a: 0.185}
+    - _ShadowColor: {r: 0.08651335, g: 0.0859965, b: 0.1509285, a: 0.23}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_BuildTextureStacks: []
