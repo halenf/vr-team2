@@ -53,7 +53,7 @@ namespace FishingGame
             private float m_lineTension = 0.75f;
             [Header("Fishing Line Visuals")]
             [Tooltip("The points along the rod that the fishing line should go through.")]
-            [SerializeField] private Vector2[] m_linePoints;
+            [SerializeField] private Transform[] m_linePoints;
 
             private void Start()
             {
@@ -120,9 +120,9 @@ namespace FishingGame
             {
                 List<Vector3> points = new List<Vector3>();
                 //Draw the fishing line from the base of the rod to the tip
-                foreach (Vector2 point in m_linePoints)
+                foreach (Transform point in m_linePoints)
                 {
-                    points.Add(transform.position + transform.forward * point.x + transform.up * point.y);
+                    points.Add(point.position);
                 }
                 //Add the tip to the list
                 points.Add(m_rodTip.position);
