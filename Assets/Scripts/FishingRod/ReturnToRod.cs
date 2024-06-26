@@ -9,41 +9,48 @@ namespace FishingGame
     {
         public class ReturnToRod : MonoBehaviour
         {
-            private float m_timer;
-            private float m_minimumVelocity;
+            [SerializeField] private float m_timer;
+            [SerializeField] private float m_minimumVelocity;
+
             private Rigidbody m_rb;
             private RodController m_rod;
             private float m_counter;
+            private bool m_attachedToObject;
 
-            public void Init(float timer, float minVelocity)
-            {
-                m_timer = timer;
-                m_minimumVelocity = minVelocity;
-            }
-
-            private void Start()
+            private void Awake()
             {
                 m_rb = GetComponent<Rigidbody>();
                 m_rod = FindObjectOfType<RodController>();
+                m_counter = 0;
+                m_attachedToObject = true;
             }
 
             private void Update()
             {
-                if (m_rb.velocity.magnitude < m_minimumVelocity)
+                if (!m_attachedToObject)
                 {
-                    m_counter += Time.deltaTime;
-                }
+                    if (m_rb.velocity.magnitude < m_minimumVelocity)
+                    {
+                        m_counter += Time.deltaTime;
+                    }
 
-                if (m_counter > m_timer)
-                {
-                    ReturnThisToRod();
+                    if (m_counter > m_timer)
+                    {
+                        ReturnThisToRod();
+                    }
                 }
+            }
+
+            public void Detach()
+            {
+                m_attachedToObject = false;
             }
 
             public void ReturnThisToRod()
             {
-                //m_rod.AttachObjectToDisplayPoint(transform);
-                Destroy(this);
+                m_rod.AttachObjectToDisplayPoint(transform);
+                m_counter = 0;
+                m_attachedToObject = true;
             }
         }
     }

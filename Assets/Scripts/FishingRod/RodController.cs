@@ -4,6 +4,8 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
+using FishingGame.Objects;
+using UnityEngine.Events;
 
 namespace FishingGame
 {
@@ -54,6 +56,7 @@ namespace FishingGame
             [Header("Fishing Line Visuals")]
             [Tooltip("The points along the rod that the fishing line should go through.")]
             [SerializeField] private Transform[] m_linePoints;
+            private GameObject m_fishInstance;
 
             private void Start()
             {
@@ -80,7 +83,7 @@ namespace FishingGame
                     case RodState.Mounted:
                         break;
                     case RodState.Casting:
-                        if (m_bobber.transform.parent.childCount > 1)
+                        if (m_fishInstance)
                         {
                             m_rodState = RodState.Mounted;
                             return;
@@ -172,7 +175,9 @@ namespace FishingGame
             {
                 MountBobber();
                 //Instance the fish model as a child of the empty parent
-                AttachObjectToDisplayPoint(Instantiate(fish.data.model).transform);
+                m_fishInstance = Instantiate(fish.data.model);
+                AttachObjectToDisplayPoint(m_fishInstance.transform);
+                
                 //Its a grabbale kinematic rigidbody, so add the components
                 /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 //fishRb.isKinematic = true;
@@ -192,7 +197,9 @@ namespace FishingGame
             public void AttachObjectToDisplayPoint(Transform obj)
             {
                 obj.SetParent(m_fishDisplayPoint);
+                obj.GetComponent<Rigidbody>().isKinematic = true;
                 obj.localPosition = Vector3.zero;
+                obj.rotation = Quaternion.identity;
             }
         }
     }
