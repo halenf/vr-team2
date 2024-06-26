@@ -14,7 +14,15 @@ namespace FishingGame
         public class Bobber : MonoBehaviour
         {
             // Returns true if the bobber is below the water level
-            public bool isUnderwater { get { return transform.position.y <= GameSettings.POOL_HEIGHT; } }
+            public bool isUnderwater
+            {
+                get
+                {
+                    if (m_rodControl.rodState == RodController.RodState.Mounted)
+                        return false;
+                    return transform.position.y <= GameSettings.POOL_HEIGHT + 0.25f;
+                }
+            }
             private Agent m_hookedAgent;
             private float m_agentPullStrength;
             // Returns true if there is a hooked agent
@@ -23,15 +31,16 @@ namespace FishingGame
             // This could be a func, but this works nicely too
             // Returns the distance between the bobber and the player
             private Vector3 playerDistance { get { return transform.position - m_playerTransform.position; } }
-            // Returns the direction between the bobber and the player
-            private Vector3 playerDirection { get { return playerDistance.normalized; } }
-            // The range a which the bobber is pulled out of the water
+            //Returns the direction between the bobber and the player
+            private Vector3 rodTipDirection { get { return (transform.position - m_rodControl.getTip.position).normalized; } }
+            [Tooltip("The range at which the bobber is pulled out of the water")]
             [SerializeField] private float m_pullRange = 1.0f;
             private RodController m_rodControl;
             private Rigidbody m_rigidbody;
-
+            private BuoyantObject m_datBuoy;
             void Start()
             {
+                m_datBuoy = GetComponent<BuoyantObject>();
                 m_rigidbody = GetComponent<Rigidbody>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
                 m_rodControl = m_playerTransform.GetComponentInChildren<RodController>();
@@ -43,8 +52,10 @@ namespace FishingGame
             private void Update()
             {
                 // Lock the Y level while underwater
-                if (isUnderwater && !m_rigidbody.isKinematic)
-                    transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
+                /*if (isUnderwater)
+                    transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);*/
+
+                if(m_rodControl.rodState != RodController.RodState.Mounted)
                 ReelIn();
             }
 
@@ -64,12 +75,14 @@ namespace FishingGame
                 if (hasHookedAgent)
                 {
                     // get the change in distance that the fish would apply to the bobber
-                    delta -= playerDirection * m_agentPullStrength * Time.deltaTime;
+                    delta += rodTipDirection * m_agentPullStrength * Time.deltaTime;
                 }
 
                 // get the change in distance that the rod wants to apply to the bobber
-                delta += playerDirection * m_rodControl.getReelForce * Time.deltaTime;
+                // should be changed to direction to rod tip instead of player position
+                delta += rodTipDirection * m_rodControl.getReelForce * Time.deltaTime;
 
+                delta.y = GameSettings.POOL_HEIGHT;
                 // apply the change in distance
                 // should this be lerped??
                 transform.position += new Vector3(delta.x, 0, delta.z);
@@ -81,7 +94,7 @@ namespace FishingGame
                     if (hasHookedAgent)
                     {
                         m_rodControl.SurfaceFish(m_hookedAgent.fish);
-                        m_hookedAgent = null;
+                        Destroy(m_hookedAgent.gameObject);
                     }
                     else
                         m_rodControl.MountBobber();
@@ -97,7 +110,8 @@ namespace FishingGame
                 if (hasHookedAgent)
                     return false;
                 m_hookedAgent = agent;
-                m_hookedAgent.transform.SetParent(transform, false);
+                m_hookedAgent.transform.SetParent(transform);
+                m_hookedAgent.transform.position = transform.position;
                 return true;
             }
 

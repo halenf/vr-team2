@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4627895588161809540}
   - component: {fileID: 4627895588161809542}
   - component: {fileID: 4627895588161809541}
+  - component: {fileID: 137493293772766108}
   m_Layer: 0
   m_Name: BobberPoint
   m_TagString: Untagged
@@ -74,6 +75,18 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &137493293772766108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627895588161809539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32821ae34cdc7bd448af8a11f1370565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4627895589450344270
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ namespace FishingGame
                 {
                     case InputActionPhase.Canceled:
                         Debug.Log("Unlocking line.");
-                        if(m_base.getRodState == RodController.state.PreCast)
-                            m_base.getRodState = RodController.state.Casting;
+                        if(m_base.rodState == RodController.RodState.Mounted)
+                            m_base.rodState = RodController.RodState.Casting;
                         break;
 
                 }
@@ -40,10 +40,10 @@ namespace FishingGame
                 switch (action.phase)
                 {
                     case InputActionPhase.Started:
-                        m_base.getRodState = RodController.state.Reeling;
+                        m_base.rodState = RodController.RodState.Reeling;
                         break;
                     case InputActionPhase.Canceled:
-                        m_base.getRodState = RodController.state.Cast;
+                        m_base.rodState = RodController.RodState.Cast;
                         break;
                 }
             }
