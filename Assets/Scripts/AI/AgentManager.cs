@@ -174,7 +174,7 @@ namespace FishingGame
                 }
                 m_fishData = fishData.ToArray();
                 if (m_fishData.Length > 0)
-                    Debug.Log($"Successfully loaded all FishDatas into the {name} Agent Manager.");
+                    Debug.Log($"Successfully loaded all FishDatas at {m_fishDataPath} into the {name} Agent Manager.");
 #endif
             }
 

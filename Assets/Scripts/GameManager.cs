@@ -5,7 +5,7 @@ using FishingGame;
 
 public class GameManager : MonoBehaviour
 {
-    public GameSettingsAsset settingsAsset;
+    [SerializeField] private GameSettingsAsset m_settingsAsset;
     
     // Start is called before the first frame update
     void Start()
@@ -22,14 +22,14 @@ public class GameManager : MonoBehaviour
     [ContextMenu("Load Settings")]
     public void LoadSettings()
     {
-        if (settingsAsset != null)
+        if (m_settingsAsset != null)
         {
-            GameSettings.LoadSettingsFromAsset(settingsAsset);
+            GameSettings.LoadSettingsFromAsset(m_settingsAsset);
             Debug.Log("GameManager successfully loaded GameSettingsAsset!");
         }
         else
         {
-            throw new System.NullReferenceException("There isn't a GameSettingsAsset attached to the GaneManager.");
+            throw new System.NullReferenceException("There isn't a GameSettingsAsset attached to the GameManager.");
         }
     }
 }
