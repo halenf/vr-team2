@@ -32,7 +32,7 @@ namespace FishingGame
             // Returns the distance between the bobber and the player
             private Vector3 playerDistance { get { return transform.position - m_playerTransform.position; } }
             // Returns the direction between the bobber and the player
-            private Vector3 playerDirection { get { return playerDistance.normalized; } }
+            private Vector3 rodTipDirection { get { return (transform.position - m_rodControl.getTip.position).normalized; } }
             // The range a which the bobber is pulled out of the water
             [SerializeField] private float m_pullRange = 1.0f;
             private RodController m_rodControl;
@@ -75,12 +75,12 @@ namespace FishingGame
                 if (hasHookedAgent)
                 {
                     // get the change in distance that the fish would apply to the bobber
-                    delta += playerDirection * m_agentPullStrength * Time.deltaTime;
+                    delta += rodTipDirection * m_agentPullStrength * Time.deltaTime;
                 }
 
                 // get the change in distance that the rod wants to apply to the bobber
                 // should be changed to direction to rod tip instead of player position
-                delta += playerDirection * m_rodControl.getReelForce * Time.deltaTime;
+                delta += rodTipDirection * m_rodControl.getReelForce * Time.deltaTime;
 
                 delta.y = GameSettings.POOL_HEIGHT;
                 // apply the change in distance

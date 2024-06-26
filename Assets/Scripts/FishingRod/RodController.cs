@@ -32,6 +32,7 @@ namespace FishingGame
             [SerializeField] private Bobber m_bobber;
             private Transform m_bobberHold;
             [SerializeField] private Transform m_rodTip;
+            public Transform getTip { get { return m_rodTip; } }
             //Casting
             private Vector3 m_handVelocity;
             public Vector3 setHandVelocity { set { m_handVelocity = value; } }
@@ -159,14 +160,25 @@ namespace FishingGame
             /// </summary>
             public void SurfaceFish(Fish fish)
             {
+                MountBobber();
                 //Instance the fish model as a child of the empty parent
                 GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
                 //Its a grabbale kinematic rigidbody, so add the components
                 Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
+                //fishRb.isKinematic = true;
+                fishRb.useGravity = false;
                 XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
-                fishRb.isKinematic = true;
                 fishGrab.useDynamicAttach = true;
-                MountBobber();
+                fishGrab.retainTransformParent = false;
+                fishGrab.forceGravityOnDetach = true;
+                /*SpringJoint fishJoint = caughtFish.AddComponent<SpringJoint>();
+                fishJoint.autoConfigureConnectedAnchor = false;
+                fishJoint.connectedAnchor = m_fishDisplayPoint.position;
+                fishJoint.spring = 10000.0f;
+                fishJoint.damper = 100.0f;
+                fishJoint.minDistance = 0;
+                fishJoint.maxDistance = 1;*/
+                caughtFish.transform.localPosition = Vector3.zero;
             }
         }
     }
