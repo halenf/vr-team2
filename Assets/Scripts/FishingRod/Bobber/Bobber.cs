@@ -31,9 +31,9 @@ namespace FishingGame
             // This could be a func, but this works nicely too
             // Returns the distance between the bobber and the player
             private Vector3 playerDistance { get { return transform.position - m_playerTransform.position; } }
-            // Returns the direction between the bobber and the player
+            //Returns the direction between the bobber and the player
             private Vector3 rodTipDirection { get { return (transform.position - m_rodControl.getTip.position).normalized; } }
-            // The range a which the bobber is pulled out of the water
+            [Tooltip("The range at which the bobber is pulled out of the water")]
             [SerializeField] private float m_pullRange = 1.0f;
             private RodController m_rodControl;
             private Rigidbody m_rigidbody;

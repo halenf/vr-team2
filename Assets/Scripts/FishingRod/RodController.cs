@@ -37,17 +37,22 @@ namespace FishingGame
             private Vector3 m_handVelocity;
             public Vector3 setHandVelocity { set { m_handVelocity = value; } }
             [Header("Casting")]
+            [Tooltip("The scale of the force applied to the bobber when casting.")]
             [SerializeField] private float m_forceScale;
             //Reeling
             private float m_reelVelocity;
             public float setReelVelo { set { m_reelVelocity = Mathf.Clamp(value, -1.0f, 0.0f); } }
             [Header("Reeling")]
+            [Tooltip("The speed which the bobber is reeled in by.")]
             [SerializeField] private float m_reelScale = 1;
             public float getReelForce { get { return m_reelVelocity * m_reelScale; } }
+            [Tooltip("The transform to mount the fish at.")]
             [SerializeField] private Transform m_fishDisplayPoint;
-            [Header("Fishing Line Visuals")]
+            //Fishing line visuals
             private LineRenderer m_line;
-            [SerializeField, Range(0.5f, 1f)] private float m_lineTension = 0.75f;
+            private float m_lineTension = 0.75f;
+            [Header("Fishing Line Visuals")]
+            [Tooltip("The points along the rod that the fishing line should go through.")]
             [SerializeField] private Vector2[] m_linePoints;
 
             private void Start()
