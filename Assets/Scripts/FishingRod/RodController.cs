@@ -17,7 +17,7 @@ namespace FishingGame
             public enum RodState
             {
                 Cast,
-                PreCast,
+                Mounted,
                 Casting,
                 Reeling
             }
@@ -71,7 +71,7 @@ namespace FishingGame
                             m_rodState = RodState.Reeling;
                         }
                         break;
-                    case RodState.PreCast:
+                    case RodState.Mounted:
                         break;
                     case RodState.Casting:
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
@@ -122,7 +122,7 @@ namespace FishingGame
                 points.Add(m_rodTip.position);
 
                 // if the rod is out, draw a line from the tip to the bobber
-                if (rodState != RodState.PreCast)
+                if (rodState != RodState.Mounted)
                 {
                     m_lineTension = 0.75f - 0.25f * -m_reelVelocity;
                     Vector3[] segs = new Vector3[3];
@@ -131,7 +131,7 @@ namespace FishingGame
                     //close
                     segs[0] = FindLineHalfPoint(m_rodTip.position, segs[1]);
                     //far
-                    segs[2] = FindLineHalfPoint(segs[2], m_bobber.transform.position);
+                    segs[2] = FindLineHalfPoint(segs[1], m_bobber.transform.position);
 
                     points.AddRange(segs);
                 }
@@ -151,8 +151,8 @@ namespace FishingGame
                 //m_reelFish.SurfaceFish();
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
-                m_bobber.transform.position = m_bobberHold.position;
-                m_rodState = RodState.PreCast;
+                m_bobber.transform.localPosition = Vector3.zero;
+                m_rodState = RodState.Mounted;
             }
             /// <summary>
             /// Upon getting near to the player/pier, pull the fish from the water.

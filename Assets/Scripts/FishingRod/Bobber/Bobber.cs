@@ -18,7 +18,7 @@ namespace FishingGame
             {
                 get
                 {
-                    if (m_rodControl.rodState == RodController.RodState.PreCast)
+                    if (m_rodControl.rodState == RodController.RodState.Mounted)
                         return false;
                     return transform.position.y <= GameSettings.POOL_HEIGHT + 0.25f;
                 }
@@ -55,10 +55,7 @@ namespace FishingGame
                 if (isUnderwater)
                     transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
 
-                /*if (isUnderwater && !m_rigidbody.isKinematic)
-                    m_rigidbody.isKinematic = true;
-                else
-                    m_rigidbody.isKinematic = false;*/
+                if(m_rodControl.rodState != RodController.RodState.Mounted)
                 ReelIn();
             }
 
