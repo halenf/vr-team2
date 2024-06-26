@@ -169,13 +169,13 @@ namespace FishingGame
                 //Instance the fish model as a child of the empty parent
                 GameObject caughtFish = Instantiate(fish.data.model, m_fishDisplayPoint);
                 //Its a grabbale kinematic rigidbody, so add the components
-                Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
+                /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 //fishRb.isKinematic = true;
-                fishRb.useGravity = false;
-                XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
+                fishRb.useGravity = false;*/
+                /*XRGrabInteractable fishGrab = caughtFish.AddComponent<XRGrabInteractable>();
                 fishGrab.useDynamicAttach = true;
                 fishGrab.retainTransformParent = false;
-                fishGrab.forceGravityOnDetach = true;
+                fishGrab.forceGravityOnDetach = true;*/
                 /*SpringJoint fishJoint = caughtFish.AddComponent<SpringJoint>();
                 fishJoint.autoConfigureConnectedAnchor = false;
                 fishJoint.connectedAnchor = m_fishDisplayPoint.position;
