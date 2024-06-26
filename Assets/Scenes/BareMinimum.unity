@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18372107, g: 0.2291378, b: 0.3047861, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_agentContainer
       value: 
       objectReference: {fileID: 1640133496}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ecacabb74d0e1d443b09bf9c58c75b8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
 --- !u!1 &349466486
@@ -316,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b32de2d4773624d942c890acdbbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsAsset: {fileID: 11400000, guid: 2332a8176df04b14c96cc1c2b21b5246, type: 2}
+  m_settingsAsset: {fileID: 11400000, guid: b4fa42d52d2675d4b8cc13a00a1a9cdd, type: 2}
 --- !u!4 &1640133496
 Transform:
   m_ObjectHideFlags: 0
