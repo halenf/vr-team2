@@ -83,8 +83,7 @@ MonoBehaviour:
   m_rodTip: {fileID: 6464047157221814696}
   m_forceScale: 1
   m_reelScale: 10
-  m_fishDisplayPoint: {fileID: 0}
-  m_lineTension: 0.75
+  m_fishDisplayPoint: {fileID: 6547717381502013303}
   m_linePoints:
   - {x: 0.14, y: 0.1}
   - {x: 0.16, y: 0.42}

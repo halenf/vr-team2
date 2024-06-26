@@ -85,16 +85,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411465557228392561}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b6a69f8ab28bf4db511230959ecdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_underwaterDrag: 10
-  m_underwaterAngularDrag: 3
-  m_airDrag: 1
-  m_airAngularDrag: 3
-  m_floatingPower: 135
+  m_forceStrength: 20
+  m_minimumForce: 20
+  m_isUnderwater: 0
 --- !u!1 &2637103825153601647
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,8 +52,8 @@ namespace FishingGame
             private void Update()
             {
                 // Lock the Y level while underwater
-                if (isUnderwater)
-                    transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
+                /*if (isUnderwater)
+                    transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);*/
 
                 if(m_rodControl.rodState != RodController.RodState.Mounted)
                 ReelIn();
