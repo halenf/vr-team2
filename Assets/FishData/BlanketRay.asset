@@ -10,12 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a27153a2f11704479605416a4428c84, type: 3}
+<<<<<<<< HEAD:Assets/FishData/BlanketRay.asset
   m_Name: BlanketRay
   m_EditorClassIdentifier: 
   m_model: {fileID: 1754754513174346070, guid: 8a347248109af46448ee2c11708d72d3, type: 3}
   m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_silhouetteSize: 1
   m_speciesName: Twin Bass
+========
+  m_Name: CommonGumpie
+  m_EditorClassIdentifier: 
+  m_model: {fileID: 1754754513174346070, guid: 19b03bd06c43b8b4297e5f3489463a29, type: 3}
+  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_silhouetteSize: 1
+  m_speciesName: Common Gumpie
+>>>>>>>> main:Assets/FishData/CommonGumpie.asset
   m_weight:
     m_min: 4
     m_max: 6
