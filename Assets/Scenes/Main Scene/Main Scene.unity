@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b32de2d4773624d942c890acdbbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsAsset: {fileID: 11400000, guid: b4fa42d52d2675d4b8cc13a00a1a9cdd, type: 2}
+  m_settingsAsset: {fileID: 0}
 --- !u!4 &1618978620
 Transform:
   m_ObjectHideFlags: 0
