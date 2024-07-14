@@ -22,7 +22,7 @@ namespace FishingGame
 
             private void Start()
             {
-                Init(FindObjectOfType<FishChecklist>());
+                Init(GameObject.FindWithTag("Player").GetComponent<FishChecklist>());
             }
 
             public void Init(FishChecklist fishChecklist)
