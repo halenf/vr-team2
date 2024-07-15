@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3729331972281016285}
-  - component: {fileID: 319443581873819768}
-  - component: {fileID: 2560880740695729330}
   - component: {fileID: 7549079263685240747}
   - component: {fileID: 7549079263685240746}
   - component: {fileID: 7549079263685240744}
@@ -32,60 +30,12 @@ Transform:
   m_LocalPosition: {x: -1.59, y: 0.01, z: 4.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3028912976985617323}
+  - {fileID: 988088068719267920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &319443581873819768
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4074331626721592679}
-  m_Mesh: {fileID: -4248296380862753294, guid: e95555c4d8ac4f049a3639af70607aa1, type: 3}
---- !u!23 &2560880740695729330
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4074331626721592679}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c7b368ebefc8a3243b58ab0e87e500c2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &7549079263685240747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,8 +77,195 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b6a69f8ab28bf4db511230959ecdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_underwaterDrag: 10
-  m_underwaterAngularDrag: 3
-  m_airDrag: 1
-  m_airAngularDrag: 3
-  m_floatingPower: 135
+  m_forceStrength: 5
+  m_minimumForce: 12
+  m_isUnderwater: 0
+--- !u!1 &9047514246759239725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3028912976985617323}
+  - component: {fileID: 330237103943605218}
+  - component: {fileID: 1454682500763908608}
+  m_Layer: 0
+  m_Name: Duck MODEL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3028912976985617323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9047514246759239725}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3729331972281016285}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &330237103943605218
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9047514246759239725}
+  m_Mesh: {fileID: -4248296380862753294, guid: e95555c4d8ac4f049a3639af70607aa1, type: 3}
+--- !u!23 &1454682500763908608
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9047514246759239725}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c7b368ebefc8a3243b58ab0e87e500c2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3592598559036821706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3729331972281016285}
+    m_Modifications:
+    - target: {fileID: 24915599637734098, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_Name
+      value: Duck SFXController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_collectionName
+      value: Ambient Duck Quacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_clipName
+      value: Ambient Duck Quack 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_clipName
+      value: Ambient Duck Quack 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf2126ca248ee24a8c790c5cbdce701, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47093d2585dff9b49846298ae39218b7, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+--- !u!4 &988088068719267920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+  m_PrefabInstance: {fileID: 3592598559036821706}
+  m_PrefabAsset: {fileID: 0}
