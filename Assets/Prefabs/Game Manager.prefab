@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: -0.59479463, y: -3.0655642, z: 12.808807}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1215065816272006371}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,4 +45,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b32de2d4773624d942c890acdbbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_settingsAsset: {fileID: 0}
+  m_settingsAsset: {fileID: 11400000, guid: b4fa42d52d2675d4b8cc13a00a1a9cdd, type: 2}
+--- !u!1001 &3220595365681359993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2096623273169952745}
+    m_Modifications:
+    - target: {fileID: 24915599637734098, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_Name
+      value: Game Manager SFXController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_collectionName
+      value: Ambient Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_collectionName
+      value: Ambient Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_clipName
+      value: Ambient Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_clipName
+      value: Ambient Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 30051cf8a7fd7aa42b8442aca899835b, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ef3ee6bc1bcb8e4c8805b567b2dd989, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+--- !u!4 &1215065816272006371 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+  m_PrefabInstance: {fileID: 3220595365681359993}
+  m_PrefabAsset: {fileID: 0}

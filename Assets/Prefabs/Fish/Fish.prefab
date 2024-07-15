@@ -117,7 +117,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 24915599637734098, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_Name
-      value: SFXController
+      value: Fish SFXController
       objectReference: {fileID: 0}
     - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_RootOrder
@@ -165,44 +165,120 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_collectionName
-      value: Bubbles
+      value: Ambient Fish Splashes
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[1].m_collectionName
-      value: Bubbles
+      value: Fish Thrown Into Lake Splashes
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitch
-      value: -1.22
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[1].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[2].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[3].m_pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_volume
-      value: 0.699
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_volume
-      value: 0.426
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[1].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[2].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[3].m_volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_clipName
-      value: 
+      value: Fish Splash 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_clipName
+      value: Fish Splash 1
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_clipName
-      value: Bubbles 1
+      value: Fish Thrown Into Lake Splash 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[1].m_clipName
+      value: Fish Thrown Into Lake Splash 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[2].m_clipName
+      value: Fish Thrown Into Lake Splash 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[3].m_clipName
+      value: Fish Thrown Into Lake Splash 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 60e088fe172bf7a43a5b92e5fd78ae7a, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7836e3396d296e540bae33904611b477, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 25f433393e2a0914fbdc280f3370f00a, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[1].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c34ec4e758ab96a4aa94e538832a2a04, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[2].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 31a19a2239e6a1e4d9dbedb31c8fefb8, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[1].m_soundClips.Array.data[3].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf7f65c3f3b9ff41884403c31940aec, type: 3}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitchVariation
       value: 0.27
