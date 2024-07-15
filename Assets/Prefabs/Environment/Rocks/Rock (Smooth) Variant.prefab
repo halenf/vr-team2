@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1544107576720167920, guid: 9d9516d6f41ea9840bc711f1cd76b27d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 34a7003e3b24cbe4eab91f3c72a83b0a, type: 2}
+      objectReference: {fileID: 2100000, guid: 22fa054d4f2d41643aa275055e8be121, type: 2}
     - target: {fileID: 3143478576625060230, guid: 9d9516d6f41ea9840bc711f1cd76b27d, type: 3}
       propertyPath: m_Name
       value: Rock (Smooth) Variant
