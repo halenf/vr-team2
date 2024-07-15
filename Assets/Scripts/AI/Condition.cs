@@ -9,11 +9,12 @@ namespace FishingGame
     {
         public abstract class Condition : MonoBehaviour
         {
-            [SerializeField] protected enum TargetType
+            [SerializeField] protected enum TargetValueType
             {
                 Value,
-                Target,
-                Bobber
+                FishTarget,
+                Bobber,
+                Spooked
             }
 
             public virtual void Enter(Agent agent) { }

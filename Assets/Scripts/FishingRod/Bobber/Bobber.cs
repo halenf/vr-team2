@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using FishingGame.Objects;
 using FishingGame.AI;
-using Unity.VisualScripting;
 
 namespace FishingGame
 {
@@ -117,11 +117,13 @@ namespace FishingGame
 
             private void OnDrawGizmos()
             {
+#if UNITY_EDITOR
                 if (!hasHookedAgent)
                 {
-                    Gizmos.color = Color.yellow;
-                    Gizmos.DrawWireSphere(transform.position, m_pullRange);
+                    Handles.color = Color.yellow;
+                    Handles.DrawWireDisc(transform.position, Vector3.up, m_pullRange);
                 }
+#endif
             }
         }
     }

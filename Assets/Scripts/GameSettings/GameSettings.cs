@@ -18,7 +18,7 @@ namespace FishingGame
             float angle = Random.Range(0, 2f * Mathf.PI);
 
             Vector3 position = new Vector3(POOL_ORIGIN.x + radius * Mathf.Cos(angle),
-                                           POOL_ORIGIN.y,
+                                           POOL_HEIGHT,
                                            POOL_ORIGIN.z + radius * Mathf.Sin(angle));
 
             return position;

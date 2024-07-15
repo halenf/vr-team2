@@ -1,6 +1,4 @@
-using FishingGame.FishControls;
 using FishingGame.FishingRod;
-using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,9 +31,11 @@ namespace FishingGame
                 }
             }
 
-            [Header("Constant Objects")]
-            private Bobber m_bobberTransform;
+            // references
+            private Bobber m_bobber;
             private Transform m_playerTransform;
+
+            [SerializeField] private int m_fishToPrespawn = 0;
 
             [Header("Agent Spawning")]
             [Tooltip("Fish prefab goes here")]
@@ -56,7 +56,7 @@ namespace FishingGame
             private List<AgentTracker> m_agents;
             public List<Agent> currentAgents { get { return m_agents.Select(agentTracker => agentTracker.agent).ToList(); } }
 
-            private Vector3 m_nextSpawnPosition;
+            private Vector3 m_nextSpawnPosition = Vector3.up;
 
             private void Start()
             {
@@ -72,12 +72,19 @@ namespace FishingGame
                 // set an initial spawn time
                 m_spawnTimer = GetRandomSpawnTime();
 
-                // calc next spawn position
+                // get an initial spawn position
                 m_nextSpawnPosition = GameSettings.get_random_position_in_pool();
 
                 // get bobber and player transform
-                m_bobberTransform = FindObjectOfType<Bobber>();
+                m_bobber = FindObjectOfType<Bobber>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+                // pre-spawn some fish
+                for (int s = 0; s < m_fishToPrespawn && s < GameSettings.MAX_FISH_COUNT; s++)
+                {
+                    SpawnAgent();
+                    m_nextSpawnPosition = GameSettings.get_random_position_in_pool();
+                }
             }
 
             private void Update()
@@ -86,7 +93,7 @@ namespace FishingGame
                 List<AgentTracker> agentsToDespawn = new List<AgentTracker>();
                 foreach (AgentTracker agentTracker in m_agents)
                 {
-                    if (agentTracker.lifeTime <= 0)
+                    if (agentTracker.lifeTime <= 0 && agentTracker.agent.stateMachine.currentState == "Hooked")
                         agentsToDespawn.Add(agentTracker);
                     else
                         agentTracker.ChangeLifeTime(-Time.deltaTime);
@@ -137,7 +144,7 @@ namespace FishingGame
                     fish.Init(m_fishData[Random.Range(0, m_fishData.Length)]);
 
                     // add the fish to the agent
-                    agent.Init(fish, m_bobberTransform, m_playerTransform);
+                    agent.Init(fish, m_bobber, m_playerTransform);
                 }
 
                 // attach the silhouette and scale it
@@ -180,27 +187,29 @@ namespace FishingGame
 
             private void OnDrawGizmos()
             {
+#if UNITY_EDITOR
                 // draw bobber position
-                if (m_bobberTransform != null)
+                if (m_bobber != null)
                 {
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawWireCube(m_bobberTransform.transform.position, new Vector3(0.5f, 0.5f, 0.5f));
+                    Handles.color = Color.red;
+                    Handles.DrawWireCube(m_bobber.transform.position, new Vector3(0.5f, 0.5f, 0.5f));
                 }
 
                 // draw player
                 if (m_playerTransform != null)
                 {
-                    Gizmos.color = Color.blue;
-                    Gizmos.DrawWireCube(m_playerTransform.position, new Vector3(0.6f, 2, 0.6f));
+                    Handles.color = Color.blue;
+                    Handles.DrawWireCube(m_playerTransform.position, new Vector3(0.6f, 2, 0.6f));
                 }
 
                 // draw pool bounds
-                Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(GameSettings.POOL_ORIGIN, GameSettings.POOL_RADIUS);
+                Handles.color = Color.blue;
+                Handles.DrawWireDisc(GameSettings.POOL_ORIGIN, Vector3.up, GameSettings.POOL_RADIUS);
 
                 // draw debug spawn location
-                Gizmos.color = Color.magenta;
-                Gizmos.DrawWireCube(m_nextSpawnPosition, new Vector3(0.5f, 0.5f, 0.5f));
+                Handles.color = Color.magenta;
+                Handles.DrawWireCube(m_nextSpawnPosition, new Vector3(0.5f, 0.5f, 0.5f));
+#endif
             }
         }
     }

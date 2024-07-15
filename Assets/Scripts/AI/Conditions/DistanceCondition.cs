@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace FishingGame
@@ -8,7 +9,7 @@ namespace FishingGame
     {
         public class DistanceCondition : Condition
         {
-            [SerializeField] private TargetType m_targetType = 0;
+            [SerializeField] private TargetValueType m_valueType = 0;
 
             [SerializeField] private float m_distance;
             [SerializeField] private Transform m_target;
@@ -18,13 +19,16 @@ namespace FishingGame
 
             public override void Enter(Agent agent)
             {
-                switch (m_targetType)
+                switch (m_valueType)
                 {
-                    case TargetType.Target:
+                    case TargetValueType.FishTarget:
                         m_distance = agent.fish.GetConstraint(agent.fish.data.swimDetectionRange);
                         break;
-                    case TargetType.Bobber:
+                    case TargetValueType.Bobber:
                         m_distance = agent.fish.GetConstraint(agent.fish.data.bobberDetectionRange);
+                        break;
+                    case TargetValueType.Spooked:
+                        m_distance = agent.fish.GetConstraint(agent.fish.data.spookRange);
                         break;
                 }
             }
@@ -33,15 +37,15 @@ namespace FishingGame
             {
                 // decide on target
                 Vector3 targetPosition = Vector3.zero;
-                switch (m_targetType)
+                switch (m_valueType)
                 {
-                    case TargetType.Value:
+                    case TargetValueType.Value:
                         targetPosition = m_target.position;
                         break;
-                    case TargetType.Target:
+                    case TargetValueType.FishTarget:
                         targetPosition = agent.targetPosition;
                         break;
-                    case TargetType.Bobber:
+                    case TargetValueType.Bobber:
                         if (!agent.bobberIsUnderwater == m_withinRange)
                             return false;
                         targetPosition = agent.bobberPosition;
@@ -53,8 +57,25 @@ namespace FishingGame
 
             private void OnDrawGizmos()
             {
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(transform.position, m_distance);
+#if UNITY_EDITOR
+                switch (m_valueType)
+                {
+                    case TargetValueType.Value:
+                        Handles.color = Color.red;
+                        break;
+                    case TargetValueType.FishTarget:
+                        Handles.color = new Color(0, 0.45f, 0);
+                        break;
+                    case TargetValueType.Bobber:
+                        Handles.color = new Color(0.45f, 0, 0);
+                        break;
+                    case TargetValueType.Spooked:
+                        Handles.color = new Color(0, 0, 0.45f);
+                        break;
+                }
+
+                Handles.DrawWireDisc(transform.position, Vector3.up, m_distance);
+#endif
             }
         }
     }

@@ -1,8 +1,8 @@
 using FishingGame.FishControls;
 using FishingGame.FishingRod;
-using FishingGame.Objects;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace FishingGame
@@ -89,9 +89,11 @@ namespace FishingGame
 
             private void OnDrawGizmos()
             {
+#if UNITY_EDITOR
                 // draw target position
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireCube(m_targetPosition, new Vector3(0.5f, 0.5f, 0.5f));
+                Handles.color = Color.green;
+                Handles.DrawWireCube(m_targetPosition, new Vector3(0.5f, 0.5f, 0.5f));
+#endif
             }
         }
     }
