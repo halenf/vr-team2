@@ -24,8 +24,9 @@ namespace FishingGame
                 // clamp target position to pool radius
                 if (Vector3.Distance(targetPosition, GameSettings.POOL_ORIGIN) > GameSettings.POOL_RADIUS)
                 {
-                    Vector3 direction = (GameSettings.POOL_ORIGIN - targetPosition).normalized;
+                    Vector3 direction = (targetPosition - GameSettings.POOL_ORIGIN).normalized;
                     targetPosition = direction * GameSettings.POOL_RADIUS;
+                    targetPosition += GameSettings.POOL_ORIGIN;
                     targetPosition.y = GameSettings.POOL_HEIGHT;
                 }
 

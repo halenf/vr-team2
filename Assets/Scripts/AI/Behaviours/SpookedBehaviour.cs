@@ -28,10 +28,13 @@ namespace FishingGame
                 // clamp target position to pool radius
                 if (Vector3.Distance(targetPosition, GameSettings.POOL_ORIGIN) > GameSettings.POOL_RADIUS)
                 {
-                    Vector3 direction = (GameSettings.POOL_ORIGIN - targetPosition).normalized;
+                    Vector3 direction = (targetPosition - GameSettings.POOL_ORIGIN).normalized;
                     targetPosition = direction * GameSettings.POOL_RADIUS;
                     targetPosition.y = GameSettings.POOL_HEIGHT;
                 }
+
+                // calc spook speed
+                m_speed = agent.fish.GetConstraint(agent.fish.data.spookSpeed);
 
                 // set the target position of the fish
                 agent.SetTargetPosition(targetPosition);

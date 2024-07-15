@@ -8,19 +8,19 @@ namespace FishingGame
     {
         public class TimeCondition : Condition
         {
-            [SerializeField] private TargetType m_targetType;
+            [SerializeField] private TargetValueType m_valueType;
             [SerializeField] private float m_time;
 
             private float m_counter = 0;
 
             public override void Enter(Agent agent)
             {
-                switch (m_targetType)
+                switch (m_valueType)
                 {
-                    case TargetType.Target:
+                    case TargetValueType.FishTarget:
                         m_time = agent.fish.GetConstraint(agent.fish.data.swimWaitTime);
                         break;
-                    case TargetType.Bobber:
+                    case TargetValueType.Bobber:
                         m_time = agent.fish.GetConstraint(agent.fish.data.bobberWaitTime);
                         break;
                 }

@@ -6,12 +6,13 @@ namespace FishingGame
 {
     namespace AI
     {
+        [DisallowMultipleComponent]
         public class FiniteStateMachine : Behaviour
         {
             [SerializeField] private State[] m_defaultStates;
             
             private State m_currentState;
-            public State currentState { get { return m_currentState; } }
+            public string currentState { get { return m_currentState.name; } }
 
             // base methods
             public override void Enter(Agent agent)

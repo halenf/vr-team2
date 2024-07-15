@@ -6,9 +6,8 @@ using FishingGame;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameSettingsAsset m_settingsAsset;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         LoadSettings();
     }
