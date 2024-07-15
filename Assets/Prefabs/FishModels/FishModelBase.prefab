@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8013415370210224991}
   - component: {fileID: 6709504678952532960}
   - component: {fileID: 1711620680184337653}
+  - component: {fileID: 7073848559276885042}
   - component: {fileID: 8014933234206681088}
   - component: {fileID: 6070993189127487423}
   m_Layer: 0
@@ -79,6 +80,38 @@ MonoBehaviour:
   m_particles:
   - {fileID: 1848308066855129938, guid: a46aad134fa9de440b424b66def4698f, type: 3}
   m_timer: 0.2
+--- !u!114 &7073848559276885042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183522391112712294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5430562eccab08a438b06e5a21cdc38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundClipObjectPrefab: {fileID: 8570937424897467016, guid: 10bce76d7968e344e8b588efa1e96945, type: 3}
+  m_clipCollections:
+  - m_collectionName: Fish Water Splash
+    m_soundClips:
+    - m_clipName: Heavy Splash 1
+      m_audioClip: {fileID: 8300000, guid: 25f433393e2a0914fbdc280f3370f00a, type: 3}
+      m_volume: 1
+      m_pitch: 1
+    - m_clipName: Heavy Splash 2
+      m_audioClip: {fileID: 8300000, guid: c34ec4e758ab96a4aa94e538832a2a04, type: 3}
+      m_volume: 1
+      m_pitch: 1
+    - m_clipName: Heavy Splash 3
+      m_audioClip: {fileID: 8300000, guid: 31a19a2239e6a1e4d9dbedb31c8fefb8, type: 3}
+      m_volume: 1
+      m_pitch: 1
+    - m_clipName: Heavy Splash 4
+      m_audioClip: {fileID: 8300000, guid: 0cf7f65c3f3b9ff41884403c31940aec, type: 3}
+      m_volume: 1
+      m_pitch: 1
 --- !u!54 &8014933234206681088
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using FishingGame.Objects;
 using FishingGame.AI;
+using FishingGame.Sound;
 
 namespace FishingGame
 {
@@ -13,6 +14,13 @@ namespace FishingGame
 
         public class Bobber : MonoBehaviour
         {
+            // Rod control details
+            [Tooltip("How close the Bobber has to be to the Player before it is pulled back up out of the water.")]
+            [SerializeField] private float m_pullRange = 1.0f;
+            private Transform m_playerTransform;
+            private RodController m_rodControl;
+            private Vector3 rodTipDirection { get { return (transform.position - m_rodControl.getTip.position).normalized; } }
+
             // Returns true if the bobber is below the water level
             public bool isUnderwater
             {
@@ -23,25 +31,14 @@ namespace FishingGame
                     return transform.position.y <= GameSettings.POOL_HEIGHT + 0.25f;
                 }
             }
+
+            // Hooked Fish
             private Agent m_hookedAgent;
             private float m_agentPullStrength;
-            // Returns true if there is a hooked agent
             public bool hasHookedAgent { get { return m_hookedAgent != null; } }
-            private Transform m_playerTransform;
-            // This could be a func, but this works nicely too
-            // Returns the distance between the bobber and the player
-            private Vector3 playerDistance { get { return transform.position - m_playerTransform.position; } }
-            //Returns the direction between the bobber and the player
-            private Vector3 rodTipDirection { get { return (transform.position - m_rodControl.getTip.position).normalized; } }
-            [Tooltip("The range at which the bobber is pulled out of the water")]
-            [SerializeField] private float m_pullRange = 1.0f;
-            private RodController m_rodControl;
-            private Rigidbody m_rigidbody;
-            private BuoyantObject m_datBuoy;
+
             void Start()
             {
-                m_datBuoy = GetComponent<BuoyantObject>();
-                m_rigidbody = GetComponent<Rigidbody>();
                 m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
                 m_rodControl = m_playerTransform.GetComponentInChildren<RodController>();
                 if (!m_rodControl)
@@ -49,14 +46,15 @@ namespace FishingGame
                     Debug.LogError("Bobber cannot find the rod!! Please ensure that the player is tagged correctly <i>(\"Player\")</i> and has a rod controller in one of its children.");
                 }
             }
+
             private void Update()
             {
                 // Lock the Y level while underwater
                 /*if (isUnderwater)
                     transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);*/
 
-                if(m_rodControl.rodState != RodController.RodState.Mounted)
-                ReelIn();
+                if (m_rodControl.rodState != RodController.RodState.Mounted)
+                    ReelIn();
             }
 
             public void SetAgentPullStrength(float value)
@@ -88,7 +86,7 @@ namespace FishingGame
                 transform.position += new Vector3(delta.x, 0, delta.z);
 
                 // check if the bobber is within range
-                if(playerDistance.magnitude <= m_pullRange)
+                if (Vector3.Distance(transform.position, m_playerTransform.position) <= m_pullRange)
                 {
                     //surface the fish if ones hooked, otherwise just mount the bobber
                     if (hasHookedAgent)

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2411465557228392518}
   - component: {fileID: 3952040238232110720}
   - component: {fileID: 4446802247342861076}
+  - component: {fileID: -252617600983277513}
+  - component: {fileID: -5749652428071165024}
   m_Layer: 0
   m_Name: Bobber
   m_TagString: Bobber
@@ -93,6 +95,71 @@ MonoBehaviour:
   m_forceStrength: 5
   m_minimumForce: 12
   m_isUnderwater: 0
+--- !u!114 &-252617600983277513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411465557228392561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5430562eccab08a438b06e5a21cdc38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundClipObjectPrefab: {fileID: 8570937424897467016, guid: 10bce76d7968e344e8b588efa1e96945, type: 3}
+  m_clipCollections:
+  - m_collectionName: Land Splashes
+    m_soundClips:
+    - m_clipName: Light Splash 2
+      m_audioClip: {fileID: 8300000, guid: 731a96cc7a1729a40987de0dbff9c6a1, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 4
+      m_audioClip: {fileID: 8300000, guid: 5ff5ed687d46dc449b4822531d5cb01a, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 1
+      m_audioClip: {fileID: 8300000, guid: 81b98f77bb49d7c4bbf70bbdb042d6cb, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Submerge Ripple
+      m_audioClip: {fileID: 8300000, guid: cba0013545172524f84e4197b8075f9b, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+  - m_collectionName: Leave Splashes
+    m_soundClips:
+    - m_clipName: Light Splash 5
+      m_audioClip: {fileID: 8300000, guid: ee663a5bf0b50a44b8118ec3bc0f9e30, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 3
+      m_audioClip: {fileID: 8300000, guid: 1d23450ad9783054a9d2680094e0c1cd, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+--- !u!114 &-5749652428071165024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411465557228392561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb6824f8b0f26d44a5080b0badb8aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rippleParticle: {fileID: 4804526207768890534, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+  m_minRippleTimer: 1.6
+  m_maxRippleTimer: 4
+  m_splashParticle: {fileID: 1848308066855129938, guid: a46aad134fa9de440b424b66def4698f, type: 3}
+  m_fishPullParticle: {fileID: 1848308066855129938, guid: a46aad134fa9de440b424b66def4698f, type: 3}
 --- !u!1001 &7693923989023715520
 PrefabInstance:
   m_ObjectHideFlags: 0

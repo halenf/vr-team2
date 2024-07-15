@@ -1,4 +1,5 @@
 using FishingGame;
+using FishingGame.Sound;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,16 +13,25 @@ namespace FishingGame
         [SerializeField] private ParticleSystem[] m_particles;
         [Tooltip("The delay for destruction.")]
         [SerializeField, Min(0)] private float m_timer;
-        private bool m_dying = false;
+
+        private bool m_splashed = false;
+
         private void FixedUpdate()
         {
             //Destroy the object when at the pool height
-            if (!m_dying && transform.position.y < GameSettings.POOL_HEIGHT)
+            if (!m_splashed && transform.position.y < GameSettings.POOL_HEIGHT)
             {
+                // create particle effect
                 if (m_particles.Length > 0)
-                    Instantiate(m_particles[Random.Range(0, m_particles.Length)]);
+                    Instantiate(m_particles[Random.Range(0, m_particles.Length)], transform.position, Quaternion.identity);
+
+                // play sound effect
+                GetComponent<SFXController>().PlayRandomSoundClipFromCollectionAtPosition("Fish Water Splash", transform.position);
+
+                // destroy the fish after a short time
                 Destroy(gameObject, m_timer);
-                m_dying = true; //me fr
+
+                m_splashed = true;
             }
         }
     }
