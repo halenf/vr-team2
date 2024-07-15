@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agentPrefab: {fileID: 2920973511554461923, guid: 379be1e51bc026842b29bed517257eb5, type: 3}
-  m_fishSilhouettePrefab: {fileID: 3727533499198983403, guid: 7e94b81ca96d6d74b8922279eff0e913, type: 3}
   m_agentContainer: {fileID: 0}
   m_fishDataPath: Assets/FishData/
   m_fishData:
-  - {fileID: 11400000, guid: f3db1e8d3823dcf438f33f5febe49a40, type: 2}
+  - {fileID: 11400000, guid: 55fe200689325e24784ee6c480f4176a, type: 2}
+  - {fileID: 11400000, guid: 204493566d43ee44a829b687bfb0fd96, type: 2}
+  - {fileID: 11400000, guid: ecacabb74d0e1d443b09bf9c58c75b8e, type: 2}
   m_minSpawnTime: 3
   m_maxSpawnTime: 10

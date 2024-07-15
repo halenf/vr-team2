@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 using System;
 using FishingGame.Objects;
 using UnityEngine.Events;
+using FishingGame.Checklist;
+using FishingGame.UI;
 
 namespace FishingGame
 {
@@ -57,6 +59,8 @@ namespace FishingGame
             [Tooltip("The points along the rod that the fishing line should go through.")]
             [SerializeField] private Transform[] m_linePoints;
             private GameObject m_fishInstance;
+            //Checklist
+            private FishChecklist m_cList;
 
             private void Start()
             {
@@ -64,6 +68,8 @@ namespace FishingGame
                 m_line = GetComponent<LineRenderer>();
                 //Get the parent of the bobber, this is used for mounting the bobber
                 m_bobberHold = m_bobber.transform.parent;
+                //Get the fish checklist
+                m_cList = FindObjectOfType<FishChecklist>();
                 //mount it for safety
                 MountBobber();
             }
@@ -177,6 +183,19 @@ namespace FishingGame
                 //Instance the fish model as a child of the empty parent
                 m_fishInstance = Instantiate(fish.data.model);
                 AttachObjectToDisplayPoint(m_fishInstance.transform);
+                if (m_cList.UnlockEntry(fish.data.speciesName))
+                {
+                    // send out an update that a new fish was found
+                }
+                if(m_cList.SetEntryRecordLength(fish.data.speciesName, UnityEngine.Random.Range(fish.data.length.min, fish.data.length.max)))
+                {
+                    // send out an update that a bigger fish was found
+                }
+                if(m_cList.SetEntryRecordWeight(fish.data.speciesName, UnityEngine.Random.Range(fish.data.weight.min, fish.data.weight.max)))
+                {
+                    // send out an update that a heavier fish was found
+                }
+                FindObjectOfType<FishChecklistUI>().UpdateUI();
                 
                 //Its a grabbale kinematic rigidbody, so add the components
                 /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();

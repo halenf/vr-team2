@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 9129917085824950747}
   - component: {fileID: 854944904222263414}
   - component: {fileID: 4015499839677581185}
+  - component: {fileID: 2848771449697176747}
   m_Layer: 0
   m_Name: FishChecklist
   m_TagString: Untagged
@@ -280,7 +281,6 @@ MonoBehaviour:
   m_headerDisplay: {fileID: 8303924502662404153}
   m_checklistEntryPrefab: {fileID: 5715553420519317444, guid: f2c26281de0ba7e45acec89833742b45, type: 3}
   m_entryContainer: {fileID: 2194993427852916853}
-  m_lockedFishSprite: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
 --- !u!223 &9129917085824950747
 Canvas:
   m_ObjectHideFlags: 0
@@ -342,6 +342,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2848771449697176747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904013279812812022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &7089175659320097664
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,8 +599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000494256, y: 0.00023081002}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0049725054, y: -0.0016822873}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3857494660788560292
 MonoBehaviour:
