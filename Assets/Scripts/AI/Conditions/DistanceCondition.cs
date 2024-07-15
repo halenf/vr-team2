@@ -45,6 +45,7 @@ namespace FishingGame
                     case TargetValueType.FishTarget:
                         targetPosition = agent.targetPosition;
                         break;
+                    case TargetValueType.Spooked:
                     case TargetValueType.Bobber:
                         if (!agent.bobberIsUnderwater == m_withinRange)
                             return false;
