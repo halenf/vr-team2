@@ -933,7 +933,6 @@ GameObject:
   - component: {fileID: 2367467705628032195}
   - component: {fileID: 3876666466488310184}
   - component: {fileID: 3982115961954310491}
-  - component: {fileID: 2068347671522919991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1475,22 +1474,6 @@ MonoBehaviour:
     m_recordWeight: 0
     m_recordLength: 0
     m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
---- !u!114 &2068347671522919991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4367296848969556528}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c6c3d7f967775e43be7952e589594f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_leftHand:
-    m_obj: {fileID: 0}
-  m_rightHand:
-    m_obj: {fileID: 0}
 --- !u!1 &4367296849453046036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1487,7 @@ GameObject:
   - component: {fileID: 4367296849453046058}
   - component: {fileID: 4367296849453046057}
   - component: {fileID: 2492452162916433472}
-  - component: {fileID: 5510694709393103168}
+  - component: {fileID: 1910995799427640836}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -1937,6 +1920,79 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!114 &1910995799427640836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367296849453046036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3fc3f1ebd240d4f9e1e7b6d99b4f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_refFrame: {fileID: 0}
+  m_target: {fileID: 4367296848924751072}
+  rotationSpeed: 0
 --- !u!1001 &867827669
 PrefabInstance:
   m_ObjectHideFlags: 0
