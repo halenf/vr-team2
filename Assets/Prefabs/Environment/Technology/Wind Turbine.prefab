@@ -105,10 +105,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6561831755310409705, guid: daa1ba5b1f23cfc42907136a85f429d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbd29c9c1d8ead847a6e85a4d0646bd4, type: 2}
     - target: {fileID: 919132149155446097, guid: daa1ba5b1f23cfc42907136a85f429d5, type: 3}
       propertyPath: m_Name
       value: MOD_WindTurbine
       objectReference: {fileID: 0}
+    - target: {fileID: 3013079963119319638, guid: daa1ba5b1f23cfc42907136a85f429d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbd29c9c1d8ead847a6e85a4d0646bd4, type: 2}
     - target: {fileID: 4654276263541313347, guid: daa1ba5b1f23cfc42907136a85f429d5, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
