@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Impfish
   m_EditorClassIdentifier: 
   m_model: {fileID: 2614957579756668686, guid: b4ac37e0efd3267428ab98f3e0d6d700, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: 4d721c74384b11d448f4ba48eda6a760, type: 3}
   m_silhouetteSize: 0
   m_speciesName: Impfish
+  m_scientificName: Acutipiscies Cobolorum
+  m_aboutDetails: 'A small fish, easily recognisable for their large fins and bright
+    red scales.
+
+    Feeds on plankton and small insects, catching them as they skirt
+    across the surface of lakes and ponds.'
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +44,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1

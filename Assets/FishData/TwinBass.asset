@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: TwinBass
   m_EditorClassIdentifier: 
   m_model: {fileID: 1754754513174346070, guid: 8a347248109af46448ee2c11708d72d3, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: 0e78d04eaa03c01419ea58ad1442e8d8, type: 3}
   m_silhouetteSize: 1
   m_speciesName: Twin Bass
+  m_scientificName: Micropterus Didymus
+  m_aboutDetails: A two-headed bass found in lakes and rivers. Based on studdies
+    of this fish's behaviour, it is believed that each head controls a different
+    side of the body, resulting in a peculiar way of moving.
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +42,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1

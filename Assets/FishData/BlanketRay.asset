@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: BlanketRay
   m_EditorClassIdentifier: 
   m_model: {fileID: 640230124652900198, guid: 3584df2d99c93ef44a6237b4aa9b4a68, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: 152a4e5d13ae0b44c9f1bf4433372e1e, type: 3}
   m_silhouetteSize: 3
-  m_speciesName: Blanket Ray
+  m_speciesName: Freshwater Blanket Ray
+  m_scientificName: Himantura Stragulum
+  m_aboutDetails: Due to the Blanket Ray's large size they have no natural predators,
+    and have lost most of their defence mechanisms. They have a friendly disposition
+    and despite having a stinger, it serves no practical purpose.
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +42,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1

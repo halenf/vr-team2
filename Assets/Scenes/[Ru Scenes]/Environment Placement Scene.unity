@@ -2472,7 +2472,7 @@ PrefabInstance:
       objectReference: {fileID: 1640133496}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
       propertyPath: m_fishData.Array.data[0]
@@ -2506,6 +2506,10 @@ PrefabInstance:
       propertyPath: m_fishData.Array.data[7]
       value: 
       objectReference: {fileID: 11400000, guid: ecacabb74d0e1d443b09bf9c58c75b8e, type: 2}
+    - target: {fileID: 6381908331430139995, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
+      propertyPath: m_fishData.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03d0ed6febcfba1468c16609ecd8855a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd96ee6ce85c40428525ddfbcdbf46b, type: 3}
 --- !u!1001 &319633335

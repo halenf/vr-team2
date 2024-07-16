@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: CommonGumpie
   m_EditorClassIdentifier: 
   m_model: {fileID: 1754754513174346070, guid: 19b03bd06c43b8b4297e5f3489463a29, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: 69405ced3e32ba642a221ca0fe4b3c61, type: 3}
   m_silhouetteSize: 1
   m_speciesName: Common Gumpie
+  m_scientificName: Poecularis Communis
+  m_aboutDetails: 'The Gumpie is a popular catch in lakes and rivers due to their
+    desirable taste and their instinctive love for fishing hooks.
+
+'
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +43,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1
