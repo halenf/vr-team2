@@ -44,7 +44,7 @@ Camera:
   m_GameObject: {fileID: 4367296847725677075}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1252,7 +1252,31 @@ MonoBehaviour:
     m_ActionId: 6bc56065-b0db-4265-8cef-5c7d4f40128a
     m_ActionName: XRI RightHand/Grip Rotation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1910995799427640836}
+        m_TargetAssemblyTypeName: FishingGame.FishingRod.HandReeling, Assembly-CSharp
+        m_MethodName: ReelGrabbed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 366430557323174676}
+        m_TargetAssemblyTypeName: FishingGame.FishingRod.FlyFishing, Assembly-CSharp
+        m_MethodName: HoldLine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ac96c10b-c955-4a46-8e67-bf16bc069b53
     m_ActionName: XRI RightHand Interaction/Select
   - m_PersistentCalls:
@@ -1488,6 +1512,7 @@ GameObject:
   - component: {fileID: 4367296849453046057}
   - component: {fileID: 2492452162916433472}
   - component: {fileID: 1910995799427640836}
+  - component: {fileID: 366430557323174676}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -1993,6 +2018,21 @@ MonoBehaviour:
   m_refFrame: {fileID: 0}
   m_target: {fileID: 4367296848924751072}
   rotationSpeed: 0
+--- !u!114 &366430557323174676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367296849453046036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea4076649e790a4d8b4e028df34b52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 4367296848924751072}
+  m_scale: 50
+  m_allowPushback: 0
 --- !u!1001 &867827669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2318,9 +2358,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4367296849453046037}
     m_Modifications:
+    - target: {fileID: 323277065389729732, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6464047156303021227, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
       propertyPath: m_Name
       value: Rod
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464047156303021228, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
+      propertyPath: m_reelScale
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6464047156303021229, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
       propertyPath: m_RootOrder
