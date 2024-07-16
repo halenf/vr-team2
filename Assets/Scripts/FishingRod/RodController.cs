@@ -31,27 +31,18 @@ namespace FishingGame
                 get { return m_rodState; }
                 set { m_rodState = value; }
             }
-            //Hook
-            [Header("Bobber")]
-            [SerializeField] private Bobber m_bobber;
-            private Transform m_bobberHold;
-            [SerializeField] private Transform m_rodTip;
-            public Transform getTip { get { return m_rodTip; } }
+
             //Casting
-            private Vector3 m_handVelocity;
-            public Vector3 setHandVelocity { set { m_handVelocity = value; } }
-            [Header("Casting")]
             [Tooltip("The scale of the force applied to the bobber when casting.")]
-            [SerializeField] private float m_forceScale;
+            [SerializeField] private float m_castForceScale;
+
             //Reeling
             private float m_reelVelocity;
             public float setReelVelo { set { m_reelVelocity = Mathf.Clamp(value, -1.0f, 0.0f); } }
-            [Header("Reeling")]
             [Tooltip("The speed which the bobber is reeled in by.")]
-            [SerializeField] private float m_reelScale = 1;
-            public float getReelForce { get { return m_reelVelocity * m_reelScale; } }
-            [Tooltip("The transform to mount the fish at.")]
-            [SerializeField] private Transform m_fishDisplayPoint;
+            [SerializeField] private float m_reelForceScale = 1;
+            public float getReelForce { get { return m_reelVelocity * m_reelForceScale; } }
+
             //Fishing line visuals
             private LineRenderer m_line;
             private float m_lineTension = 0.75f;
@@ -59,9 +50,22 @@ namespace FishingGame
             [Tooltip("The points along the rod that the fishing line should go through.")]
             [SerializeField] private Transform[] m_linePoints;
             private GameObject m_fishInstance;
+
+            //Hook
+            [Header("Bobber")]
+            [SerializeField] private Bobber m_bobber;
+            private Transform m_bobberHold;
+            [SerializeField] private Transform m_rodTip;
+            public Transform getTip { get { return m_rodTip; } }
+            [Tooltip("The transform to mount the fish at.")]
+            [SerializeField] private Transform m_fishDisplayPoint;
+
             //Checklist
             private FishChecklist m_cList;
 
+            // for animations/sounds
+            public bool lineIsBeingMoved { get { return m_rodState == RodState.Reeling || m_bobber.hasHookedAgent; } }
+                    
             private void Start()
             {
                 //Get the line components for visuals
@@ -73,6 +77,7 @@ namespace FishingGame
                 //mount it for safety
                 MountBobber();
             }
+
             void Update()
             {
                 switch (m_rodState)
@@ -86,8 +91,6 @@ namespace FishingGame
                             m_rodState = RodState.Reeling;
                         }
                         break;
-                    case RodState.Mounted:
-                        break;
                     case RodState.Casting:
                         if (m_fishInstance)
                         {
@@ -96,7 +99,7 @@ namespace FishingGame
                         }
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Apply the controller's velocity to it
-                        m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_forceScale, ForceMode.VelocityChange);
+                        m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_castForceScale, ForceMode.VelocityChange);
                         //The rod has now been cast
                         //Unparent the bobber from its mount
                         m_bobber.transform.SetParent(null);
@@ -115,6 +118,7 @@ namespace FishingGame
                 }
                 DrawFishingLine();
             }
+
             /// <summary>
             /// Finds the mid point between 2 points, and lowers it slightly.
             /// </summary>
@@ -127,6 +131,7 @@ namespace FishingGame
 
                 return pos;
             }
+
             /// <summary>
             /// Draws the line when cast out
             /// </summary>
@@ -162,6 +167,7 @@ namespace FishingGame
                 m_line.positionCount = points.Count;
                 m_line.SetPositions(points.ToArray());
             }
+
             /// <summary>
             /// Mounts the bobber to the rod
             /// </summary>
@@ -174,6 +180,7 @@ namespace FishingGame
                 m_bobber.transform.localPosition = Vector3.zero;
                 m_rodState = RodState.Mounted;
             }
+
             /// <summary>
             /// Upon getting near to the player/pier, pull the fish from the water.
             /// </summary>
@@ -183,15 +190,16 @@ namespace FishingGame
                 //Instance the fish model as a child of the empty parent
                 m_fishInstance = Instantiate(fish.data.model);
                 AttachObjectToDisplayPoint(m_fishInstance.transform);
+
                 if (m_cList.UnlockEntry(fish.data.speciesName))
                 {
                     // send out an update that a new fish was found
                 }
-                if(m_cList.SetEntryRecordLength(fish.data.speciesName, UnityEngine.Random.Range(fish.data.length.min, fish.data.length.max)))
+                if(m_cList.SetEntryRecordLength(fish.data.speciesName, fish.length))
                 {
                     // send out an update that a bigger fish was found
                 }
-                if(m_cList.SetEntryRecordWeight(fish.data.speciesName, UnityEngine.Random.Range(fish.data.weight.min, fish.data.weight.max)))
+                if(m_cList.SetEntryRecordWeight(fish.data.speciesName, fish.weight))
                 {
                     // send out an update that a heavier fish was found
                 }

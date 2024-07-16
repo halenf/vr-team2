@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2411465557228392518}
   - component: {fileID: 3952040238232110720}
   - component: {fileID: 4446802247342861076}
+  - component: {fileID: -252617600983277513}
+  - component: {fileID: -5749652428071165024}
   m_Layer: 0
   m_Name: Bobber
   m_TagString: Bobber
@@ -33,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3568346150119841363}
+  - {fileID: 3133112832379364312}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -93,6 +96,138 @@ MonoBehaviour:
   m_forceStrength: 5
   m_minimumForce: 12
   m_isUnderwater: 0
+--- !u!114 &-252617600983277513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411465557228392561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5430562eccab08a438b06e5a21cdc38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundClipObjectPrefab: {fileID: 8570937424897467016, guid: 10bce76d7968e344e8b588efa1e96945, type: 3}
+  m_clipCollections:
+  - m_collectionName: Land Splashes
+    m_soundClips:
+    - m_clipName: Light Splash 2
+      m_audioClip: {fileID: 8300000, guid: 731a96cc7a1729a40987de0dbff9c6a1, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 4
+      m_audioClip: {fileID: 8300000, guid: 5ff5ed687d46dc449b4822531d5cb01a, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 1
+      m_audioClip: {fileID: 8300000, guid: 81b98f77bb49d7c4bbf70bbdb042d6cb, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Submerge Ripple
+      m_audioClip: {fileID: 8300000, guid: cba0013545172524f84e4197b8075f9b, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+  - m_collectionName: Leave Splashes
+    m_soundClips:
+    - m_clipName: Light Splash 5
+      m_audioClip: {fileID: 8300000, guid: ee663a5bf0b50a44b8118ec3bc0f9e30, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+    - m_clipName: Light Splash 3
+      m_audioClip: {fileID: 8300000, guid: 1d23450ad9783054a9d2680094e0c1cd, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 50
+--- !u!114 &-5749652428071165024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411465557228392561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb6824f8b0f26d44a5080b0badb8aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rippleParticle: {fileID: 3161172937402888312}
+  m_minRippleTimer: 0.8
+  m_maxRippleTimer: 3
+  m_splashParticle: {fileID: 1848308066855129938, guid: a46aad134fa9de440b424b66def4698f, type: 3}
+  m_fishPullParticle: {fileID: 1848308066855129938, guid: a46aad134fa9de440b424b66def4698f, type: 3}
+--- !u!1001 &7598598591269354718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2411465557228392570}
+    m_Modifications:
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909156837963835092, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+      propertyPath: m_Name
+      value: Bobbing Ripple
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+--- !u!4 &3133112832379364312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4758238470392258310, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+  m_PrefabInstance: {fileID: 7598598591269354718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3161172937402888312 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4804526207768890534, guid: 55298b8b430eb2e4f868aa7b05ee91e7, type: 3}
+  m_PrefabInstance: {fileID: 7598598591269354718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7693923989023715520
 PrefabInstance:
   m_ObjectHideFlags: 0

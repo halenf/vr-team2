@@ -14,14 +14,17 @@ namespace FishingGame
             public void Init(SFXController.SoundClip soundClip)
             {
                 // get source component
-                m_source = gameObject.AddComponent<AudioSource>();
+                m_source = GetComponent<AudioSource>();
+                m_source.clip = soundClip.audioClip;
+                m_source.loop = false;
 
                 // set variables
                 m_source.volume = soundClip.volume;
                 m_source.pitch = soundClip.pitch;
+                m_source.maxDistance = soundClip.range;
 
                 // play clip
-                m_source.PlayOneShot(soundClip.audioClip);
+                m_source.Play();
                 m_isPlaying = true;
             }
 
