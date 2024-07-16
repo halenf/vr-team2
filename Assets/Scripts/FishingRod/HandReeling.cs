@@ -14,13 +14,15 @@ namespace FishingGame
             private bool m_cranking;
             private bool m_active;
 
+            [SerializeField, Min(0.001f)] private float m_scale;
+
             [Header("Transforms")]
             [SerializeField] private Transform m_refFrame;
             [SerializeField] private Transform m_target;
 
             [Header("Angles")]
+            [HideInInspector] public float rotationSpeed;
             private float lastAngle;
-            public float rotationSpeed;
 
             private RodController m_rodControl;
 
@@ -59,7 +61,7 @@ namespace FishingGame
                     lastAngle = dirAsAngle;
 
                     //pass that difference as the reel speed
-                    m_rodControl.setReelVelo = rotationSpeed;
+                    m_rodControl.setReelVelo = rotationSpeed * m_scale;
                 }
             }
             public void ReelGrabbed(InputAction.CallbackContext action)
