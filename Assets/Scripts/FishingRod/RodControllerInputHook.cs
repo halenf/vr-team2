@@ -26,11 +26,7 @@ namespace FishingGame
 
                 }
             }
-            public void PassControllerVelo(InputAction.CallbackContext action)
-            {
-                //LogAction(action);
-                m_base.setHandVelocity = action.ReadValue<Vector3>();
-            }
+
             public void PassStickY(InputAction.CallbackContext action)
             {
                 m_base.setReelVelo = action.ReadValue<Vector2>().y;

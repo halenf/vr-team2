@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7549079263685240747}
   - component: {fileID: 7549079263685240746}
   - component: {fileID: 7549079263685240744}
+  - component: {fileID: 6783260585528805666}
   m_Layer: 0
-  m_Name: Duck
+  m_Name: Duck B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,6 +81,21 @@ MonoBehaviour:
   m_forceStrength: 5
   m_minimumForce: 12
   m_isUnderwater: 0
+--- !u!114 &6783260585528805666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074331626721592679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c0dbc42b931042a4925d6a55c4789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundCollectionName: Ambient Duck Quacks
+  m_clipFrequencyMin: 45
+  m_clipFrequencyMax: 75
 --- !u!1 &9047514246759239725
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_pitch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
       propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_volume

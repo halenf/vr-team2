@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 6464047156303021229}
   - component: {fileID: 6464047156303021228}
   - component: {fileID: 6464047156303021230}
+  - component: {fileID: 7241569483949500333}
+  - component: {fileID: 3272258495350296155}
   m_Layer: 0
   m_Name: Rod
   m_TagString: Untagged
@@ -171,11 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843548adc5b940544b73389417fc1be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bobber: {fileID: 7784012275639616061}
-  m_rodTip: {fileID: 6698554762247748285}
-  m_forceScale: 1
-  m_reelScale: 10
-  m_fishDisplayPoint: {fileID: 6547717381502013303}
+  m_castForceScale: 1
+  m_reelForceScale: 10
   m_linePoints:
   - {fileID: 8823893952857995857}
   - {fileID: 2857413632537159640}
@@ -184,6 +183,9 @@ MonoBehaviour:
   - {fileID: 2345319621812239169}
   - {fileID: 7301173319941800107}
   - {fileID: 6698554762247748285}
+  m_bobber: {fileID: 7784012275639616061}
+  m_rodTip: {fileID: 6698554762247748285}
+  m_fishDisplayPoint: {fileID: 6547717381502013303}
 --- !u!120 &6464047156303021230
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -288,6 +290,86 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &7241569483949500333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464047156303021227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5430562eccab08a438b06e5a21cdc38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundClipObjectPrefab: {fileID: 8570937424897467016, guid: 10bce76d7968e344e8b588efa1e96945, type: 3}
+  m_clipCollections:
+  - m_collectionName: Line Casting Sounds
+    m_soundClips:
+    - m_clipName: Line bend 2
+      m_audioClip: {fileID: 8300000, guid: ce64947088c8de245a008e76353a8733, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Line Thrown
+      m_audioClip: {fileID: 8300000, guid: 1322f2bb977919342a0127ed04cd5b14, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Fish Reeled
+      m_audioClip: {fileID: 8300000, guid: 7e8a4100f616a314a9cda4b760013ba3, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+  - m_collectionName: Reeling Sounds
+    m_soundClips:
+    - m_clipName: Reeling Fish 1
+      m_audioClip: {fileID: 8300000, guid: a2ac4450d4122c74faae9d1d7fe84331, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Reeling Fish 2
+      m_audioClip: {fileID: 8300000, guid: 4b4eedc0147593745a539b58eb44704c, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Reeling Fish 3
+      m_audioClip: {fileID: 8300000, guid: 45373eedb3bb8bc49a853d6513cfcec8, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Line Bend 1
+      m_audioClip: {fileID: 8300000, guid: 0271afca20cb93e4b90dcbef96335e18, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+  - m_collectionName: Misc Line Sounds
+    m_soundClips:
+    - m_clipName: Line Thrown
+      m_audioClip: {fileID: 8300000, guid: 2db48f3dd0bd15d4eb0481199d2a8d33, type: 3}
+      m_volume: 0.66
+      m_pitch: 1
+      m_range: 500
+    - m_clipName: Lock Release Line
+      m_audioClip: {fileID: 8300000, guid: d5d11fa0052aa7a49816f3fef657c890, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 500
+--- !u!114 &3272258495350296155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464047156303021227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeb75ab0f1b1d848b6c2fd283897ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_startReelBufferTime: 0
+  m_minReelSoundTime: 0.9
+  m_maxReelSoundTime: 1.8
 --- !u!1 &6464047157221814695
 GameObject:
   m_ObjectHideFlags: 0

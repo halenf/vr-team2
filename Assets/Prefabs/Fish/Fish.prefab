@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 2920973511554461922}
   - component: {fileID: 2920973511554461923}
   - component: {fileID: -5713193310852732087}
+  - component: {fileID: 1755539192914089377}
+  - component: {fileID: -5358016148594718418}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -108,6 +110,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bubbleSystem: {fileID: 7640355577661281678}
+--- !u!114 &1755539192914089377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920973511554461920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5430562eccab08a438b06e5a21cdc38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundClipObjectPrefab: {fileID: 8570937424897467016, guid: 10bce76d7968e344e8b588efa1e96945, type: 3}
+  m_clipCollections:
+  - m_collectionName: Bubble Sounds
+    m_soundClips:
+    - m_clipName: Bubble 2
+      m_audioClip: {fileID: 8300000, guid: 29a97dc9e8a8b57449ef17cc6cfcc6b6, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 20
+    - m_clipName: Bubble 3
+      m_audioClip: {fileID: 8300000, guid: 1c062340e6aafd543bbd3f59ad2eb969, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 20
+    - m_clipName: Bubble 4
+      m_audioClip: {fileID: 8300000, guid: d1b09e01e2dae8743a9814303d2f59fc, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 20
+  - m_collectionName: Random Splash Sounds
+    m_soundClips:
+    - m_clipName: Bubble 1
+      m_audioClip: {fileID: 8300000, guid: 60e088fe172bf7a43a5b92e5fd78ae7a, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 20
+    - m_clipName: Fish Drip
+      m_audioClip: {fileID: 8300000, guid: 7836e3396d296e540bae33904611b477, type: 3}
+      m_volume: 1
+      m_pitch: 1
+      m_range: 20
+--- !u!114 &-5358016148594718418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920973511554461920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c0dbc42b931042a4925d6a55c4789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enabled: 1
+  m_soundCollectionName: Random Splash Sounds
+  m_clipFrequencyMin: 20
+  m_clipFrequencyMax: 40
 --- !u!1001 &4650058604530581786
 PrefabInstance:
   m_ObjectHideFlags: 0
