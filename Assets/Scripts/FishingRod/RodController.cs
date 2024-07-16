@@ -222,16 +222,17 @@ namespace FishingGame
                 {
                     // send out an update that a new fish was found
                 }
-                if(m_cList.SetEntryRecordLength(fish.data.speciesName, fish.length))
+                if (m_cList.SetEntryRecordLength(fish.data.speciesName, fish.length))
                 {
                     // send out an update that a bigger fish was found
                 }
-                if(m_cList.SetEntryRecordWeight(fish.data.speciesName, fish.weight))
+                if (m_cList.SetEntryRecordWeight(fish.data.speciesName, fish.weight))
                 {
                     // send out an update that a heavier fish was found
                 }
-                FindObjectOfType<FishChecklistUI>().UpdateUI();
-                
+                if(FindObjectOfType<FishChecklistUI>())
+                    FindObjectOfType<FishChecklistUI>().UpdateUI();
+
                 //Its a grabbale kinematic rigidbody, so add the components
                 /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 //fishRb.isKinematic = true;
