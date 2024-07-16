@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0506653f4d57fc140845aea7bcf7cf0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fishToPrespawn: 0
+  m_fishToPrespawn: 4
   m_agentPrefab: {fileID: 2920973511554461923, guid: 379be1e51bc026842b29bed517257eb5, type: 3}
   m_agentContainer: {fileID: 6381908331430139992}
   m_fishDataPath: Assets/FishData/

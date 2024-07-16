@@ -58,7 +58,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1483,12 +1483,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fishDataPath: Assets/FishData/
   m_checklistEntries:
+  - m_speciesName: Blanket Ray
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - m_speciesName: Blimpfish
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Common Gumpie
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
     m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - m_speciesName: Flathead Gumpie
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Horned Hagfish
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - m_speciesName: Impfish
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - m_speciesName: Torch Fish
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0

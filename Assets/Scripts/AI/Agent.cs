@@ -31,9 +31,16 @@ namespace FishingGame
             private Bobber m_bobber;
             public Bobber bobber { get { return m_bobber; } }
             public Vector3 bobberPosition 
-            { get { return m_bobber.transform.position; }
-              set { m_bobber.transform.position = value; } }
-            public bool bobberIsUnderwater { get { return m_bobber.isUnderwater; } }
+            {
+                get
+                {
+                    return new Vector3(m_bobber.transform.position.x, GameSettings.POOL_HEIGHT, m_bobber.transform.position.z);
+                }
+                set
+                {
+                    m_bobber.transform.position = value;
+                }
+            }
 
             private Transform m_playerTransform;
             public Vector3 playerPosition { get { return m_playerTransform.position; } }

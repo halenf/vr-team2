@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8013415370210224991, guid: 0b91830c93cb710409b2bcf1cfed7ed0, type: 3}
       propertyPath: m_Height
-      value: 0.34
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8013415370210224991, guid: 0b91830c93cb710409b2bcf1cfed7ed0, type: 3}
       propertyPath: m_Radius
-      value: 0.05
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8013415370210224991, guid: 0b91830c93cb710409b2bcf1cfed7ed0, type: 3}
       propertyPath: m_Center.x
