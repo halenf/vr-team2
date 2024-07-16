@@ -8,6 +8,7 @@ using FishingGame.Objects;
 using UnityEngine.Events;
 using FishingGame.Checklist;
 using FishingGame.UI;
+using Unity.VisualScripting;
 
 namespace FishingGame
 {
@@ -252,7 +253,16 @@ namespace FishingGame
             public void AttachObjectToDisplayPoint(Transform obj)
             {
                 obj.position = m_bobber.transform.position;
-                obj.GetComponent<Joint>().connectedBody = m_bobber.GetComponent<Rigidbody>();
+                try
+                {
+                    obj.GetComponent<Joint>().connectedBody = m_bobber.GetComponent<Rigidbody>();
+                }
+                catch (Exception e)
+                {
+                    SpringJoint sJoint = obj.AddComponent<SpringJoint>();
+                    sJoint.spring = 10000;
+                    sJoint.connectedBody = m_bobber.GetComponent<Rigidbody>();
+                }
                 obj.rotation = Quaternion.identity;
             }
         }
