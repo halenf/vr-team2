@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.902
       objectReference: {fileID: 0}
+    - target: {fileID: 12395615167973485, guid: 25798956d5d3dc747a2dfc20ee3fc25e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cf946261aba23e46b761fff8e8344f1, type: 2}
     - target: {fileID: 919132149155446097, guid: 25798956d5d3dc747a2dfc20ee3fc25e, type: 3}
       propertyPath: m_Name
       value: Mod_FishingRod_ShortHandle(Centimeters)
@@ -150,6 +154,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.902
       objectReference: {fileID: 0}
+    - target: {fileID: 12395615167973485, guid: 4de29e0ae0669b84bbb859154888ced3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cf946261aba23e46b761fff8e8344f1, type: 2}
     - target: {fileID: 919132149155446097, guid: 4de29e0ae0669b84bbb859154888ced3, type: 3}
       propertyPath: m_Name
       value: MOD_FishingRod_Short_NoReel
