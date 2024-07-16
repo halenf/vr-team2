@@ -12,10 +12,10 @@ namespace FishingGame
 
             public override bool IsTrue(Agent agent)
             {
-                if (!m_bobberIsUnderwater && agent.bobberIsUnderwater)
+                if (!m_bobberIsUnderwater && agent.bobber.isUnderwater)
                     return true;
 
-                m_bobberIsUnderwater = agent.bobberIsUnderwater;
+                m_bobberIsUnderwater = agent.bobber.isUnderwater;
                 return false;
             }
         }

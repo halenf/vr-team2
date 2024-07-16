@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FishingGame
 {
-    [CreateAssetMenu(fileName = "FishData", menuName = "FishingGame/FishData", order = 0)]
+    [CreateAssetMenu(fileName = "FishData", menuName = "FishData", order = 0)]
     public class FishData : ScriptableObject
     {
         [System.Serializable]
