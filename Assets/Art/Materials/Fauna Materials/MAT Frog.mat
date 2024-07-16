@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColorTexture:
-        m_Texture: {fileID: 2800000, guid: fefdea0ffd7d8c842a39b0df4a9605b6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45a58295670ecd34da81e79ed3b19562, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -145,8 +145,8 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 0.4}
-    - _RimColor: {r: 0.19335067, g: 0.5188676, b: 0.24734095, a: 0.244}
-    - _ShadowColor: {r: 0.08649989, g: 0.08598282, b: 0.15091273, a: 0.84}
+    - _RimColor: {r: 0.19335064, g: 0.5188676, b: 0.24734092, a: 0.244}
+    - _ShadowColor: {r: 0.08649988, g: 0.08598279, b: 0.1509127, a: 0.84}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   m_BuildTextureStacks: []
