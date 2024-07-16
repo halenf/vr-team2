@@ -68,15 +68,17 @@ namespace FishingGame
             }
 
             /// <summary>
-            /// Play a random sound clip from a specified collection.
+            /// Play a random sound clip from a specified collection and attaches the sound to this transform.
             /// </summary>
-            /// <param name="collectionName"></param>
             public void PlayRandomSoundClipFromCollection(string collectionName)
             {
                 List<SoundClip> soundClips = m_clipCollections.Find(collection => collection.collectionName == collectionName).soundClips;
                 PlayAudioClip(soundClips[Random.Range(0, soundClips.Count)]);
             }
 
+            /// <summary>
+            /// Plays a random sound clip from a specified collection at a point in world space.
+            /// </summary>
             public void PlayRandomSoundClipFromCollectionAtPosition(string collectionName, Vector3 position)
             {
                 List<SoundClip> soundClips = m_clipCollections.Find(collection => collection.collectionName == collectionName).soundClips;

@@ -27,6 +27,8 @@ namespace FishingGame
             [Tooltip("The splash for when the Bobber leaves the water with a Fish hooked.")]
             [SerializeField] private ParticleSystem m_fishPullParticle;
 
+            private Vector3 m_poolPosition { get { return new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z); } }
+
             // Start is called before the first frame update
             void Start()
             {
@@ -41,16 +43,16 @@ namespace FishingGame
                 // When the bobber hits the water
                 if (!m_isUnderwater && m_bobber.isUnderwater)
                 {
-                    m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Land Splashes", transform.position);
-                    Instantiate(m_splashParticle);
+                    m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Land Splashes", m_poolPosition);
+                    Instantiate(m_splashParticle, m_poolPosition, Quaternion.identity);
                     SetTimerValue();
                 }
 
                 // when the bobber leaves the water
                 if (m_isUnderwater && !m_bobber.isUnderwater)
                 {
-                    m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Leave Splashes", transform.position);
-                    Instantiate(m_fishPullParticle);
+                    m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Leave Splashes", m_poolPosition);
+                    Instantiate(m_fishPullParticle, m_poolPosition, Quaternion.identity);
                 }
 
                 // update held value
@@ -59,14 +61,20 @@ namespace FishingGame
                 // play ripples if the bobber is in the water
                 if (m_isUnderwater)
                 {
+                    // delay for ripples when bobber hits the water
                     if (m_timer <= 0)
                     {
-                        Instantiate(m_rippleParticle, transform.position, Quaternion.identity);
+                        m_rippleParticle.Play();
                         SetTimerValue();
                     }
                     else
                         m_timer -= Time.deltaTime;
+
+                    // keep the ripples stuck to the pool
+                    m_rippleParticle.transform.position = new Vector3(transform.position.x, GameSettings.POOL_HEIGHT, transform.position.z);
                 }
+                else if (m_rippleParticle.isPlaying)
+                    m_rippleParticle.Stop();
             }
 
             private void SetTimerValue()

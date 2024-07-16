@@ -22,6 +22,9 @@ namespace FishingGame
 
             public void ToggleBubbles(bool value)
             {
+                if (value == m_bubbleSystem.isPlaying)
+                    return;
+                
                 if (value)
                 {
                     m_bubbleSystem.Play();
