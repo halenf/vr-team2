@@ -32,14 +32,14 @@ MonoBehaviour:
     m_min: 5
     m_max: 6
   m_spookSpeed:
-    m_min: 70
-    m_max: 80
+    m_min: 7
+    m_max: 8
   m_swimRange:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 5
-    m_max: 15
+    m_min: 20
+    m_max: 30
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1

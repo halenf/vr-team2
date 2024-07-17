@@ -2396,10 +2396,6 @@ PrefabInstance:
       propertyPath: m_reelScale
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 6464047156303021228, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
-      propertyPath: m_lineVisual
-      value: 
-      objectReference: {fileID: 4367296848924751074}
     - target: {fileID: 6464047156303021229, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
       propertyPath: m_RootOrder
       value: 1
