@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9053399275702683453}
+  - component: {fileID: 4717864279752499284}
   m_Layer: 0
   m_Name: Duck A
   m_TagString: Untagged
@@ -29,9 +30,26 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6255562560931732410}
+  - {fileID: 5841713848658034960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4717864279752499284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990991350579856559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c0dbc42b931042a4925d6a55c4789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enabled: 1
+  m_soundCollectionName: Ambient Duck Quacks
+  m_clipFrequencyMin: 45
+  m_clipFrequencyMax: 75
 --- !u!1001 &5862139135110478929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,4 +115,110 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 050dcb6e3a9222441ab5613fbf7e67e4, type: 3}
   m_PrefabInstance: {fileID: 5862139135110478929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7889447057786012042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9053399275702683453}
+    m_Modifications:
+    - target: {fileID: 24915599637734098, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_Name
+      value: Duck SFXController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_collectionName
+      value: Ambient Duck Quacks
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_pitch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_pitch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_clipName
+      value: Ambient Duck Quack 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_clipName
+      value: Ambient Duck Quack 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf2126ca248ee24a8c790c5cbdce701, type: 3}
+    - target: {fileID: 7975561284335444156, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+      propertyPath: m_clipCollections.Array.data[0].m_soundClips.Array.data[1].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47093d2585dff9b49846298ae39218b7, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+--- !u!4 &5841713848658034960 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4354168884239532186, guid: 19b29c24464853f42a4c8fa03987ce62, type: 3}
+  m_PrefabInstance: {fileID: 7889447057786012042}
   m_PrefabAsset: {fileID: 0}
