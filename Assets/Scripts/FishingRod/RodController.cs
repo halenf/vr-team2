@@ -8,6 +8,7 @@ using FishingGame.Objects;
 using UnityEngine.Events;
 using FishingGame.Checklist;
 using FishingGame.UI;
+using Unity.VisualScripting;
 
 namespace FishingGame
 {
@@ -60,12 +61,17 @@ namespace FishingGame
             [Tooltip("The transform to mount the fish at.")]
             [SerializeField] private Transform m_fishDisplayPoint;
 
+            //Grabbing Visuals
+            [Header("Grabbing Visuals")]
+            [SerializeField] private XRInteractorLineVisual m_lineVisual;
+            private Gradient m_invalidGradient;
+
             //Checklist
             private FishChecklist m_cList;
 
             // for animations/sounds
             public bool lineIsBeingMoved { get { return m_rodState == RodState.Reeling || m_bobber.hasHookedAgent; } }
-                    
+
             private void Start()
             {
                 //Get the line components for visuals
@@ -74,12 +80,26 @@ namespace FishingGame
                 m_bobberHold = m_bobber.transform.parent;
                 //Get the fish checklist
                 m_cList = FindObjectOfType<FishChecklist>();
+                //Get the controller line renderer invalid gradient
+                m_invalidGradient = new Gradient();
+                m_invalidGradient.SetKeys(
+                    m_lineVisual.invalidColorGradient.colorKeys,
+                    m_lineVisual.invalidColorGradient.alphaKeys);
                 //mount it for safety
                 MountBobber();
+                //Disable the current gradient
+                m_lineVisual.invalidColorGradient.SetKeys(
+                    new GradientColorKey[] { new GradientColorKey(Color.black, 0.0f) },
+                    new GradientAlphaKey[] { new GradientAlphaKey(0, 0.0f) });
             }
 
             void Update()
             {
+                if (m_fishInstance == null)
+                    //Disable the current gradient
+                    m_lineVisual.invalidColorGradient.SetKeys(
+                        new GradientColorKey[] { new GradientColorKey(Color.black, 0.0f) },
+                        new GradientAlphaKey[] { new GradientAlphaKey(0, 0.0f) });
                 switch (m_rodState)
                 {
                     case RodState.Cast:
@@ -97,12 +117,18 @@ namespace FishingGame
                             m_rodState = RodState.Mounted;
                             return;
                         }
+                        m_lineVisual.invalidColorGradient.SetKeys(
+                            new GradientColorKey[] { new GradientColorKey(Color.black, 0.0f) },
+                            new GradientAlphaKey[] { new GradientAlphaKey(0, 0.0f) });
+
                         m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Apply the controller's velocity to it
                         m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_castForceScale, ForceMode.VelocityChange);
                         //The rod has now been cast
                         //Unparent the bobber from its mount
                         m_bobber.transform.SetParent(null);
+                        m_bobberHold.GetComponent<Rigidbody>().isKinematic = true;
+                        m_bobberHold.position = m_rodTip.position;
                         m_rodState = RodState.Cast;
                         break;
                     case RodState.Reeling:
@@ -178,7 +204,9 @@ namespace FishingGame
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
                 m_bobber.transform.localPosition = Vector3.zero;
+                m_bobberHold.GetComponent<Rigidbody>().isKinematic = false;
                 m_rodState = RodState.Mounted;
+                m_lineVisual.invalidColorGradient.SetKeys(m_invalidGradient.colorKeys, m_invalidGradient.alphaKeys);
             }
 
             /// <summary>
@@ -195,16 +223,17 @@ namespace FishingGame
                 {
                     // send out an update that a new fish was found
                 }
-                if(m_cList.SetEntryRecordLength(fish.data.speciesName, fish.length))
+                if (m_cList.SetEntryRecordLength(fish.data.speciesName, fish.length))
                 {
                     // send out an update that a bigger fish was found
                 }
-                if(m_cList.SetEntryRecordWeight(fish.data.speciesName, fish.weight))
+                if (m_cList.SetEntryRecordWeight(fish.data.speciesName, fish.weight))
                 {
                     // send out an update that a heavier fish was found
                 }
-                FindObjectOfType<FishChecklistUI>().UpdateUI();
-                
+                if(FindObjectOfType<FishChecklistUI>())
+                    FindObjectOfType<FishChecklistUI>().UpdateUI();
+
                 //Its a grabbale kinematic rigidbody, so add the components
                 /*Rigidbody fishRb = caughtFish.AddComponent<Rigidbody>();
                 //fishRb.isKinematic = true;
@@ -223,9 +252,17 @@ namespace FishingGame
             }
             public void AttachObjectToDisplayPoint(Transform obj)
             {
-                obj.SetParent(m_fishDisplayPoint);
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-                obj.localPosition = Vector3.zero;
+                obj.position = m_bobber.transform.position;
+                try
+                {
+                    obj.GetComponent<Joint>().connectedBody = m_bobber.GetComponent<Rigidbody>();
+                }
+                catch (Exception e)
+                {
+                    SpringJoint sJoint = obj.AddComponent<SpringJoint>();
+                    sJoint.spring = 10000;
+                    sJoint.connectedBody = m_bobber.GetComponent<Rigidbody>();
+                }
                 obj.rotation = Quaternion.identity;
             }
         }

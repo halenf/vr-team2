@@ -53,7 +53,6 @@ namespace FishingGame
                     float dis = (m_target.position - transform.position).magnitude;
                     //then the difference in distance from the last frame
                     float dif = dis - m_lastDistance;
-                    Debug.Log("Dif" + dif);
                     //if the difference has grown.
                     if (dif > 0)
                         //reel the rod in

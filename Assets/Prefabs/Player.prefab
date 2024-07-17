@@ -58,7 +58,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1483,69 +1483,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fishDataPath: Assets/FishData/
   m_checklistEntries:
-  - m_speciesName: Freshwater Blanket Ray
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 152a4e5d13ae0b44c9f1bf4433372e1e, type: 3}
-  - m_speciesName: Grand Blimpfish
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: c565c6196a50b1d419b38aecf8f94c01, type: 3}
   - m_speciesName: Common Gumpie
-    m_scientificName: 
-    m_aboutDetails: 
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 69405ced3e32ba642a221ca0fe4b3c61, type: 3}
-  - m_speciesName: Flathead Gumpie
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 0d90b36c6d2d1d146a22430c62ed460e, type: 3}
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Horned Hagfish
-    m_scientificName: 
-    m_aboutDetails: 
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 7d30c2de4b7316346ac29579e3e9da14, type: 3}
-  - m_speciesName: Impfish
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 4d721c74384b11d448f4ba48eda6a760, type: 3}
-  - m_speciesName: Miniature Torch Fish
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 2bc68dd6063c78446b5ad39b2af17b88, type: 3}
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Twin Bass
-    m_scientificName: 
-    m_aboutDetails: 
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: 0e78d04eaa03c01419ea58ad1442e8d8, type: 3}
-  - m_speciesName: Yellow Fantail
-    m_scientificName: 
-    m_aboutDetails: 
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 21300000, guid: b602973e75153d4409c33a2b5e65593e, type: 3}
+    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &4367296849453046036
 GameObject:
   m_ObjectHideFlags: 0
