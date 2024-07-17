@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bubbleSystem: {fileID: 7640355577661281678}
+  m_soundOnMoveFrequency: 0.05
 --- !u!114 &1755539192914089377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,29 +129,29 @@ MonoBehaviour:
     m_soundClips:
     - m_clipName: Bubble 2
       m_audioClip: {fileID: 8300000, guid: 29a97dc9e8a8b57449ef17cc6cfcc6b6, type: 3}
-      m_volume: 1
+      m_volume: 0.3
       m_pitch: 1
       m_range: 20
     - m_clipName: Bubble 3
       m_audioClip: {fileID: 8300000, guid: 1c062340e6aafd543bbd3f59ad2eb969, type: 3}
-      m_volume: 1
+      m_volume: 0.3
       m_pitch: 1
       m_range: 20
-    - m_clipName: Bubble 4
-      m_audioClip: {fileID: 8300000, guid: d1b09e01e2dae8743a9814303d2f59fc, type: 3}
-      m_volume: 1
+    - m_clipName: Bubble 1
+      m_audioClip: {fileID: 8300000, guid: 60e088fe172bf7a43a5b92e5fd78ae7a, type: 3}
+      m_volume: 0.3
       m_pitch: 1
       m_range: 20
   - m_collectionName: Random Splash Sounds
     m_soundClips:
     - m_clipName: Bubble 1
       m_audioClip: {fileID: 8300000, guid: 60e088fe172bf7a43a5b92e5fd78ae7a, type: 3}
-      m_volume: 1
+      m_volume: 0.3
       m_pitch: 1
       m_range: 20
     - m_clipName: Fish Drip
       m_audioClip: {fileID: 8300000, guid: 7836e3396d296e540bae33904611b477, type: 3}
-      m_volume: 1
+      m_volume: 0.3
       m_pitch: 1
       m_range: 20
 --- !u!114 &-5358016148594718418

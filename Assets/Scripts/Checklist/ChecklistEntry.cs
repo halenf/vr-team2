@@ -29,6 +29,8 @@ namespace FishingGame
             {
                 m_isUnlocked = false;
                 m_speciesName = fishData.speciesName;
+                m_scientificName = fishData.scientificName;
+                m_aboutDetails = fishData.aboutDetails;
                 m_recordWeight = 0;
                 m_recordLength = 0;
                 m_sprite = fishData.sprite;

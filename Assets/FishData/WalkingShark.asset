@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a27153a2f11704479605416a4428c84, type: 3}
-  m_Name: BlanketRay
+  m_Name: WalkingShark
   m_EditorClassIdentifier: 
-  m_model: {fileID: 640230124652900198, guid: 3584df2d99c93ef44a6237b4aa9b4a68, type: 3}
-  m_sprite: {fileID: 21300000, guid: 152a4e5d13ae0b44c9f1bf4433372e1e, type: 3}
-  m_silhouetteSize: 3
-  m_speciesName: Freshwater Blanket Ray
-  m_scientificName: Himantura Stragulum
-  m_aboutDetails: Due to the Blanket Ray's large size they have no natural predators.
-    They have a friendly disposition and despite having a stinger, it serves no practical
-    purpose.
+  m_model: {fileID: 351247825465076611, guid: 33fde0aa4f2ee374a91aa23c8e72847a, type: 3}
+  m_sprite: {fileID: 21300000, guid: 8181e0f8d95b13d42bf24725634eef32, type: 3}
+  m_silhouetteSize: 2
+  m_speciesName: Pauldron Walking Shark
+  m_scientificName: Hemiscellium Pars
+  m_aboutDetails: This shark has evolved to walk short distances out of water using
+    its fins as prototype legs. It survives without oxygen for prolonged periods
+    by shutting down parts of its body.
   m_weight:
     m_min: 4
     m_max: 6

@@ -48,6 +48,13 @@ namespace FishingGame
                     m_spriteDisplay.color = Color.black;
                 }
             }
+
+            // for start unlocked bool on FishChecklist.cs
+            private void Start()
+            {
+                if (m_baseObject.isUnlocked)
+                    UpdateUI();
+            }
         }
     }
 }
