@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3729331972281016285}
-  - component: {fileID: 7549079263685240747}
-  - component: {fileID: 7549079263685240746}
-  - component: {fileID: 7549079263685240744}
   - component: {fileID: 6783260585528805666}
   m_Layer: 0
   m_Name: Duck B
@@ -37,50 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7549079263685240747
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4074331626721592679}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &7549079263685240746
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4074331626721592679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.17
-  m_Center: {x: 0, y: -0.12, z: 0}
---- !u!114 &7549079263685240744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4074331626721592679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b6a69f8ab28bf4db511230959ecdbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_forceStrength: 5
-  m_minimumForce: 12
-  m_isUnderwater: 0
 --- !u!114 &6783260585528805666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c0dbc42b931042a4925d6a55c4789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enabled: 1
   m_soundCollectionName: Ambient Duck Quacks
   m_clipFrequencyMin: 45
   m_clipFrequencyMax: 75
