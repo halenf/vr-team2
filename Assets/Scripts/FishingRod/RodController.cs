@@ -121,12 +121,13 @@ namespace FishingGame
                             new GradientColorKey[] { new GradientColorKey(Color.black, 0.0f) },
                             new GradientAlphaKey[] { new GradientAlphaKey(0, 0.0f) });
 
-                        m_bobber.GetComponent<Rigidbody>().isKinematic = false;
-                        //Apply the controller's velocity to it
-                        m_bobber.GetComponent<Rigidbody>().AddForce(m_bobber.transform.parent.GetComponent<Rigidbody>().velocity * m_castForceScale, ForceMode.VelocityChange);
                         //The rod has now been cast
+                        m_bobber.GetComponent<Rigidbody>().isKinematic = false;
                         //Unparent the bobber from its mount
                         m_bobber.transform.SetParent(null);
+                        //Apply the controller's velocity to it
+                        m_bobber.GetComponent<Rigidbody>().AddForce(m_bobberHold.GetComponent<Rigidbody>().velocity * m_castForceScale, ForceMode.VelocityChange);
+                        m_bobber.GetComponent<Collider>().enabled = true;
                         m_bobberHold.GetComponent<Rigidbody>().isKinematic = true;
                         m_bobberHold.position = m_rodTip.position;
                         m_rodState = RodState.Cast;
@@ -203,6 +204,7 @@ namespace FishingGame
                 //m_reelFish.SurfaceFish();
                 m_bobber.transform.SetParent(m_bobberHold);
                 m_bobber.GetComponent<Rigidbody>().isKinematic = true;
+                m_bobber.GetComponent<Collider>().enabled = false;
                 m_bobber.transform.localPosition = Vector3.zero;
                 m_bobberHold.GetComponent<Rigidbody>().isKinematic = false;
                 m_rodState = RodState.Mounted;
