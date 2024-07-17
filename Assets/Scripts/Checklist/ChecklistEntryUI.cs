@@ -33,8 +33,8 @@ namespace FishingGame
                     m_speciesNameDisplay.text = m_baseObject.speciesName;
                     m_scientificNameDisplay.text = m_baseObject.scientificName;
                     m_aboutFishDisplay.text = m_baseObject.aboutDetails;
-                    m_recordWeightDisplay.text = "Best Weight: " + m_baseObject.recordWeight.ToString();
-                    m_recordLengthDisplay.text = "Best Length: " + m_baseObject.recordLength.ToString();
+                    m_recordWeightDisplay.text = "Best Weight: " + (Mathf.Round(m_baseObject.recordWeight * 100.0f) / 100.0f).ToString() + "kg";
+                    m_recordLengthDisplay.text = "Best Length: " + (Mathf.Round(m_baseObject.recordLength * 100.0f) / 100.0f).ToString() + "m";
                     m_spriteDisplay.color = Color.white;
                 }
                 else
