@@ -10,6 +10,8 @@ namespace FishingGame
         public class ChecklistEntry
         {
             [SerializeField] private string m_speciesName;
+            [SerializeField] private string m_scientificName;
+            [SerializeField] private string m_aboutDetails;
             [SerializeField] private bool m_isUnlocked;
             [SerializeField] private float m_recordWeight;
             [SerializeField] private float m_recordLength;
@@ -17,6 +19,8 @@ namespace FishingGame
 
             public bool isUnlocked { get { return m_isUnlocked; } }
             public string speciesName { get { return m_speciesName; } }
+            public string scientificName { get { return m_scientificName; } }
+            public string aboutDetails { get { return m_aboutDetails; } }
             public float recordWeight { get { return m_recordWeight; } }
             public float recordLength { get { return m_recordLength; } }
             public Sprite sprite { get { return m_sprite; } }
@@ -25,6 +29,8 @@ namespace FishingGame
             {
                 m_isUnlocked = false;
                 m_speciesName = fishData.speciesName;
+                m_scientificName = fishData.scientificName;
+                m_aboutDetails = fishData.aboutDetails;
                 m_recordWeight = 0;
                 m_recordLength = 0;
                 m_sprite = fishData.sprite;

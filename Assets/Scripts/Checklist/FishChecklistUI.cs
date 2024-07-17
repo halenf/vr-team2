@@ -13,9 +13,6 @@ namespace FishingGame
         {
             private ChecklistEntryUI[] m_checklistEntryUIs;
 
-            [Header("Display Options")]
-            [SerializeField] private TMP_Text m_headerDisplay;
-
             [Header("Checklist Entries")]
             [SerializeField] private ChecklistEntryUI m_checklistEntryPrefab;
             [SerializeField] private Transform m_entryContainer;
@@ -23,6 +20,8 @@ namespace FishingGame
             private void Start()
             {
                 Init(GameObject.FindWithTag("Player").GetComponent<FishChecklist>());
+
+
             }
 
             public void Init(FishChecklist fishChecklist)
@@ -42,8 +41,6 @@ namespace FishingGame
             
             public override void UpdateUI()
             {
-                m_headerDisplay.text = "Fish Encyclopedia";
-
                 foreach (ChecklistEntryUI ui in m_checklistEntryUIs)
                 {
                     ui.UpdateUI();

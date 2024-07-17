@@ -58,7 +58,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.005
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 2
+  m_LineLength: 10
   m_AutoAdjustLineLength: 0
   m_MinLineLength: 0.5
   m_UseDistanceToHitAsMaxLineLength: 1
@@ -837,7 +837,7 @@ MonoBehaviour:
     ctime5: 0
     ctime6: 0
     ctime7: 0
-    atime0: 32768
+    atime0: 0
     atime1: 65535
     atime2: 0
     atime3: 0
@@ -859,7 +859,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 1638
+    ctime1: 65535
     ctime2: 0
     ctime3: 0
     ctime4: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 3277
+    atime1: 65535
     atime2: 0
     atime3: 0
     atime4: 0
@@ -1483,37 +1483,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fishDataPath: Assets/FishData/
   m_checklistEntries:
-  - m_speciesName: Blanket Ray
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - m_speciesName: Blimpfish
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Common Gumpie
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
     m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - m_speciesName: Flathead Gumpie
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - m_speciesName: Horned Hagfish
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - m_speciesName: Impfish
-    m_isUnlocked: 0
-    m_recordWeight: 0
-    m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - m_speciesName: Torch Fish
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
@@ -2040,8 +2015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3fc3f1ebd240d4f9e1e7b6d99b4f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scale: 50
-  m_refFrame: {fileID: 2105469547688421825}
+  m_refFrame: {fileID: 0}
   m_target: {fileID: 4367296848924751072}
   rotationSpeed: 0
 --- !u!114 &366430557323174676
@@ -2057,7 +2031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 4367296848924751072}
-  m_scale: 400
+  m_scale: 50
   m_allowPushback: 0
 --- !u!1001 &867827669
 PrefabInstance:
@@ -2450,11 +2424,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
---- !u!4 &2105469547688421825 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8653394666507188153, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}
-  m_PrefabInstance: {fileID: 7291092484132003448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4367296847499598548 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6464047156303021228, guid: 9f8be23a960e05f4aab01bafbef7c65c, type: 3}

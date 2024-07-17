@@ -32,6 +32,8 @@ namespace FishingGame
 
         [Header("Core Data")]
         [SerializeField] private string m_speciesName; // key
+        [SerializeField] private string m_scientificName;
+        [SerializeField, TextArea] private string m_aboutDetails;
         [Space()]
         [SerializeField, Tooltip("Kilograms")] private Constraint m_weight;
         [SerializeField, Tooltip("Metres")] private Constraint m_length;
@@ -56,6 +58,8 @@ namespace FishingGame
 
         // core
         public string speciesName { get { return m_speciesName; } }
+        public string scientificName { get { return m_scientificName; } }
+        public string aboutDetails { get { return m_aboutDetails; } }
         public Constraint weight { get { return m_weight; } }
         public Constraint length { get { return m_length; } }
 

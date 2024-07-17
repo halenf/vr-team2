@@ -11,6 +11,7 @@ namespace FishingGame
         {
             [Header("Bubbles")]
             [SerializeField] private ParticleSystem m_bubbleSystem;
+            [SerializeField, Range(0f, 1f)] private float m_soundOnMoveFrequency;
 
             private SFXController m_sfxController;
             public SFXController sfxController { get { return m_sfxController; } }
@@ -28,7 +29,8 @@ namespace FishingGame
                 if (value)
                 {
                     m_bubbleSystem.Play();
-                    m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Bubble Sounds", transform.position);
+                    if (m_soundOnMoveFrequency >= 1 || Random.Range(0f, 1f) <= m_soundOnMoveFrequency)
+                        m_sfxController.PlayRandomSoundClipFromCollectionAtPosition("Bubble Sounds", transform.position);
                 }
                 else
                     m_bubbleSystem.Stop();

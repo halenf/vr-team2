@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a27153a2f11704479605416a4428c84, type: 3}
+  m_Name: TorchFish
+  m_EditorClassIdentifier: 
+  m_model: {fileID: 6358660300618824049, guid: ed5ff47aa81f22449875971aa5b9fefe, type: 3}
+<<<<<<< HEAD
+  m_sprite: {fileID: 21300000, guid: 2bc68dd6063c78446b5ad39b2af17b88, type: 3}
+  m_silhouetteSize: 0
+  m_speciesName: Miniature Torch Fish
+  m_scientificName: Rotoculus Exiguum
+  m_aboutDetails: A small nocturnal fish with bioluminescent eyes. The glow from
+    its eyes attracts small lake-borne insects during the night that it feeds on.
+=======
+  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_silhouetteSize: 0
+  m_speciesName: Torch Fish
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1
+  m_weight:
+    m_min: 4
+    m_max: 6
+  m_length:
+    m_min: 0.8
+    m_max: 1
+  m_lifeTime:
+    m_min: 25
+    m_max: 35
+  m_swimSpeed:
+    m_min: 3
+    m_max: 4
+  m_chaseSpeed:
+    m_min: 5
+    m_max: 6
+  m_spookSpeed:
+    m_min: 7
+    m_max: 8
+  m_swimRange:
+    m_min: 10
+    m_max: 20
+  m_spookRange:
+<<<<<<< HEAD
+    m_min: 7
+    m_max: 13
+=======
+    m_min: 20
+    m_max: 30
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1
+  m_swimDetectionRange:
+    m_min: 0.6
+    m_max: 1
+  m_bobberDetectionRange:
+    m_min: 4
+    m_max: 7
+  m_swimWaitTime:
+    m_min: 2
+    m_max: 3
+  m_bobberWaitTime:
+    m_min: 2
+    m_max: 4
+  m_pullStrength:
+    m_min: 2
+    m_max: 2

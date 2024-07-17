@@ -89,6 +89,11 @@ namespace FishingGame
                 transform.rotation = Quaternion.LookRotation(m_targetPosition - transform.position);
             }
 
+            public void LookAtBobber()
+            {
+                transform.rotation = Quaternion.LookRotation(bobberPosition - transform.position);
+            }
+
             public void LookAwayFromTarget()
             {
                 transform.rotation = Quaternion.LookRotation(transform.position - m_targetPosition);

@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: TorchFish
   m_EditorClassIdentifier: 
   m_model: {fileID: 6358660300618824049, guid: ed5ff47aa81f22449875971aa5b9fefe, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: 2bc68dd6063c78446b5ad39b2af17b88, type: 3}
   m_silhouetteSize: 0
-  m_speciesName: Torch Fish
+  m_speciesName: Miniature Torch Fish
+  m_scientificName: Rotoculus Exiguum
+  m_aboutDetails: A small nocturnal fish with bioluminescent eyes. The glow from
+    its eyes attracts small lake-borne insects during the night that it feeds on.
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +41,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1
