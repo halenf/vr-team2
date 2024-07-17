@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7515675563469217981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8013360721627768559}
+  m_Layer: 3
+  m_Name: MODEL_PREFAB_Blimpfish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8013360721627768559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7515675563469217981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD:Assets/Art/Fish/MODEL_PREFAB_Blimpfish.prefab
+  m_ConstrainProportionsScale: 1
+=======
+  m_ConstrainProportionsScale: 0
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1:Assets/Art/Fish Model Prefabs/MODEL_PREFAB_Blimpfish.prefab
+  m_Children:
+  - {fileID: 3271863142119538439}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3093206911571925228
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8013360721627768559}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+<<<<<<< HEAD:Assets/Art/Fish/MODEL_PREFAB_Blimpfish.prefab
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+=======
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1:Assets/Art/Fish Model Prefabs/MODEL_PREFAB_Blimpfish.prefab
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Art/Fish/MODEL_PREFAB_Blimpfish.prefab
+      value: -0.486
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.093
+=======
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.066
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1:Assets/Art/Fish Model Prefabs/MODEL_PREFAB_Blimpfish.prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+<<<<<<< HEAD:Assets/Art/Fish/MODEL_PREFAB_Blimpfish.prefab
+    - target: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+=======
+>>>>>>> 81325a589e25ab7bea37fb0f459bc44e39af38e1:Assets/Art/Fish Model Prefabs/MODEL_PREFAB_Blimpfish.prefab
+    - target: {fileID: -7511558181221131132, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f55b6a30c5aba844b80b5562d159f950, type: 2}
+    - target: {fileID: -7511558181221131132, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f55b6a30c5aba844b80b5562d159f950, type: 2}
+    - target: {fileID: 919132149155446097, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_Name
+      value: CHAR_Blimpfish
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+--- !u!4 &3271863142119538439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bd995c63eb9e4ef46bc324adfe086a6a, type: 3}
+  m_PrefabInstance: {fileID: 3093206911571925228}
+  m_PrefabAsset: {fileID: 0}

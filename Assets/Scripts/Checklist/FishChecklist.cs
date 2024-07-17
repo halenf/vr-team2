@@ -9,6 +9,8 @@ namespace FishingGame
     {
         public class FishChecklist : MonoBehaviour
         {
+            [SerializeField] private bool m_startUnlocked = false;
+            
             [SerializeField] private string m_fishDataPath = "Assets/FishData/";
             
             [SerializeField] private ChecklistEntry[] m_checklistEntries;
@@ -57,6 +59,13 @@ namespace FishingGame
                 if (m_checklistEntries.Length > 0)
                     Debug.Log($"Successfully populated the {name} Checklist with all FishDatas at {m_fishDataPath}.");
 #endif
+            }
+
+            private void Start()
+            {
+                if (m_startUnlocked)
+                    foreach (ChecklistEntry entry in m_checklistEntries)
+                        entry.UnlockFish();
             }
         }
     }

@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Blimpfish
   m_EditorClassIdentifier: 
   m_model: {fileID: 717434924257652378, guid: 50497f482efb5104ca504658120f8983, type: 3}
-  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_sprite: {fileID: 21300000, guid: c565c6196a50b1d419b38aecf8f94c01, type: 3}
   m_silhouetteSize: 2
-  m_speciesName: Blimpfish
+  m_speciesName: Grand Blimpfish
+  m_scientificName: Silurnus Rotundi
+  m_aboutDetails: A large predatory fish that sticks to the deeper regions of lakes.
+    Due to their territorial nature, it is rare to find more than one in a given
+    area.
   m_weight:
     m_min: 4
     m_max: 6
@@ -38,8 +42,8 @@ MonoBehaviour:
     m_min: 10
     m_max: 20
   m_spookRange:
-    m_min: 20
-    m_max: 30
+    m_min: 7
+    m_max: 13
   m_swimDetectionRange:
     m_min: 0.6
     m_max: 1

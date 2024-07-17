@@ -17,7 +17,7 @@ namespace FishingGame
 
             public override void UpdateThis(Agent agent)
             {
-                agent.LookAtTarget();
+                agent.LookAtBobber();
             }
         }
     }

@@ -49,8 +49,14 @@ MonoBehaviour:
   m_agentContainer: {fileID: 6381908331430139992}
   m_fishDataPath: Assets/FishData/
   m_fishData:
+  - {fileID: 11400000, guid: 29726049df3f17649a8c740d23fa4c96, type: 2}
+  - {fileID: 11400000, guid: c08f78770d8213748a5e67be749bb6a8, type: 2}
   - {fileID: 11400000, guid: 55fe200689325e24784ee6c480f4176a, type: 2}
+  - {fileID: 11400000, guid: b15a80a78d617c64192c9f2d75bf6bac, type: 2}
   - {fileID: 11400000, guid: 204493566d43ee44a829b687bfb0fd96, type: 2}
+  - {fileID: 11400000, guid: 079c92a8e349c3b46926bb5ab69e24df, type: 2}
+  - {fileID: 11400000, guid: af10cbb21c8b1e44aa6ba3a9bd5732ec, type: 2}
   - {fileID: 11400000, guid: ecacabb74d0e1d443b09bf9c58c75b8e, type: 2}
+  - {fileID: 11400000, guid: 03d0ed6febcfba1468c16609ecd8855a, type: 2}
   m_minSpawnTime: 3
   m_maxSpawnTime: 10
