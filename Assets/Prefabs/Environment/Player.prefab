@@ -44,7 +44,7 @@ Camera:
   m_GameObject: {fileID: 4367296847725677075}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -1481,23 +1481,97 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b74ed6222071f4c9a566d88d308495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_startUnlocked: 0
   m_fishDataPath: Assets/FishData/
   m_checklistEntries:
+  - m_speciesName: Freshwater Blanket Ray
+    m_scientificName: Himantura Stragulum
+    m_aboutDetails: Due to the Blanket Ray's large size they have no natural predators.
+      They have a friendly disposition and despite having a stinger, it serves no
+      practical purpose.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: 152a4e5d13ae0b44c9f1bf4433372e1e, type: 3}
+  - m_speciesName: Grand Blimpfish
+    m_scientificName: Silurnus Rotundi
+    m_aboutDetails: A large predatory fish that sticks to the deeper regions of lakes.
+      Due to their territorial nature, it is rare to find more than one in a given
+      area.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: c565c6196a50b1d419b38aecf8f94c01, type: 3}
   - m_speciesName: Common Gumpie
+    m_scientificName: Poecularis Communis
+    m_aboutDetails: 'The Gumpie is a popular catch in lakes and rivers due to their
+      desirable taste and their instinctive love for fishing hooks.
+
+'
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    m_sprite: {fileID: 21300000, guid: 69405ced3e32ba642a221ca0fe4b3c61, type: 3}
+  - m_speciesName: Flathead Gumpie
+    m_scientificName: Poecularis Macrorhynchus
+    m_aboutDetails: A relative to the Common Gumpie. These fish dwell on lake bottoms
+      and feed on scraps from predators.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: 0d90b36c6d2d1d146a22430c62ed460e, type: 3}
   - m_speciesName: Horned Hagfish
+    m_scientificName: Eptatretus Robustus-Corniger
+    m_aboutDetails: A fairly common, midsized fish. Its tough, leathery skin makes
+      it unappealing to fishermen, though it is edible.
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    m_sprite: {fileID: 21300000, guid: 7d30c2de4b7316346ac29579e3e9da14, type: 3}
+  - m_speciesName: Impfish
+    m_scientificName: Acutipiscies Cobolorum
+    m_aboutDetails: 'A small fish, easily recognisable for their large fins and bright
+      red scales.
+
+      Feeds on plankton and small insects, catching them as they
+      skirt across the surface of lakes and ponds.'
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: 4d721c74384b11d448f4ba48eda6a760, type: 3}
+  - m_speciesName: Miniature Torch Fish
+    m_scientificName: Rotoculus Exiguum
+    m_aboutDetails: A small nocturnal fish with bioluminescent eyes. The glow from
+      its eyes attracts small lake-borne insects during the night that it feeds on.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: 2bc68dd6063c78446b5ad39b2af17b88, type: 3}
   - m_speciesName: Twin Bass
+    m_scientificName: Micropterus Didymus
+    m_aboutDetails: A two-headed bass found in lakes and rivers. Based on studdies
+      of this fish's behaviour, it is believed that each head controls a different
+      side of the body, resulting in a peculiar way of moving.
     m_isUnlocked: 0
     m_recordWeight: 0
     m_recordLength: 0
-    m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    m_sprite: {fileID: 21300000, guid: 0e78d04eaa03c01419ea58ad1442e8d8, type: 3}
+  - m_speciesName: Pauldron Walking Shark
+    m_scientificName: Hemiscellium Pars
+    m_aboutDetails: This shark has evolved to walk short distances out of water using
+      its fins as prototype legs. It survives without oxygen for prolonged periods
+      by shutting down parts of its body.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: 8181e0f8d95b13d42bf24725634eef32, type: 3}
+  - m_speciesName: Yellow Fantail
+    m_scientificName: Carassius Flavum
+    m_aboutDetails: A common fish that feeds on algae and zooplankton.
+    m_isUnlocked: 0
+    m_recordWeight: 0
+    m_recordLength: 0
+    m_sprite: {fileID: 21300000, guid: b602973e75153d4409c33a2b5e65593e, type: 3}
 --- !u!1 &4367296849453046036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3fc3f1ebd240d4f9e1e7b6d99b4f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_scale: 0
   m_refFrame: {fileID: 0}
   m_target: {fileID: 4367296848924751072}
   rotationSpeed: 0
