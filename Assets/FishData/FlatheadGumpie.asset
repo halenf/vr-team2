@@ -20,11 +20,11 @@ MonoBehaviour:
   m_aboutDetails: A relative to the Common Gumpie. These fish dwell on lake bottoms
     and feed on scraps from predators.
   m_weight:
-    m_min: 4
-    m_max: 6
+    m_min: 5
+    m_max: 8
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 0.7
+    m_max: 1.1
   m_lifeTime:
     m_min: 25
     m_max: 35

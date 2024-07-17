@@ -45,6 +45,14 @@ namespace FishingGame
             private Transform m_playerTransform;
             public Vector3 playerPosition { get { return m_playerTransform.position; } }
 
+            // is hooked
+            private bool m_isHooked = false;
+            public bool isHooked { get { return m_isHooked; } }
+            public void SetHooked()
+            {
+                m_isHooked = true;
+            }
+
             public void Init(Fish fish, Bobber bobber, Transform player)
             {
                 m_fish = fish;

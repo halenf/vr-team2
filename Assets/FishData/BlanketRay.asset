@@ -21,11 +21,11 @@ MonoBehaviour:
     They have a friendly disposition and despite having a stinger, it serves no practical
     purpose.
   m_weight:
+    m_min: 24
+    m_max: 36
+  m_length:
     m_min: 4
     m_max: 6
-  m_length:
-    m_min: 0.8
-    m_max: 1
   m_lifeTime:
     m_min: 25
     m_max: 35

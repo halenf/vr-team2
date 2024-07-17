@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2194993427852916853, guid: 7257b091881e32146a5c97b35674acec, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194993427852916853, guid: 7257b091881e32146a5c97b35674acec, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -176,6 +180,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8176488150848667190, guid: 7257b091881e32146a5c97b35674acec, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176488150848667190, guid: 7257b091881e32146a5c97b35674acec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873887322160416840, guid: 7257b091881e32146a5c97b35674acec, type: 3}
+      propertyPath: m_Size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873887322160416840, guid: 7257b091881e32146a5c97b35674acec, type: 3}
+      propertyPath: m_Value
+      value: -0.0000054836432
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7257b091881e32146a5c97b35674acec, type: 3}
 --- !u!224 &3248068578883876522 stripped
@@ -261,6 +281,14 @@ PrefabInstance:
     - target: {fileID: 7212358663697089502, guid: eed7d9ab08b64c345a788f13aac7ba29, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212358663748250314, guid: eed7d9ab08b64c345a788f13aac7ba29, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212358663748250315, guid: eed7d9ab08b64c345a788f13aac7ba29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.5000153
       objectReference: {fileID: 0}
     - target: {fileID: 7212358663853475228, guid: eed7d9ab08b64c345a788f13aac7ba29, type: 3}
       propertyPath: m_Pivot.x

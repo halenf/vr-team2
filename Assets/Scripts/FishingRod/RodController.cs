@@ -39,7 +39,6 @@ namespace FishingGame
 
             //Reeling
             private float m_reelVelocity;
-            public float setReelVelo { set { m_reelVelocity = Mathf.Clamp(value, -1.0f, 0.0f); } }
             [Tooltip("The speed which the bobber is reeled in by.")]
             [SerializeField] private float m_reelForceScale = 1;
             public float getReelForce { get { return m_reelVelocity * m_reelForceScale; } }
@@ -96,10 +95,14 @@ namespace FishingGame
             void Update()
             {
                 if (m_fishInstance == null)
+                {
                     //Disable the current gradient
                     m_lineVisual.invalidColorGradient.SetKeys(
                         new GradientColorKey[] { new GradientColorKey(Color.black, 0.0f) },
                         new GradientAlphaKey[] { new GradientAlphaKey(0, 0.0f) });
+                    if (m_rodState == RodState.Mounted)
+                        m_bobberHold.GetComponent<Collider>().enabled = true;
+                }
                 switch (m_rodState)
                 {
                     case RodState.Cast:
@@ -115,6 +118,7 @@ namespace FishingGame
                         if (m_fishInstance)
                         {
                             m_rodState = RodState.Mounted;
+                            m_bobber.GetComponent<Collider>().enabled = false;
                             return;
                         }
                         m_lineVisual.invalidColorGradient.SetKeys(
@@ -144,6 +148,13 @@ namespace FishingGame
 
                 }
                 DrawFishingLine();
+            }
+
+            public void SetReelVelocity(float value)
+            {
+                m_reelVelocity = value;
+                if (m_reelVelocity > 0)
+                    m_reelVelocity = 0;
             }
 
             /// <summary>
@@ -254,18 +265,12 @@ namespace FishingGame
             }
             public void AttachObjectToDisplayPoint(Transform obj)
             {
-                obj.position = m_bobber.transform.position;
-                try
-                {
-                    obj.GetComponent<Joint>().connectedBody = m_bobber.GetComponent<Rigidbody>();
-                }
-                catch (Exception e)
-                {
-                    SpringJoint sJoint = obj.AddComponent<SpringJoint>();
-                    sJoint.spring = 10000;
-                    sJoint.connectedBody = m_bobber.GetComponent<Rigidbody>();
-                }
+                obj.SetParent(m_bobber.transform);
                 obj.rotation = Quaternion.identity;
+                obj.localPosition = Vector3.zero;
+                obj.GetComponent<Rigidbody>().useGravity = false;
+                obj.GetComponent<Rigidbody>().isKinematic = true;
+                m_bobberHold.GetComponent<Collider>().enabled = false;
             }
         }
     }

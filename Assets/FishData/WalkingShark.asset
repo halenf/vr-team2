@@ -21,11 +21,11 @@ MonoBehaviour:
     its fins as prototype legs. It survives without oxygen for prolonged periods
     by shutting down parts of its body.
   m_weight:
-    m_min: 4
-    m_max: 6
+    m_min: 17
+    m_max: 29
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 1.5
+    m_max: 3
   m_lifeTime:
     m_min: 25
     m_max: 35

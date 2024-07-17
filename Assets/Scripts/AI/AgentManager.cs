@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using static FishingGame.AI.AgentManager;
 
 namespace FishingGame
 {
@@ -11,7 +12,8 @@ namespace FishingGame
     {
         public class AgentManager : MonoBehaviour
         {
-            public struct AgentTracker
+            [System.Serializable]
+            public class AgentTracker
             {
                 public AgentTracker(Agent agent, float lifeTime)
                 {
@@ -93,7 +95,7 @@ namespace FishingGame
                 List<AgentTracker> agentsToDespawn = new List<AgentTracker>();
                 foreach (AgentTracker agentTracker in m_agents)
                 {
-                    if (agentTracker.lifeTime <= 0 && agentTracker.agent.stateMachine.currentState == "Hooked")
+                    if (agentTracker.lifeTime <= 0 || agentTracker.agent.isHooked)
                         agentsToDespawn.Add(agentTracker);
                     else
                         agentTracker.ChangeLifeTime(-Time.deltaTime);
@@ -155,18 +157,18 @@ namespace FishingGame
                 m_agents.Add(new AgentTracker(agent, fish.GetConstraint(fish.data.lifeTime)));
             }
 
-            public bool DespawnAgent(AgentTracker agentTracker)
+            public void DespawnAgent(AgentTracker agentTracker)
             {
-                bool despawned = m_agents.Remove(agentTracker);
-                Destroy(agentTracker.agent.gameObject);
-                return despawned;
+                m_agents.Remove(agentTracker);
+                if (!agentTracker.agent.isHooked)
+                    Destroy(agentTracker.agent.gameObject);
             }
 
-            public bool DespawnAgent(Agent agent)
+            public void DespawnAgent(Agent agent)
             {
-                bool despawned = m_agents.RemoveAll(agentTracker => agentTracker.agent == agent) > 0;
-                Destroy(agent.gameObject);
-                return despawned;
+                m_agents.RemoveAll(agentTracker => agentTracker.agent == agent);
+                if (!agent.isHooked)
+                    Destroy(agent.gameObject);
             }
 
             [ContextMenu("Load FishData from Fish Data Path")]

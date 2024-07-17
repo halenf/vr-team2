@@ -29,7 +29,7 @@ namespace FishingGame
 
             public void PassStickY(InputAction.CallbackContext action)
             {
-                m_base.setReelVelo = action.ReadValue<Vector2>().y;
+                m_base.SetReelVelocity(action.ReadValue<Vector2>().y);
             }
             public void GripButton(InputAction.CallbackContext action)
             {

@@ -21,11 +21,11 @@ MonoBehaviour:
     Due to their territorial nature, it is rare to find more than one in a given
     area.
   m_weight:
-    m_min: 4
-    m_max: 6
+    m_min: 42
+    m_max: 60
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 1.2
+    m_max: 1.9
   m_lifeTime:
     m_min: 25
     m_max: 35

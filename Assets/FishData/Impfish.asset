@@ -23,11 +23,11 @@ MonoBehaviour:
     Feeds on plankton and small insects, catching them as they skirt
     across the surface of lakes and ponds.'
   m_weight:
-    m_min: 4
-    m_max: 6
-  m_length:
     m_min: 0.8
-    m_max: 1
+    m_max: 3
+  m_length:
+    m_min: 0.3
+    m_max: 0.7
   m_lifeTime:
     m_min: 25
     m_max: 35

@@ -21,11 +21,11 @@ MonoBehaviour:
     of this fish's behaviour, it is believed that each head controls a different
     side of the body, resulting in a peculiar way of moving.
   m_weight:
-    m_min: 4
-    m_max: 6
+    m_min: 15
+    m_max: 21
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 1.1
+    m_max: 1.6
   m_lifeTime:
     m_min: 25
     m_max: 35

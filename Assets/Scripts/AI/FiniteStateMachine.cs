@@ -12,7 +12,6 @@ namespace FishingGame
             [SerializeField] private State[] m_defaultStates;
             
             private State m_currentState;
-            public string currentState { get { return m_currentState.name; } }
 
             // base methods
             public override void Enter(Agent agent)

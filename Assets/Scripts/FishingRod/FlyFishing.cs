@@ -35,12 +35,12 @@ namespace FishingGame
                 //Enable or disable this input as long as a button is held
                 switch (action.phase)
                 {
-                    case InputActionPhase.Performed:
+                    case InputActionPhase.Started:
                         m_lineHeld = true;
                         m_lastDistance = (m_target.position - transform.position).magnitude;
                         break;
                     case InputActionPhase.Canceled:
-                        m_rodControl.setReelVelo = 0;
+                        m_rodControl.SetReelVelocity(0);
                         m_lineHeld = false;
                         break;
                 }
@@ -56,11 +56,11 @@ namespace FishingGame
                     //if the difference has grown.
                     if (dif > 0)
                         //reel the rod in
-                        m_rodControl.setReelVelo = -dif * m_scale;
+                        m_rodControl.SetReelVelocity(-dif * m_scale);
                     //else if we are allowing pushback
                     else if (m_allowPushback)
                         //push it back out at a reduced speed
-                        m_rodControl.setReelVelo = -dif * m_scale / 2.0f;
+                        m_rodControl.SetReelVelocity(-dif * m_scale / 2.0f);
 
                     //updated the last distance
                     m_lastDistance = dis;

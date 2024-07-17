@@ -23,10 +23,10 @@ MonoBehaviour:
 '
   m_weight:
     m_min: 4
-    m_max: 6
+    m_max: 7
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 0.4
+    m_max: 0.7
   m_lifeTime:
     m_min: 25
     m_max: 35

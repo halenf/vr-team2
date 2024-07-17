@@ -21,8 +21,8 @@ namespace FishingGame
             [SerializeField] private Transform m_target;
 
             [Header("Angles")]
-            [HideInInspector] public float rotationSpeed;
-            private float lastAngle;
+            [HideInInspector] public float m_rotationSpeed;
+            private float m_lastAngle;
 
             private RodController m_rodControl;
 
@@ -57,11 +57,12 @@ namespace FishingGame
                     else if (targetDir.y < 0) dirAsAngle += Mathf.PI * 2;
 
                     //get difference in the angle from the last frame
-                    rotationSpeed = Mathf.Clamp(lastAngle - dirAsAngle, -Mathf.PI / 2, Mathf.PI / 2);
-                    lastAngle = dirAsAngle;
+                    m_rotationSpeed = Mathf.Clamp(m_lastAngle - dirAsAngle, -Mathf.PI / 2, Mathf.PI / 2);
+                    m_lastAngle = dirAsAngle;
 
                     //pass that difference as the reel speed
-                    m_rodControl.setReelVelo = rotationSpeed * m_scale;
+                    if(m_rotationSpeed <= 0)
+                        m_rodControl.SetReelVelocity(m_rotationSpeed * m_scale);
                 }
             }
             public void ReelGrabbed(InputAction.CallbackContext action)
@@ -74,7 +75,7 @@ namespace FishingGame
                         m_cranking = true;
                         break;
                     case InputActionPhase.Canceled:
-                        m_rodControl.setReelVelo = 0;
+                        m_rodControl.SetReelVelocity(0);
                         m_cranking = false;
                         break;
                 }

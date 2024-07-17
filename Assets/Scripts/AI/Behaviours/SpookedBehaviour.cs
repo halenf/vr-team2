@@ -16,12 +16,14 @@ namespace FishingGame
 
             public override void Enter(Agent agent)
             {
-                // get the direction of the bobber to the fish
-                Vector3 awayFromBobber = (agent.transform.position - agent.bobberPosition).normalized;
+                // get the random position to add
+                float xRange = agent.fish.GetConstraint(agent.fish.data.spookRange) * 2;
+                float zRange = agent.fish.GetConstraint(agent.fish.data.spookRange) * 2;
 
-                // apply the angle rotation to the direction and set length
-                Vector3 targetPosition = awayFromBobber * agent.fish.GetConstraint(agent.fish.data.spookRange) * 2f;
-                targetPosition.y = GameSettings.POOL_HEIGHT;
+                // calc the new target position
+                float xTarget = agent.transform.position.x + Random.Range(-xRange, xRange);
+                float zTarget = agent.transform.position.z + Random.Range(-zRange, zRange);
+                Vector3 targetPosition = new Vector3(xTarget, GameSettings.POOL_HEIGHT, zTarget);
 
                 // clamp target position to pool radius
                 if (Vector3.Distance(targetPosition, GameSettings.POOL_ORIGIN) > GameSettings.POOL_RADIUS)

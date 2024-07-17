@@ -20,11 +20,11 @@ MonoBehaviour:
   m_aboutDetails: A small nocturnal fish with bioluminescent eyes. The glow from
     its eyes attracts small lake-borne insects during the night that it feeds on.
   m_weight:
-    m_min: 4
-    m_max: 6
+    m_min: 0.3
+    m_max: 0.6
   m_length:
-    m_min: 0.8
-    m_max: 1
+    m_min: 0.15
+    m_max: 0.4
   m_lifeTime:
     m_min: 25
     m_max: 35
