@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fishToPrespawn: 4
   m_agentPrefab: {fileID: 2920973511554461923, guid: 379be1e51bc026842b29bed517257eb5, type: 3}
-  m_agentContainer: {fileID: 6381908331430139992}
+  m_agentContainer: {fileID: 0}
   m_fishDataPath: Assets/FishData/
   m_fishData:
   - {fileID: 11400000, guid: 29726049df3f17649a8c740d23fa4c96, type: 2}
@@ -58,5 +58,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af10cbb21c8b1e44aa6ba3a9bd5732ec, type: 2}
   - {fileID: 11400000, guid: ecacabb74d0e1d443b09bf9c58c75b8e, type: 2}
   - {fileID: 11400000, guid: 03d0ed6febcfba1468c16609ecd8855a, type: 2}
+  - {fileID: 11400000, guid: b84ed5e53c3d94c43b5d37aff83f6ce3, type: 2}
   m_minSpawnTime: 3
   m_maxSpawnTime: 10
